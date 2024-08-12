@@ -30,10 +30,13 @@ struct TestView: View {
         rightExpressionModel.children.append(rightModel)
         rightExpressionModel.lastFocusedChildrenId = 0
         
-        var fractionModel: FractionModel = FractionModel(id:3, showCaret:false, parentModel:nil)
-        var singleModel: SingularTextModel  = SingularTextModel(id:1, text: "A", showCaret:false,isEndChar:false,fontSize: 20)
+        var fractionModel: FractionModel = FractionModel(id:5, showCaret:false, parentModel:nil)
+        fractionModel.numeratorPartModel = leftExpressionModel
+        fractionModel.denominatorPartModel = rightExpressionModel
         
-        var expressionModel: ExpressionModel = ExpressionModel(id:1, parentModel: nil, fontSize: 20)
+        var singleModel: SingularTextModel  = SingularTextModel(id:6, text: "A", showCaret:false,isEndChar:false,fontSize: 20)
+        
+        var expressionModel: ExpressionModel = ExpressionModel(id:7, parentModel: nil, fontSize: 20)
         expressionModel.children.append(fractionModel)
         expressionModel.children.append(singleModel)
         expressionModel.lastFocusedChildrenId = 1

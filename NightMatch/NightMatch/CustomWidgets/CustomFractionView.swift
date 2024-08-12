@@ -21,7 +21,7 @@ struct CustomFractionView: View {
                 }
                 VStack(spacing:0){
                     CustomExpressionView(expressionModel:model.numeratorPartModel)
-                    Rectangle().frame(height: 1).foregroundColor(.red)
+                    Rectangle().frame(height: 1).foregroundColor(.black)
                     CustomExpressionView(expressionModel:model.denominatorPartModel)
                 }
             }

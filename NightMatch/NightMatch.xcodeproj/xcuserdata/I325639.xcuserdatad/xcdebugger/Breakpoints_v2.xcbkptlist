@@ -3,4 +3,52 @@
    uuid = "8EB1C2B9-C061-4524-B347-DB5F76895ED1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AEE5BBBA-16EE-40F4-8E0B-FC9056FF346F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NightMatch/CustomWidgets/CustomExpressionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AEE5BBBA-16EE-40F4-8E0B-FC9056FF346F - 3456d336430855a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Optional&lt;SwiftUI._ConditionalContent&lt;NightMatch.CustomSingularTextView, NightMatch.CustomFractionView&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, Swift.Optional&lt;SwiftUI._ConditionalContent&lt;NightMatch.CustomSingularTextView, NightMatch.CustomFractionView&gt;&gt;&gt; in NightMatch.CustomExpressionView.body.getter : some"
+                  moduleName = "NightMatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomWidgets/CustomExpressionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15">
+               </Location>
+               <Location
+                  uuid = "AEE5BBBA-16EE-40F4-8E0B-FC9056FF346F - 3456d336430855a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Optional&lt;SwiftUI._ConditionalContent&lt;NightMatch.CustomSingularTextView, NightMatch.CustomFractionView&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, Swift.Optional&lt;SwiftUI._ConditionalContent&lt;NightMatch.CustomSingularTextView, NightMatch.CustomFractionView&gt;&gt;&gt; in NightMatch.CustomExpressionView.body.getter : some"
+                  moduleName = "NightMatch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomWidgets/CustomExpressionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -20,9 +20,11 @@ class FractionModel:Caretable,ObservableObject,ArrowListener{
         self.id = id
         self.showCaret = showCaret
         self.parentModel = parentModel
-        self.fontSize = parentModel?.fontSize ?? 20//Variable 'self.numeratorPartModel' used before being initialized
-        self.numeratorPartModel = ExpressionModel(id:1, parentModel:self, fontSize:parentModel!.fontSize)
-        self.denominatorPartModel = ExpressionModel(id:2, parentModel:self, fontSize:parentModel!.fontSize)
+        self.fontSize = parentModel?.fontSize ?? 20
+        self.numeratorPartModel = ExpressionModel(id:1, parentModel:nil, fontSize:self.fontSize)
+        self.denominatorPartModel = ExpressionModel(id:2, parentModel:nil, fontSize:self.fontSize)
+        self.numeratorPartModel.parentModel = self
+        self.denominatorPartModel.parentModel = self
     }
     
     func onLeftArrow() {

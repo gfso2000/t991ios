@@ -11,9 +11,17 @@ class SingularTextModel : Caretable,ObservableObject{
     @Published var showCaret: Bool = false
     var id:Int = 0
     var text:String = ""
-    init(id:Int, text: String, hasFocus: Bool) {
+    var isEndChar:Bool = false
+    var fontSize: Int
+    
+    init(id:Int, text: String, showCaret: Bool, isEndChar:Bool, fontSize:Int) {
         self.id = id
         self.text = text
-        self.showCaret = hasFocus
+        self.showCaret = showCaret
+        self.isEndChar = isEndChar
+        if(isEndChar){
+            self.id = 999
+        }
+        self.fontSize = fontSize
     }
 }

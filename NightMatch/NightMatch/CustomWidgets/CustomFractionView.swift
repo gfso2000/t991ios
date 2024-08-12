@@ -20,9 +20,9 @@ struct CustomFractionView: View {
                     Rectangle().frame(width: 1).foregroundColor(.clear)
                 }
                 VStack(spacing:0){
-                    CustomExpressionView(expressionModel:model.leftModel)
+                    CustomExpressionView(expressionModel:model.numeratorPartModel)
                     Rectangle().frame(height: 1).foregroundColor(.red)
-                    CustomExpressionView(expressionModel:model.rightModel)
+                    CustomExpressionView(expressionModel:model.denominatorPartModel)
                 }
             }
             .fixedSize(horizontal: false, vertical: true)
@@ -46,7 +46,7 @@ struct CustomFractionView: View {
 
 #Preview {
     VStack{
-        CustomFractionView(model: FractionModel(id:1,hasFocus:true, leftModel: ExpressionModel(), rightModel: ExpressionModel()))
-        CustomFractionView(model: FractionModel(id:2,hasFocus:false, leftModel: ExpressionModel(), rightModel: ExpressionModel()))
+        CustomFractionView(model:FractionModel(id: 1, showCaret: true, parentModel: ExpressionModel(id:1,parentModel: nil,fontSize: 20)))
+        CustomFractionView(model:FractionModel(id: 1, showCaret: false, parentModel: ExpressionModel(id:1,parentModel: nil,fontSize: 20)))
     }
 }

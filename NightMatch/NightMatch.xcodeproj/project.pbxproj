@@ -21,6 +21,8 @@
 		DABFAF612C65E488008E8048 /* ExpressionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF602C65E488008E8048 /* ExpressionModel.swift */; };
 		DABFAF632C65F7FD008E8048 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF622C65F7FC008E8048 /* TestView.swift */; };
 		DAC991102C69CFF400744B5D /* CustomFractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9910F2C69CFF400744B5D /* CustomFractionView.swift */; };
+		DAC991132C69E43600744B5D /* FocusDirectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991122C69E43600744B5D /* FocusDirectionEnum.swift */; };
+		DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991142C69E6C000744B5D /* ArrowListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		DABFAF602C65E488008E8048 /* ExpressionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionModel.swift; sourceTree = "<group>"; };
 		DABFAF622C65F7FC008E8048 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		DAC9910F2C69CFF400744B5D /* CustomFractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFractionView.swift; sourceTree = "<group>"; };
+		DAC991122C69E43600744B5D /* FocusDirectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusDirectionEnum.swift; sourceTree = "<group>"; };
+		DAC991142C69E6C000744B5D /* ArrowListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +160,9 @@
 		DABFAF592C65D613008E8048 /* CustomModels */ = {
 			isa = PBXGroup;
 			children = (
+				DAC991122C69E43600744B5D /* FocusDirectionEnum.swift */,
 				DABFAF5A2C65E1FD008E8048 /* Caretable.swift */,
+				DAC991142C69E6C000744B5D /* ArrowListener.swift */,
 				DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */,
 				DABFAF5E2C65E420008E8048 /* FractionModel.swift */,
 				DABFAF602C65E488008E8048 /* ExpressionModel.swift */,
@@ -294,9 +300,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */,
 				DA03B85B2C65A9B5003626B8 /* CustomExpressionView.swift in Sources */,
 				DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */,
 				DABFAF5D2C65E23F008E8048 /* SingularTextModel.swift in Sources */,
+				DAC991132C69E43600744B5D /* FocusDirectionEnum.swift in Sources */,
 				DABFAF612C65E488008E8048 /* ExpressionModel.swift in Sources */,
 				DABFAF632C65F7FD008E8048 /* TestView.swift in Sources */,
 				DA076E202C22B0DF00F7A2C1 /* NightMatchApp.swift in Sources */,

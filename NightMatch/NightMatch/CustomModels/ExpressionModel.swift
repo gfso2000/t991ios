@@ -7,8 +7,207 @@
 
 import Foundation
 
-class ExpressionModel:ObservableObject{
+class ExpressionModel:ObservableObject,ArrowListener{
+    var parentModel: ArrowListener?
+    var fontSize: Int
+    var id: Int
+    var endCharTextModel: SingularTextModel
     @Published var children:[Caretable] = []
     @Published var lastFocusedChildrenId:Int = -1
     
+    init(id:Int, parentModel: ArrowListener? = nil, fontSize: Int) {
+        self.id = id;
+        self.parentModel = parentModel
+        self.fontSize = fontSize
+        
+        endCharTextModel = SingularTextModel(id:999, text: "", showCaret: false, isEndChar:true, fontSize: fontSize);
+        children.append(endCharTextModel);
+        lastFocusedChildrenId = endCharTextModel.id
+        self.id = id
+    }
+    
+    func onLeftArrow() {
+        guard var child = getLastFocusedChildren() else {
+            return
+        }
+        child.showCaret = false
+        
+        guard var index:Int = childIndexForId(child.id) else {
+            return
+        }
+        
+        index-=1;
+        if (index != -1) {
+            lastFocusedChildrenId = children[index].id;
+            if (children[index] is ArrowListener) {
+                //the last focused view is a composite view, when press right, need to move into it
+                loseFocus()
+                (children[index] as! ArrowListener).setFocus(FocusDirectionEnum.RIGHT)
+                return
+            }
+            children[index].showCaret = true
+            return
+        }
+        
+        //if reach to the start
+        if (parentModel != nil) {
+            loseFocus()
+            parentModel!.onLeftArrowFromChild(self)
+        } else {
+            lastFocusedChildrenId = children[children.count - 1].id
+            if (children[children.count - 1] is ArrowListener) {
+                //the last focused view is a composite view, when press right, need to move into it
+                loseFocus()
+                (children[children.count - 1] as! ArrowListener).setFocus(FocusDirectionEnum.RIGHT)
+                return
+            }
+            children[children.count - 1].showCaret = true
+        }
+    }
+    
+    func onRightArrow() {
+        guard var child = getLastFocusedChildren() else {
+            return
+        }
+        child.showCaret = false
+        
+        if (child is ArrowListener) {
+            //the last focused view is a composite view, when press right, need to move into it
+            loseFocus()
+            (child as! ArrowListener).setFocus(FocusDirectionEnum.LEFT)
+            return;
+        }
+
+        guard var index:Int = childIndexForId(child.id) else {
+            return
+        }
+
+        index+=1
+        if (index != children.count) {
+            lastFocusedChildrenId = children[index].id
+            children[index].showCaret = true
+            return
+        }
+        //if reach to the end
+        if (parentModel != nil) {
+            loseFocus();
+            parentModel!.onRightArrowFromChild(self);
+        } else {
+            lastFocusedChildrenId = children[0].id
+            children[0].showCaret = true
+        }
+    }
+    
+    func onUpArrow() {
+        if (parentModel != nil) {
+            loseFocus();
+            parentModel!.onUpArrowFromChild(self);
+        }
+    }
+    
+    func onDownArrow() {
+        if (parentModel != nil) {
+            loseFocus();
+            parentModel!.onDownArrowFromChild(self);
+        }
+    }
+    
+    func onShiftLeftArrow() {
+        guard var child = getLastFocusedChildren() else {
+            return
+        }
+        child.showCaret = false
+        children[0].showCaret = true
+        lastFocusedChildrenId = children[0].id
+    }
+    
+    func onShiftRightArrow() {
+        guard var child = getLastFocusedChildren() else {
+            return
+        }
+        child.showCaret = false
+        children[children.count - 1].showCaret = true
+        lastFocusedChildrenId = children[children.count - 1].id
+    }
+    
+    func onLeftArrowFromChild(_ childModel: any ArrowListener) {
+        //move left from childView, now show caret of childView
+        lastFocusedChildrenId = (childModel as! Caretable).id
+        guard var child = (childModel as? Caretable) else{
+            return
+        }
+        child.showCaret = true
+        switchToActive();
+    }
+    
+    func onRightArrowFromChild(_ childModel: any ArrowListener) {
+        //move right from childView, now show caret on the next child
+        guard var index:Int = childIndexForId((childModel as! Caretable).id) else {
+            return
+        }
+        lastFocusedChildrenId = children[index + 1].id
+        children[index + 1].showCaret=true
+        switchToActive();
+    }
+    
+    func onUpArrowFromChild(_ childModel: any ArrowListener) {
+        //expression view won't handle, this only happens for composite view like fraction
+        if (parentModel != nil) {
+            loseFocus();
+            parentModel!.onUpArrowFromChild(self);
+        } else {
+            childModel.setFocus(FocusDirectionEnum.ORIGINAL);
+        }
+    }
+    
+    func onDownArrowFromChild(_ childModel: any ArrowListener) {
+        //expression view won't handle, this only happens for composite view like fraction
+        if (parentModel != nil) {
+            loseFocus();
+            parentModel!.onDownArrowFromChild(self);
+        } else {
+            childModel.setFocus(FocusDirectionEnum.ORIGINAL);
+        }
+    }
+    
+    func setFocus(_ direction: FocusDirectionEnum) {
+        if (direction == FocusDirectionEnum.LEFT) {
+            lastFocusedChildrenId = children[0].id
+        } else if (direction == FocusDirectionEnum.RIGHT) {
+            lastFocusedChildrenId = children[children.count - 1].id
+        }
+        guard var child = getLastFocusedChildren() else {
+            return
+        }
+        child.showCaret=true
+        switchToActive();
+    }
+    
+    func loseFocus() {
+        guard var child = getLastFocusedChildren() else {
+            return
+        }
+        child.showCaret=false
+    }
+    
+    func handleDeleteFromChild(_ childModel: any ArrowListener) {
+        
+    }
+    
+    func getLastFocusedChildren() -> Caretable? {
+        for child in children {
+            if (child.id == lastFocusedChildrenId) {
+                return child
+            }
+        }
+        return nil
+    }
+    
+    func childIndexForId(_ idToFind: Int) -> Int? {
+        return children.firstIndex { $0.id == idToFind }
+    }
+    
+    func switchToActive() {
+        //expressionContext.activeExpressionModelId = self.id;
+    }
 }

@@ -24,5 +24,5 @@ struct CustomExpressionView: View {
 }
 
 #Preview {
-    CustomExpressionView(expressionModel: ExpressionModel())
+    CustomExpressionView(expressionModel: ExpressionModel(id:1,parentModel: nil,fontSize: 20))
 }

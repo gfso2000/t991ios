@@ -55,8 +55,8 @@ struct CustomSingularTextView: View {
 
 #Preview {
     VStack{
-        CustomSingularTextView(model:SingularTextModel(id:1,text:"A",hasFocus: true))
-        CustomSingularTextView(model:SingularTextModel(id:1,text:"A",hasFocus: false))
+        CustomSingularTextView(model:SingularTextModel(id:1, text: "A", showCaret: false, isEndChar:false, fontSize:20))
+        CustomSingularTextView(model:SingularTextModel(id:1, text: "A", showCaret: true, isEndChar:false, fontSize:20))
     }
     
 }

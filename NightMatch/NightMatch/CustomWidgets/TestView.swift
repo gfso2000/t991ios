@@ -14,19 +14,19 @@ struct TestView: View {
         CustomExpressionView(expressionModel: self.expressionModel)
         Button(action: {
             // Add a new child to expressionModel
-            let newChild = SingularTextModel(id: expressionModel.children.count + 1, text: "B", hasFocus:true)
+            let newChild = SingularTextModel(id: expressionModel.children.count + 1, text: "B", showCaret:true,isEndChar:false,fontSize: 20)
             expressionModel.children.append(newChild)
         }) {
             Text("Add Child")
         }
     }
     init(){
-        var leftModel: SingularTextModel  = SingularTextModel(id:1, text: "L", hasFocus: false)
-        var rightModel: SingularTextModel  = SingularTextModel(id:2, text: "R", hasFocus: false)
-        var leftExpressionModel: ExpressionModel = ExpressionModel()
+        var leftModel: SingularTextModel  = SingularTextModel(id:1, text: "L", showCaret:false,isEndChar:false,fontSize: 20)
+        var rightModel: SingularTextModel  = SingularTextModel(id:2, text: "R", showCaret:false,isEndChar:false,fontSize: 20)
+        var leftExpressionModel: ExpressionModel = ExpressionModel(id:3, parentModel: nil, fontSize: 20)
         leftExpressionModel.children.append(leftModel)
         leftExpressionModel.lastFocusedChildrenId = 0
-        var rightExpressionModel: ExpressionModel = ExpressionModel()
+        var rightExpressionModel: ExpressionModel = ExpressionModel(id:4, parentModel: nil, fontSize: 20)
         rightExpressionModel.children.append(rightModel)
         rightExpressionModel.lastFocusedChildrenId = 0
         

@@ -8,14 +8,14 @@
 import Foundation
 
 class FractionModel:Caretable,ObservableObject{
-    var hasFocus: Bool = false
+    var showCaret: Bool = false
     var id:Int = 0
     var leftModel:ExpressionModel = ExpressionModel()
     var rightModel:ExpressionModel = ExpressionModel()
     
     init(id: Int, hasFocus: Bool, leftModel: ExpressionModel, rightModel: ExpressionModel) {
         self.id = id
-        self.hasFocus = hasFocus
+        self.showCaret = hasFocus
         self.leftModel = leftModel
         self.rightModel = rightModel
     }

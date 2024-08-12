@@ -44,7 +44,7 @@ struct CustomSingularTextView: View {
         .fixedSize(horizontal: true, vertical: false)
         .background(Color.yellow)
         .onReceive(Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()) { _ in
-            if model.hasFocus {
+            if model.showCaret {
                 isRectangleVisible.toggle()
             } else {
                 isRectangleVisible = false

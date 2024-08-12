@@ -14,7 +14,7 @@ struct CustomExpressionView: View {
             ForEach(expressionModel.children.indices, id: \.self) { index in
                 if let singularTextModel = expressionModel.children[index] as? SingularTextModel {
                     CustomSingularTextView(model:singularTextModel)
-                } 
+                }
                 else if let fractionModel = expressionModel.children[index] as? FractionModel {
                     CustomFractionView(model:fractionModel)
                 }

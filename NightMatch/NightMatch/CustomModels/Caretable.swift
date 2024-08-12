@@ -9,5 +9,5 @@ import Foundation
 
 protocol Caretable{
     var id:Int { get set }
-    var hasFocus:Bool { get set }
+    var showCaret:Bool { get set }
 }

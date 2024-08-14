@@ -11,7 +11,49 @@ struct KeyboardPanel: View {
     var body: some View {
         VStack(spacing:0){
             HStack(spacing:0){
-                Button("Press Me") {
+                Button {
+                    print("Button pressed!")
+                }label: {
+                    Text("Del").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(GrowingButtonStyle())
+                Button() {
+                    print("Button pressed!")
+                }label: {
+                    Text("⬆︎").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(GrowingButtonStyle())
+                Button() {
+                    print("Button pressed!")
+                }label: {
+                    Text("Undo").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(GrowingButtonStyle())
+            }
+            HStack(spacing:0){
+                Button("⬅︎") {
+                    print("Button pressed!")
+                }
+                .buttonStyle(GrowingButtonStyle())
+                Button("OK") {
+                    print("Button pressed!")
+                }
+                .buttonStyle(GrowingButtonStyle())
+                Button("➡︎") {
+                    print("Button pressed!")
+                }
+                .buttonStyle(GrowingButtonStyle())
+            }
+            HStack(spacing:0){
+                Button("X") {
+                    print("Button pressed!")
+                }
+                .buttonStyle(GrowingButtonStyle())
+                Button("⬇︎") {
+                    print("Button pressed!")
+                }
+                .buttonStyle(GrowingButtonStyle())
+                Button("X") {
                     print("Button pressed!")
                 }
                 .buttonStyle(GrowingButtonStyle())

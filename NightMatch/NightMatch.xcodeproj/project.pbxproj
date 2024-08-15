@@ -26,6 +26,7 @@
 		DAC991172C6C572C00744B5D /* KeyboardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991162C6C572C00744B5D /* KeyboardPanel.swift */; };
 		DAC9911C2C6C769400744B5D /* GrowingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9911B2C6C769400744B5D /* GrowingButtonStyle.swift */; };
 		DAC991202C6D8CD600744B5D /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9911F2C6D8CD600744B5D /* KeyboardButton.swift */; };
+		DAC991232C6DD9C200744B5D /* IdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991222C6DD9C200744B5D /* IdGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		DAC991162C6C572C00744B5D /* KeyboardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPanel.swift; sourceTree = "<group>"; };
 		DAC9911B2C6C769400744B5D /* GrowingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButtonStyle.swift; sourceTree = "<group>"; };
 		DAC9911F2C6D8CD600744B5D /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
+		DAC991222C6DD9C200744B5D /* IdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		DA076E1E2C22B0DF00F7A2C1 /* NightMatch */ = {
 			isa = PBXGroup;
 			children = (
+				DAC991212C6DD9B300744B5D /* Utils */,
 				DAC991182C6C75A900744B5D /* CommonWidgets */,
 				DABFAF592C65D613008E8048 /* CustomModels */,
 				DA03B8572C65A418003626B8 /* CustomWidgets */,
@@ -185,6 +188,14 @@
 				DAC991162C6C572C00744B5D /* KeyboardPanel.swift */,
 			);
 			path = CommonWidgets;
+			sourceTree = "<group>";
+		};
+		DAC991212C6DD9B300744B5D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DAC991222C6DD9C200744B5D /* IdGenerator.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */,
+				DAC991232C6DD9C200744B5D /* IdGenerator.swift in Sources */,
 				DA03B85B2C65A9B5003626B8 /* CustomExpressionView.swift in Sources */,
 				DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */,
 				DABFAF5D2C65E23F008E8048 /* SingularTextModel.swift in Sources */,

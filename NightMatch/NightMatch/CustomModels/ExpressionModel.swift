@@ -9,21 +9,42 @@ import Foundation
 
 class ExpressionModel:ObservableObject,ArrowListener{
     var parentModel: ArrowListener?
-    var fontSize: Int
+    var fontSize: CGFloat
     var id: Int
     var endCharTextModel: SingularTextModel
     @Published var children:[Caretable] = []
     @Published var lastFocusedChildrenId:Int = -1
     
-    init(id:Int, parentModel: ArrowListener? = nil, fontSize: Int) {
+    init(id:Int, parentModel: ArrowListener? = nil, fontSize: CGFloat) {
         self.id = id;
         self.parentModel = parentModel
         self.fontSize = fontSize
         
-        endCharTextModel = SingularTextModel(id:999, text: "", showCaret: false, isEndChar:true, fontSize: fontSize);
+        endCharTextModel = SingularTextModel(id:999, text: "$", showCaret: false, isEndChar:true, fontSize: fontSize);
         children.append(endCharTextModel);
         lastFocusedChildrenId = endCharTextModel.id
         self.id = id
+    }
+    
+    func savePreviousState() -> Void {
+        //todo
+    }
+    
+    func insertChild(_ caretable:Caretable) -> Void {
+        let index:Int = childIndexForId(lastFocusedChildrenId) ?? children.count-1
+        children.insert(caretable, at:index);
+        endCharTextModel.text=""
+        //            this.view.hideBorder();
+    }
+    
+    func addSingularText(_ text:String) -> Void {
+        savePreviousState();
+        doAddSingularText(text);
+    }
+    
+    func doAddSingularText(_ text:String) -> Void {
+        let newChild = SingularTextModel(id: IdGenerator.generateId(), text: text, showCaret:false,isEndChar:false,fontSize: self.fontSize)
+        insertChild(newChild);
     }
     
     func onLeftArrow() {

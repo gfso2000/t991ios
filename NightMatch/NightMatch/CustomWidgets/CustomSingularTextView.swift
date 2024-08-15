@@ -19,9 +19,10 @@ struct CustomSingularTextView: View {
                 }else{
                     Rectangle().frame(width: 1).foregroundColor(.clear)
                 }
-                if model.text == ""{
-                    Text("    ")
+                if model.text == "$"{
+                    Text("    ").font(.system(size: model.fontSize))
                         .foregroundColor(.black)
+                        .frame(height:model.fontSize)
                         .overlay(
                             Rectangle()
                                 .stroke(style: StrokeStyle(lineWidth: 1, dash: [2]))
@@ -29,19 +30,29 @@ struct CustomSingularTextView: View {
                         )
                     
                 }else{
-                    Text(model.text)
+                    Text(model.text).font(.system(size: model.fontSize))
                         .foregroundColor(.black)
+                        .frame(height:model.fontSize)
                 }
-                
             }
             .fixedSize(horizontal: false, vertical: true)
+            .padding(0)
             if isRectangleVisible {
-                Rectangle().frame(height: 1).foregroundColor(.red)
+                if model.isEndChar && model.text == ""{
+                    Rectangle().frame(width:1,height: 1).foregroundColor(.red)
+                }else{
+                    Rectangle().frame(height: 1).foregroundColor(.red)
+                }
             }else{
-                Rectangle().frame(height: 1).foregroundColor(.clear)
+                if model.isEndChar && model.text == ""{
+                    Rectangle().frame(width:1,height: 1).foregroundColor(.clear)
+                }else{
+                    Rectangle().frame(height: 1).foregroundColor(.clear)
+                }
             }
         }
         .fixedSize(horizontal: true, vertical: false)
+        .padding(0)
         .background(Color.yellow)
         .onReceive(Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()) { _ in
             if model.showCaret {
@@ -55,8 +66,9 @@ struct CustomSingularTextView: View {
 
 #Preview {
     VStack{
-        CustomSingularTextView(model:SingularTextModel(id:1, text: "A", showCaret: false, isEndChar:false, fontSize:20))
+        CustomSingularTextView(model:SingularTextModel(id:1, text: "$", showCaret: true, isEndChar:true, fontSize:20))
         CustomSingularTextView(model:SingularTextModel(id:1, text: "A", showCaret: true, isEndChar:false, fontSize:20))
+        CustomSingularTextView(model:SingularTextModel(id:1, text: "", showCaret: true, isEndChar:true, fontSize:20))
     }
     
 }

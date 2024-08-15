@@ -27,7 +27,7 @@ protocol ArrowListener {
     
     var parentModel: ArrowListener? { get set }
     var smallerFontSize: Int { get }
-    var fontSize: Int { get set }
+    var fontSize: CGFloat { get set }
 }
 
 extension ArrowListener{

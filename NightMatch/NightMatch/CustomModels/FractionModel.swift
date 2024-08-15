@@ -9,7 +9,7 @@ import Foundation
 
 class FractionModel:Caretable,ObservableObject,ArrowListener{
     var parentModel: ArrowListener?
-    var fontSize: Int
+    var fontSize: CGFloat
     
     var showCaret: Bool = false
     var id:Int = 0

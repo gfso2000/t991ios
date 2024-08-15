@@ -19,6 +19,7 @@ struct TestView: View {
         }) {
             Text("Add Child")
         }
+        KeyboardPanel()
     }
     init(){
         var leftModel: SingularTextModel  = SingularTextModel(id:1, text: "L", showCaret:false,isEndChar:false,fontSize: 20)

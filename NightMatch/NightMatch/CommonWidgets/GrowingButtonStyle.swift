@@ -15,7 +15,7 @@ struct GrowingButtonStyle: ButtonStyle {
             .foregroundStyle(.white)
             .cornerRadius(6)
             .overlay(
-                RoundedRectangle(cornerRadius: 6).fill(Color.pink)
+                RoundedRectangle(cornerRadius: 6).fill(Color.gray)
                     .mask(
                         HStack(spacing:0) {
                             Rectangle().frame(width: 3)

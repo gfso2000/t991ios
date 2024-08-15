@@ -8,57 +8,43 @@
 import SwiftUI
 
 struct KeyboardPanel: View {
+    let btnSpacing:CGFloat = 5
     var body: some View {
         VStack(spacing:0){
-            HStack(spacing:0){
-                Button {
-                    print("Button pressed!")
-                }label: {
-                    Text("Del").frame(maxWidth: .infinity)
-                }
-                .buttonStyle(GrowingButtonStyle())
-                Button() {
-                    print("Button pressed!")
-                }label: {
-                    Text("⬆︎").frame(maxWidth: .infinity)
-                }
-                .buttonStyle(GrowingButtonStyle())
-                Button() {
-                    print("Button pressed!")
-                }label: {
-                    Text("Undo").frame(maxWidth: .infinity)
-                }
-                .buttonStyle(GrowingButtonStyle())
+            HStack(spacing:btnSpacing){
+                KeyboardButton(text: "DEL", secondText: "FUN", action:{
+                    print("DEL");
+                })
+                KeyboardButton(text: "⬆︎", secondText: " ", action:{
+                    print("⬆︎");
+                })
+                KeyboardButton(text: "Undo", secondText: "撤销", action:{
+                    print("Undo");
+                })
             }
-            HStack(spacing:0){
-                Button("⬅︎") {
-                    print("Button pressed!")
-                }
-                .buttonStyle(GrowingButtonStyle())
-                Button("OK") {
-                    print("Button pressed!")
-                }
-                .buttonStyle(GrowingButtonStyle())
-                Button("➡︎") {
-                    print("Button pressed!")
-                }
-                .buttonStyle(GrowingButtonStyle())
+            HStack(spacing:btnSpacing){
+                KeyboardButton(text: "⬅︎", secondText: "向左", action:{
+                    print("⬅︎");
+                })
+                KeyboardButton(text: "OK", secondText: " ", action:{
+                    print("OK");
+                })
+                KeyboardButton(text: "➡︎", secondText: "向右", action:{
+                    print("➡︎");
+                })
             }
-            HStack(spacing:0){
-                Button("X") {
-                    print("Button pressed!")
-                }
-                .buttonStyle(GrowingButtonStyle())
-                Button("⬇︎") {
-                    print("Button pressed!")
-                }
-                .buttonStyle(GrowingButtonStyle())
-                Button("X") {
-                    print("Button pressed!")
-                }
-                .buttonStyle(GrowingButtonStyle())
+            HStack(spacing:btnSpacing){
+                KeyboardButton(text: "X", secondText: " ", action:{
+                    print("X");
+                })
+                KeyboardButton(text: "⬇︎", secondText: " ", action:{
+                    print("⬇︎");
+                })
+                KeyboardButton(text: "X", secondText: "向右", action:{
+                    print("X");
+                })
             }
-        }
+        }.padding(btnSpacing)
     }
 }
 

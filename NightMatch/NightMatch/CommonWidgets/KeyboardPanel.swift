@@ -15,7 +15,7 @@ struct KeyboardPanel: View {
         VStack(spacing:0){
             HStack(spacing:btnSpacing){
                 KeyboardButton(text: "DEL", secondText: "FUN", action:{
-                    print("DEL");
+                    expressionModel.delete()
                 })
                 KeyboardButton(text: "⬆︎", secondText: " ", action:{
                     expressionModel.onUpArrow()
@@ -42,8 +42,13 @@ struct KeyboardPanel: View {
                 KeyboardButton(text: "⬇︎", secondText: " ", action:{
                     expressionModel.onDownArrow()
                 })
-                KeyboardButton(text: "X", secondText: "向右", action:{
-                    print("X");
+                KeyboardButton(text: "X/Y", secondText: "向右", action:{
+                    expressionModel.addFraction()
+                })
+            }
+            HStack(spacing:btnSpacing){
+                KeyboardButton(text: "AC", secondText: " ", action:{
+                    expressionModel.onAC()
                 })
             }
         }.padding(btnSpacing)

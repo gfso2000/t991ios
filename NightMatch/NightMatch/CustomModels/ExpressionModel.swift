@@ -95,7 +95,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
     
     func doAddFraction() -> FractionModel {
-        var fractionModel = FractionModel(expressionContext:self.expressionContext, id:IdGenerator.generateId(), showCaret: false, parentModel: self);
+        let fractionModel = FractionModel(expressionContext:self.expressionContext, id:CustomIdGenerator.generateId(), showCaret: false, parentModel: self);
         insertChild(fractionModel);
         return fractionModel;
     }
@@ -106,7 +106,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
     
     func doAddSingularText(_ text:String) -> Void {
-        let newChild = SingularTextModel(id: IdGenerator.generateId(), text: text, showCaret:false,isEndChar:false,fontSize: self.fontSize)
+        let newChild = SingularTextModel(id: CustomIdGenerator.generateId(), text: text, showCaret:false,isEndChar:false,fontSize: self.fontSize)
         insertChild(newChild)
     }
     
@@ -292,7 +292,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
     
     func switchToActive() {
-        //expressionContext.activeExpressionModelId = self.id
+        expressionContext.activeExpressionModelId = self.id
     }
     
     func findExpressionModelById(_ expressionModelId:Int ) -> ExpressionModel? {
@@ -300,7 +300,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
             return self;
         }
         for child in self.children {
-            var expressionModel = child.findExpressionModelById(expressionModelId);
+            let expressionModel = child.findExpressionModelById(expressionModelId);
             if (expressionModel != nil) {
                 return expressionModel;
             }

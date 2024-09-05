@@ -13,7 +13,7 @@ class ExpressionContext{
     var handleUndoExpressionModelId:Int = 0
     
     func getActiveExpressionModel() -> ExpressionModel{
-        var activeExpressionModel = rootExpressionModel!.findExpressionModelById(activeExpressionModelId);
+        let activeExpressionModel = rootExpressionModel!.findExpressionModelById(activeExpressionModelId);
         if (activeExpressionModel != nil) {
             return activeExpressionModel!;
         }
@@ -24,7 +24,7 @@ class ExpressionContext{
         if (handleUndoExpressionModelId == 0) {
             return nil;
         }
-        var handleUndoExpressionModel = rootExpressionModel!.findExpressionModelById(handleUndoExpressionModelId);
+        let handleUndoExpressionModel = rootExpressionModel!.findExpressionModelById(handleUndoExpressionModelId);
         return handleUndoExpressionModel;
     }
     
@@ -33,7 +33,7 @@ class ExpressionContext{
     }
     
     func onUndo() -> Void{
-        var undoExpressionModel = getHandleUndoExpressionModel();
+        let undoExpressionModel = getHandleUndoExpressionModel();
         if (undoExpressionModel != nil && undoExpressionModel!.canUndo()) {
             getActiveExpressionModel().loseFocus();
             undoExpressionModel!.undo();

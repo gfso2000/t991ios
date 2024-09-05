@@ -9,16 +9,16 @@ import SwiftUI
 
 struct KeyboardPanel: View {
     let btnSpacing:CGFloat = 5
-    @ObservedObject var expressionModel:ExpressionModel
+    var expressionContext: ExpressionContext
     
     var body: some View {
         VStack(spacing:0){
             HStack(spacing:btnSpacing){
                 KeyboardButton(text: "DEL", secondText: "FUN", action:{
-                    expressionModel.delete()
+                    expressionContext.getActiveExpressionModel().delete()
                 })
                 KeyboardButton(text: "⬆︎", secondText: " ", action:{
-                    expressionModel.onUpArrow()
+                    expressionContext.getActiveExpressionModel().onUpArrow()
                 })
                 KeyboardButton(text: "Undo", secondText: "撤销", action:{
                     print("Undo");
@@ -26,29 +26,29 @@ struct KeyboardPanel: View {
             }
             HStack(spacing:btnSpacing){
                 KeyboardButton(text: "⬅︎", secondText: "向左", action:{
-                    expressionModel.onLeftArrow()
+                    expressionContext.getActiveExpressionModel().onLeftArrow()
                 })
                 KeyboardButton(text: "OK", secondText: " ", action:{
                     print("OK");
                 })
                 KeyboardButton(text: "➡︎", secondText: "向右", action:{
-                    expressionModel.onRightArrow()
+                    expressionContext.getActiveExpressionModel().onRightArrow()
                 })
             }
             HStack(spacing:btnSpacing){
                 KeyboardButton(text: "X", secondText: " ", action:{
-                    expressionModel.addSingularText("A")
+                    expressionContext.getActiveExpressionModel().addSingularText("A")
                 })
                 KeyboardButton(text: "⬇︎", secondText: " ", action:{
-                    expressionModel.onDownArrow()
+                    expressionContext.getActiveExpressionModel().onDownArrow()
                 })
                 KeyboardButton(text: "X/Y", secondText: "向右", action:{
-                    expressionModel.addFraction()
+                    expressionContext.getActiveExpressionModel().addFraction()
                 })
             }
             HStack(spacing:btnSpacing){
                 KeyboardButton(text: "AC", secondText: " ", action:{
-                    expressionModel.onAC()
+                    expressionContext.getActiveExpressionModel().onAC()
                 })
             }
         }.padding(btnSpacing)
@@ -57,5 +57,9 @@ struct KeyboardPanel: View {
 
 #Preview {
     var expressionContext = ExpressionContext()
-    return KeyboardPanel(expressionModel: ExpressionModel(expressionContext:expressionContext, id: 1, parentModel: nil, fontSize: 20))
+    var expressionModel = ExpressionModel(expressionContext:expressionContext, id: 1, parentModel: nil, fontSize: 20)
+    expressionContext.rootExpressionModel = expressionModel
+    expressionContext.activeExpressionModelId = expressionModel.id
+    
+    return KeyboardPanel(expressionContext: expressionContext)
 }

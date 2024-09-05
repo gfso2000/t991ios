@@ -23,8 +23,8 @@ class FractionModel:Caretable,ObservableObject,ArrowListener{
         self.showCaret = showCaret
         self.parentModel = parentModel
         self.fontSize = parentModel?.fontSize ?? 20
-        self.numeratorPartModel = ExpressionModel(expressionContext: expressionContext, id:1, parentModel:nil, fontSize:self.fontSize)
-        self.denominatorPartModel = ExpressionModel(expressionContext: expressionContext, id:2, parentModel:nil, fontSize:self.fontSize)
+        self.numeratorPartModel = ExpressionModel(expressionContext: expressionContext, id:CustomIdGenerator.generateId(), parentModel:nil, fontSize:self.fontSize)
+        self.denominatorPartModel = ExpressionModel(expressionContext: expressionContext, id:CustomIdGenerator.generateId(), parentModel:nil, fontSize:self.fontSize)
         self.numeratorPartModel.parentModel = self
         self.denominatorPartModel.parentModel = self
     }
@@ -97,7 +97,7 @@ class FractionModel:Caretable,ObservableObject,ArrowListener{
     }
     
     func findExpressionModelById(_ expressionModelId: Int) -> ExpressionModel? {
-        var expressionModel = numeratorPartModel.findExpressionModelById(expressionModelId);
+        let expressionModel = numeratorPartModel.findExpressionModelById(expressionModelId);
         if(expressionModel != nil){
             return expressionModel!;
         }

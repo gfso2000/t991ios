@@ -7,7 +7,7 @@
 
 import Foundation
 
-class IdGenerator {
+class CustomIdGenerator {
     private static var counter = 0
     
     // Global static method to generate and return the next ID

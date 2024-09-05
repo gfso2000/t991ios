@@ -26,7 +26,7 @@
 		DAC991172C6C572C00744B5D /* KeyboardPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991162C6C572C00744B5D /* KeyboardPanel.swift */; };
 		DAC9911C2C6C769400744B5D /* GrowingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9911B2C6C769400744B5D /* GrowingButtonStyle.swift */; };
 		DAC991202C6D8CD600744B5D /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9911F2C6D8CD600744B5D /* KeyboardButton.swift */; };
-		DAC991232C6DD9C200744B5D /* IdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991222C6DD9C200744B5D /* IdGenerator.swift */; };
+		DAC991232C6DD9C200744B5D /* CustomIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991222C6DD9C200744B5D /* CustomIdGenerator.swift */; };
 		DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991242C6F27EC00744B5D /* LeftTopStrokeShape.swift */; };
 		DAC991272C6F2E7000744B5D /* GrowingButtonStyle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991262C6F2E7000744B5D /* GrowingButtonStyle2.swift */; };
 		DAC991292C6F2ECD00744B5D /* KeyboardButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991282C6F2ECD00744B5D /* KeyboardButton2.swift */; };
@@ -78,7 +78,7 @@
 		DAC991162C6C572C00744B5D /* KeyboardPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPanel.swift; sourceTree = "<group>"; };
 		DAC9911B2C6C769400744B5D /* GrowingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButtonStyle.swift; sourceTree = "<group>"; };
 		DAC9911F2C6D8CD600744B5D /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
-		DAC991222C6DD9C200744B5D /* IdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdGenerator.swift; sourceTree = "<group>"; };
+		DAC991222C6DD9C200744B5D /* CustomIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIdGenerator.swift; sourceTree = "<group>"; };
 		DAC991242C6F27EC00744B5D /* LeftTopStrokeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTopStrokeShape.swift; sourceTree = "<group>"; };
 		DAC991262C6F2E7000744B5D /* GrowingButtonStyle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButtonStyle2.swift; sourceTree = "<group>"; };
 		DAC991282C6F2ECD00744B5D /* KeyboardButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton2.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		DAC991212C6DD9B300744B5D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DAC991222C6DD9C200744B5D /* IdGenerator.swift */,
+				DAC991222C6DD9C200744B5D /* CustomIdGenerator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -364,7 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */,
-				DAC991232C6DD9C200744B5D /* IdGenerator.swift in Sources */,
+				DAC991232C6DD9C200744B5D /* CustomIdGenerator.swift in Sources */,
 				DAEEB3932C899C1F00246752 /* FractionData.swift in Sources */,
 				DA03B85B2C65A9B5003626B8 /* CustomExpressionView.swift in Sources */,
 				DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */,

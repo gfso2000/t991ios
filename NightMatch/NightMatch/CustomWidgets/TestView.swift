@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TestView: View {
+    var expressionContext: ExpressionContext = ExpressionContext()
     @StateObject var expressionModel:ExpressionModel
     
     var body: some View {
@@ -23,7 +24,7 @@ struct TestView: View {
                 //.containerRelativeFrame(.vertical, count: 2, span: 1, spacing: 0)
                 
                 HStack{
-                    KeyboardPanel(expressionModel: self.expressionModel)
+                    KeyboardPanel(expressionContext: self.expressionContext)
                 }
                 .frame(height:geometry.size.height * 0.5)
                 .background(Color.yellow)
@@ -47,8 +48,7 @@ struct TestView: View {
 //        
 //        var singleModel: SingularTextModel  = SingularTextModel(id:96, text: "A", showCaret:false,isEndChar:false,fontSize: 20)
 //        
-        var expressionContext = ExpressionContext()
-        var expressionModel: ExpressionModel = ExpressionModel(expressionContext: expressionContext, id:IdGenerator.generateId(), parentModel: nil, fontSize: 20)
+        var expressionModel: ExpressionModel = ExpressionModel(expressionContext: expressionContext, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: 20)
         //        expressionModel.children.append(fractionModel)
         //        expressionModel.children.append(singleModel)
         //        expressionModel.lastFocusedChildrenId = 1
@@ -59,7 +59,7 @@ struct TestView: View {
 //        leftExpressionModel.parentModel = fractionModel
 //        rightExpressionModel.parentModel = fractionModel
         
-        _expressionModel = StateObject(wrappedValue: expressionModel)
+        self._expressionModel = StateObject(wrappedValue: expressionModel)
     }
 }
 

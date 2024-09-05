@@ -24,4 +24,12 @@ class SingularTextModel : Caretable,ObservableObject{
         }
         self.fontSize = fontSize
     }
+    
+    func findExpressionModelById(_ expressionModelId: Int) -> ExpressionModel? {
+        return nil
+    }
+    
+    func getData() -> any ExpressionItemData {
+        return SingularTextData(id:self.id, text:self.text);
+    }
 }

@@ -45,8 +45,9 @@ struct CustomFractionView: View {
 }
 
 #Preview {
-    VStack{
-        CustomFractionView(model:FractionModel(id: 1, showCaret: true, parentModel: ExpressionModel(id:1,parentModel: nil,fontSize: 20)))
-        CustomFractionView(model:FractionModel(id: 1, showCaret: false, parentModel: ExpressionModel(id:1,parentModel: nil,fontSize: 20)))
+    var expressionContext = ExpressionContext()
+    return VStack{
+        CustomFractionView(model:FractionModel(expressionContext: expressionContext, id: 1, showCaret: true, parentModel: ExpressionModel(expressionContext: expressionContext, id:1,parentModel: nil,fontSize: 20)))
+        CustomFractionView(model:FractionModel(expressionContext: expressionContext, id: 1, showCaret: false, parentModel: ExpressionModel(expressionContext: expressionContext, id:1,parentModel: nil,fontSize: 20)))
     }
 }

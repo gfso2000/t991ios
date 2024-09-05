@@ -8,6 +8,7 @@
 import Foundation
 
 class FractionModel:Caretable,ObservableObject,ArrowListener{
+    var expressionContext: ExpressionContext
     var parentModel: ArrowListener?
     var fontSize: CGFloat
     
@@ -16,13 +17,14 @@ class FractionModel:Caretable,ObservableObject,ArrowListener{
     var numeratorPartModel:ExpressionModel
     var denominatorPartModel:ExpressionModel
     
-    init(id: Int, showCaret: Bool, parentModel: ArrowListener?) {
+    init(expressionContext:ExpressionContext, id: Int, showCaret: Bool, parentModel: ArrowListener?) {
+        self.expressionContext = expressionContext
         self.id = id
         self.showCaret = showCaret
         self.parentModel = parentModel
         self.fontSize = parentModel?.fontSize ?? 20
-        self.numeratorPartModel = ExpressionModel(id:1, parentModel:nil, fontSize:self.fontSize)
-        self.denominatorPartModel = ExpressionModel(id:2, parentModel:nil, fontSize:self.fontSize)
+        self.numeratorPartModel = ExpressionModel(expressionContext: expressionContext, id:1, parentModel:nil, fontSize:self.fontSize)
+        self.denominatorPartModel = ExpressionModel(expressionContext: expressionContext, id:2, parentModel:nil, fontSize:self.fontSize)
         self.numeratorPartModel.parentModel = self
         self.denominatorPartModel.parentModel = self
     }
@@ -92,5 +94,17 @@ class FractionModel:Caretable,ObservableObject,ArrowListener{
     
     func handleDeleteFromChild(_ childModel: any ArrowListener) {
         
+    }
+    
+    func findExpressionModelById(_ expressionModelId: Int) -> ExpressionModel? {
+        var expressionModel = numeratorPartModel.findExpressionModelById(expressionModelId);
+        if(expressionModel != nil){
+            return expressionModel!;
+        }
+        return denominatorPartModel.findExpressionModelById(expressionModelId);
+    }
+    
+    func getData() -> any ExpressionItemData {
+        return FractionData(numeratorPartData:numeratorPartModel.getData(), denominatorPartData:denominatorPartModel.getData(), id:self.id);
     }
 }

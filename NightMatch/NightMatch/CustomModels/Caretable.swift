@@ -8,8 +8,11 @@
 import Foundation
 
 protocol Caretable{
+    
     var id:Int { get set }
     var showCaret:Bool { get set }
+    func findExpressionModelById(_ expressionModelId:Int) -> ExpressionModel?
+    func getData() -> ExpressionItemData
 }
 
 //extension Caretable {

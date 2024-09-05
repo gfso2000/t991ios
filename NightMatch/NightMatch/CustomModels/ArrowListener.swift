@@ -25,7 +25,7 @@ protocol ArrowListener {
     //func replaceChild(childModel: Caretable, expressionData: ExpressionData)
     func handleDeleteFromChild(_ childModel: ArrowListener)
     
-    var parentModel: ArrowListener? { get set }
+    //var parentModel: ArrowListener? { get set }
     var smallerFontSize: Int { get }
     var fontSize: CGFloat { get set }
 }

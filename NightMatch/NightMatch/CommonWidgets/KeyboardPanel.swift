@@ -56,5 +56,6 @@ struct KeyboardPanel: View {
 }
 
 #Preview {
-    KeyboardPanel(expressionModel: ExpressionModel(id: 1, parentModel: nil, fontSize: 20))
+    var expressionContext = ExpressionContext()
+    return KeyboardPanel(expressionModel: ExpressionModel(expressionContext:expressionContext, id: 1, parentModel: nil, fontSize: 20))
 }

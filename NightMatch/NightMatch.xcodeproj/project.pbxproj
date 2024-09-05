@@ -30,6 +30,12 @@
 		DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991242C6F27EC00744B5D /* LeftTopStrokeShape.swift */; };
 		DAC991272C6F2E7000744B5D /* GrowingButtonStyle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991262C6F2E7000744B5D /* GrowingButtonStyle2.swift */; };
 		DAC991292C6F2ECD00744B5D /* KeyboardButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991282C6F2ECD00744B5D /* KeyboardButton2.swift */; };
+		DAD6C2FA2C75CE660020311E /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6C2F92C75CE660020311E /* SwiftUIView.swift */; };
+		DAEEB38C2C89817300246752 /* ExpressionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB38B2C89817300246752 /* ExpressionContext.swift */; };
+		DAEEB38E2C89928700246752 /* ExpressionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB38D2C89928700246752 /* ExpressionData.swift */; };
+		DAEEB3912C8993FF00246752 /* ExpressionItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */; };
+		DAEEB3932C899C1F00246752 /* FractionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3922C899C1F00246752 /* FractionData.swift */; };
+		DAEEB3952C899F6600246752 /* SingularTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3942C899F6600246752 /* SingularTextData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,12 @@
 		DAC991242C6F27EC00744B5D /* LeftTopStrokeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTopStrokeShape.swift; sourceTree = "<group>"; };
 		DAC991262C6F2E7000744B5D /* GrowingButtonStyle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButtonStyle2.swift; sourceTree = "<group>"; };
 		DAC991282C6F2ECD00744B5D /* KeyboardButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton2.swift; sourceTree = "<group>"; };
+		DAD6C2F92C75CE660020311E /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		DAEEB38B2C89817300246752 /* ExpressionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionContext.swift; sourceTree = "<group>"; };
+		DAEEB38D2C89928700246752 /* ExpressionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionData.swift; sourceTree = "<group>"; };
+		DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionItemData.swift; sourceTree = "<group>"; };
+		DAEEB3922C899C1F00246752 /* FractionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionData.swift; sourceTree = "<group>"; };
+		DAEEB3942C899F6600246752 /* SingularTextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularTextData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,7 @@
 				DAC9910F2C69CFF400744B5D /* CustomFractionView.swift */,
 				DA03B85A2C65A9B5003626B8 /* CustomExpressionView.swift */,
 				DABFAF622C65F7FC008E8048 /* TestView.swift */,
+				DAD6C2F92C75CE660020311E /* SwiftUIView.swift */,
 			);
 			path = CustomWidgets;
 			sourceTree = "<group>";
@@ -138,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				DAC991212C6DD9B300744B5D /* Utils */,
+				DAEEB38F2C89937F00246752 /* CustomData */,
 				DAC991182C6C75A900744B5D /* CommonWidgets */,
 				DABFAF592C65D613008E8048 /* CustomModels */,
 				DA03B8572C65A418003626B8 /* CustomWidgets */,
@@ -182,6 +196,7 @@
 				DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */,
 				DABFAF5E2C65E420008E8048 /* FractionModel.swift */,
 				DABFAF602C65E488008E8048 /* ExpressionModel.swift */,
+				DAEEB38B2C89817300246752 /* ExpressionContext.swift */,
 			);
 			path = CustomModels;
 			sourceTree = "<group>";
@@ -205,6 +220,17 @@
 				DAC991222C6DD9C200744B5D /* IdGenerator.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DAEEB38F2C89937F00246752 /* CustomData */ = {
+			isa = PBXGroup;
+			children = (
+				DAEEB38D2C89928700246752 /* ExpressionData.swift */,
+				DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */,
+				DAEEB3942C899F6600246752 /* SingularTextData.swift */,
+				DAEEB3922C899C1F00246752 /* FractionData.swift */,
+			);
+			path = CustomData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,18 +365,24 @@
 			files = (
 				DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */,
 				DAC991232C6DD9C200744B5D /* IdGenerator.swift in Sources */,
+				DAEEB3932C899C1F00246752 /* FractionData.swift in Sources */,
 				DA03B85B2C65A9B5003626B8 /* CustomExpressionView.swift in Sources */,
 				DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */,
+				DAEEB3952C899F6600246752 /* SingularTextData.swift in Sources */,
 				DABFAF5D2C65E23F008E8048 /* SingularTextModel.swift in Sources */,
 				DAC991132C69E43600744B5D /* FocusDirectionEnum.swift in Sources */,
 				DABFAF612C65E488008E8048 /* ExpressionModel.swift in Sources */,
 				DABFAF632C65F7FD008E8048 /* TestView.swift in Sources */,
 				DAC991172C6C572C00744B5D /* KeyboardPanel.swift in Sources */,
+				DAD6C2FA2C75CE660020311E /* SwiftUIView.swift in Sources */,
+				DAEEB3912C8993FF00246752 /* ExpressionItemData.swift in Sources */,
 				DAC991202C6D8CD600744B5D /* KeyboardButton.swift in Sources */,
 				DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */,
 				DA076E202C22B0DF00F7A2C1 /* NightMatchApp.swift in Sources */,
 				DA03B8592C65A438003626B8 /* CustomSingularTextView.swift in Sources */,
+				DAEEB38E2C89928700246752 /* ExpressionData.swift in Sources */,
 				DAC9911C2C6C769400744B5D /* GrowingButtonStyle.swift in Sources */,
+				DAEEB38C2C89817300246752 /* ExpressionContext.swift in Sources */,
 				DAC991102C69CFF400744B5D /* CustomFractionView.swift in Sources */,
 				DAC991292C6F2ECD00744B5D /* KeyboardButton2.swift in Sources */,
 				DAC991272C6F2E7000744B5D /* GrowingButtonStyle2.swift in Sources */,
@@ -533,6 +565,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gfso.NightMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -562,6 +598,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gfso.NightMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

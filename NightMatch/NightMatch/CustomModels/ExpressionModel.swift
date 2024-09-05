@@ -8,6 +8,7 @@
 import Foundation
 
 class ExpressionModel:ObservableObject,ArrowListener{
+    var expressionContext:ExpressionContext
     var parentModel: ArrowListener?
     var fontSize: CGFloat
     var id: Int
@@ -15,7 +16,8 @@ class ExpressionModel:ObservableObject,ArrowListener{
     @Published var children:[Caretable] = []
     @Published var lastFocusedChildrenId:Int = -1
     
-    init(id:Int, parentModel: ArrowListener? = nil, fontSize: CGFloat) {
+    init(expressionContext:ExpressionContext,id:Int, parentModel: ArrowListener? = nil, fontSize: CGFloat) {
+        self.expressionContext = expressionContext
         self.id = id
         self.parentModel = parentModel
         self.fontSize = fontSize
@@ -24,10 +26,6 @@ class ExpressionModel:ObservableObject,ArrowListener{
         children.append(endCharTextModel)
         lastFocusedChildrenId = endCharTextModel.id
         self.id = id
-    }
-    
-    func savePreviousState() -> Void {
-        //todo
     }
     
     func insertChild(_ caretable:Caretable) -> Void {
@@ -97,7 +95,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
     
     func doAddFraction() -> FractionModel {
-        var fractionModel = FractionModel(id:IdGenerator.generateId(), showCaret: false, parentModel: self);
+        var fractionModel = FractionModel(expressionContext:self.expressionContext, id:IdGenerator.generateId(), showCaret: false, parentModel: self);
         insertChild(fractionModel);
         return fractionModel;
     }
@@ -295,5 +293,72 @@ class ExpressionModel:ObservableObject,ArrowListener{
     
     func switchToActive() {
         //expressionContext.activeExpressionModelId = self.id
+    }
+    
+    func findExpressionModelById(_ expressionModelId:Int ) -> ExpressionModel? {
+        if (self.id == expressionModelId) {
+            return self;
+        }
+        for child in self.children {
+            var expressionModel = child.findExpressionModelById(expressionModelId);
+            if (expressionModel != nil) {
+                return expressionModel;
+            }
+        }
+        return nil;
+    }
+    
+    var previousState:ExpressionData?
+    func savePreviousState() -> Void {
+        self.previousState = getData();
+        self.expressionContext.handleUndoExpressionModelId = self.id;
+    }
+    func canUndo() -> Bool {
+        if (previousState == nil) {
+            return false;
+        }
+        return true;
+    }
+    
+    func getData() -> ExpressionData {
+        var childrenData: [ExpressionItemData] = []
+        for i in 0..<children.count - 1 {
+            childrenData.append(children[i].getData())
+        }
+        var expressionData = ExpressionData(lastFocusedChildrenId: self.lastFocusedChildrenId, children: childrenData, id: self.id)
+        return expressionData;
+    }
+    
+    func undo() -> Void {
+        if (previousState == nil) {
+            return;
+        }
+        //important, hide caret, because after replicate, we will find the child to show caret
+        loseFocus();
+        var currentState = getData();
+        //clear all children, except the endChar
+        for i in stride(from: children.count - 2, through: 0, by: -1) {
+            deleteChild(i)
+        }
+        //since we have cleared all children, not set lastFocusedChildrenId to endChar, so that
+        //during replicate, the newly added widget will be inserted before endChar correctly
+        self.lastFocusedChildrenId = self.children[0].id
+        //restore to previousState by replicate previous children
+        //Note: during replicate, the lastFocusedChildrenId is updated also
+        //replicate(previousState);
+
+        var lastFocusedChildren = self.getLastFocusedChildren();
+        if let singularTextModel = lastFocusedChildren as? SingularTextModel {
+            singularTextModel.showCaret = true
+            switchToActive()
+        } else if let arrowListener = lastFocusedChildren as? ArrowListener {
+            arrowListener.setFocus(.LEFT)
+        }
+
+        if (self.children.count == 1) {
+            endCharTextModel.text="$"
+        }
+        //then update previousState
+        previousState = currentState;
     }
 }

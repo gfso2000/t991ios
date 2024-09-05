@@ -11,6 +11,14 @@ struct TestView: View {
     var expressionContext: ExpressionContext = ExpressionContext()
     @StateObject var expressionModel:ExpressionModel
     
+    init(){
+        var expressionModel: ExpressionModel = ExpressionModel(expressionContext: expressionContext, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: 20)
+        expressionModel.setFocus(FocusDirectionEnum.ORIGINAL)
+        expressionContext.rootExpressionModel = expressionModel
+        expressionContext.activeExpressionModelId = expressionModel.id
+        self._expressionModel = StateObject(wrappedValue: expressionModel)
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing:0){
@@ -31,35 +39,6 @@ struct TestView: View {
             }.background(Color.red)
             .frame(height:.infinity)
         }
-    }
-    init(){
-//        var leftModel: SingularTextModel  = SingularTextModel(id:91, text: "L", showCaret:false,isEndChar:false,fontSize: 20)
-//        var rightModel: SingularTextModel  = SingularTextModel(id:92, text: "R", showCaret:false,isEndChar:false,fontSize: 20)
-//        var leftExpressionModel: ExpressionModel = ExpressionModel(id:93, parentModel: nil, fontSize: 20)
-//        leftExpressionModel.children.append(leftModel)
-//        leftExpressionModel.lastFocusedChildrenId = 0
-//        var rightExpressionModel: ExpressionModel = ExpressionModel(id:94, parentModel: nil, fontSize: 20)
-//        rightExpressionModel.children.append(rightModel)
-//        rightExpressionModel.lastFocusedChildrenId = 0
-//        
-//        var fractionModel: FractionModel = FractionModel(id:95, showCaret:false, parentModel:nil)
-//        fractionModel.numeratorPartModel = leftExpressionModel
-//        fractionModel.denominatorPartModel = rightExpressionModel
-//        
-//        var singleModel: SingularTextModel  = SingularTextModel(id:96, text: "A", showCaret:false,isEndChar:false,fontSize: 20)
-//        
-        var expressionModel: ExpressionModel = ExpressionModel(expressionContext: expressionContext, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: 20)
-        //        expressionModel.children.append(fractionModel)
-        //        expressionModel.children.append(singleModel)
-        //        expressionModel.lastFocusedChildrenId = 1
-        expressionModel.setFocus(FocusDirectionEnum.ORIGINAL)
-        expressionContext.rootExpressionModel = expressionModel
-        expressionContext.activeExpressionModelId = expressionModel.id
-//        fractionModel.parentModel = expressionModel
-//        leftExpressionModel.parentModel = fractionModel
-//        rightExpressionModel.parentModel = fractionModel
-        
-        self._expressionModel = StateObject(wrappedValue: expressionModel)
     }
 }
 

@@ -24,6 +24,9 @@ struct HistoryList: View {
             ForEach(historyBeanList) { item in
                 HistoryItem(historyBean: item, parentMethod: deleteItem)
             }
+            if(historyBeanList.isEmpty){
+                Text("No History Records")
+            }
         }.frame(height:300)
     }
     

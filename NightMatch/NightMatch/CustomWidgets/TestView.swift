@@ -23,13 +23,14 @@ struct TestView: View {
         GeometryReader { geometry in
             VStack(spacing:0){
                 HStack{
-                    ScrollView(.horizontal) {
-                        CustomExpressionView(expressionModel: self.expressionModel)
+                    ScrollView(.vertical) {
+                        ScrollView(.horizontal) {
+                            CustomExpressionView(expressionModel: self.expressionModel)
+                        }
                     }
                 }
                 .frame(height:geometry.size.height * 0.5)
                 .background(Color.blue)
-                //.containerRelativeFrame(.vertical, count: 2, span: 1, spacing: 0)
                 
                 HStack{
                     KeyboardPanel(expressionContext: self.expressionContext)
@@ -37,7 +38,6 @@ struct TestView: View {
                 .frame(height:geometry.size.height * 0.5)
                 .background(Color.yellow)
             }.background(Color.red)
-            //.frame(height:.infinity)
         }
     }
 }

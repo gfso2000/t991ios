@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct KeyboardPanel: View {
+    @State private var showingHistory = false
     let btnSpacing:CGFloat = 5
     let expressionContext: ExpressionContext
     
@@ -48,11 +49,14 @@ struct KeyboardPanel: View {
             }
             HStack(spacing:btnSpacing){
                 KeyboardButton(text: "AC", secondText: " ", action:{
-                    expressionContext.getActiveExpressionModel().onAC()
+                    expressionContext.rootExpressionModel!.onAC()
                 })
                 KeyboardButton(text: "History", secondText: " ", action:{
-                    expressionContext.getActiveExpressionModel().onAC()
-                })
+                    showingHistory = true
+                }).sheet(isPresented: $showingHistory) {
+                    HistoryList()
+                }
+                
             }
         }.padding(btnSpacing)
     }

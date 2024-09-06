@@ -7,47 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AEE5BBBA-16EE-40F4-8E0B-FC9056FF346F"
-            shouldBeEnabled = "Yes"
+            uuid = "97D51CDF-3753-4845-99EF-6FE5703B9FDC"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NightMatch/CustomWidgets/CustomExpressionView.swift"
+            filePath = "NightMatch/CustomModels/ExpressionModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "AEE5BBBA-16EE-40F4-8E0B-FC9056FF346F - 3456d336430855a3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Optional&lt;SwiftUI._ConditionalContent&lt;NightMatch.CustomSingularTextView, NightMatch.CustomFractionView&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, Swift.Optional&lt;SwiftUI._ConditionalContent&lt;NightMatch.CustomSingularTextView, NightMatch.CustomFractionView&gt;&gt;&gt; in NightMatch.CustomExpressionView.body.getter : some"
-                  moduleName = "NightMatch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomWidgets/CustomExpressionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15">
-               </Location>
-               <Location
-                  uuid = "AEE5BBBA-16EE-40F4-8E0B-FC9056FF346F - 3456d336430855a3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Optional&lt;SwiftUI._ConditionalContent&lt;NightMatch.CustomSingularTextView, NightMatch.CustomFractionView&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, Swift.Optional&lt;SwiftUI._ConditionalContent&lt;NightMatch.CustomSingularTextView, NightMatch.CustomFractionView&gt;&gt;&gt; in NightMatch.CustomExpressionView.body.getter : some"
-                  moduleName = "NightMatch"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomWidgets/CustomExpressionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15">
-               </Location>
-            </Locations>
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "undo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1A4AA3D-44B5-4671-A8E7-125FACF48088"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NightMatch/CustomModels/ExpressionModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "undo()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

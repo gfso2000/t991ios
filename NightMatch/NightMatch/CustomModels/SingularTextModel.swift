@@ -32,4 +32,13 @@ class SingularTextModel : Caretable,ObservableObject{
     func getData() -> any ExpressionItemData {
         return SingularTextData(id:self.id, text:self.text);
     }
+    
+    func replicate(_ expressionItemData: any ExpressionItemData) {
+        if let singularTextData = expressionItemData as? SingularTextData {
+            self.text=singularTextData.text
+            self.id = singularTextData.id
+        } else {
+            fatalError("Not SingularTextData: \(expressionItemData)")
+        }
+    }
 }

@@ -81,7 +81,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
         //                return;
         //            }
         savePreviousState();
-        var fractionModel = doAddFraction();
+        let fractionModel = doAddFraction();
         //hide caret, because the newly added Fraction will show caret
         loseFocus();
         self.lastFocusedChildrenId = fractionModel.id
@@ -102,12 +102,13 @@ class ExpressionModel:ObservableObject,ArrowListener{
     
     func addSingularText(_ text:String) -> Void {
         savePreviousState()
-        doAddSingularText(text)
+        _ = doAddSingularText(text)
     }
     
-    func doAddSingularText(_ text:String) -> Void {
+    func doAddSingularText(_ text:String) -> SingularTextModel {
         let newChild = SingularTextModel(id: CustomIdGenerator.generateId(), text: text, showCaret:false,isEndChar:false,fontSize: self.fontSize)
         insertChild(newChild)
+        return newChild
     }
     
     func onLeftArrow() {
@@ -226,7 +227,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     
     func onRightArrowFromChild(_ childModel: any ArrowListener) {
         //move right from childView, now show caret on the next child
-        guard var index:Int = childIndexForId((childModel as! Caretable).id) else {
+        guard let index:Int = childIndexForId((childModel as! Caretable).id) else {
             return
         }
         lastFocusedChildrenId = children[index + 1].id
@@ -325,7 +326,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
         for i in 0..<children.count - 1 {
             childrenData.append(children[i].getData())
         }
-        var expressionData = ExpressionData(lastFocusedChildrenId: self.lastFocusedChildrenId, children: childrenData, id: self.id)
+        let expressionData = ExpressionData(lastFocusedChildrenId: self.lastFocusedChildrenId, children: childrenData, id: self.id)
         return expressionData;
     }
     
@@ -335,7 +336,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
         }
         //important, hide caret, because after replicate, we will find the child to show caret
         loseFocus();
-        var currentState = getData();
+        let currentState = getData();
         //clear all children, except the endChar
         for i in stride(from: children.count - 2, through: 0, by: -1) {
             deleteChild(i)
@@ -345,9 +346,9 @@ class ExpressionModel:ObservableObject,ArrowListener{
         self.lastFocusedChildrenId = self.children[0].id
         //restore to previousState by replicate previous children
         //Note: during replicate, the lastFocusedChildrenId is updated also
-        //replicate(previousState);
+        replicate(previousState!);
 
-        var lastFocusedChildren = self.getLastFocusedChildren();
+        let lastFocusedChildren = self.getLastFocusedChildren();
         if let singularTextModel = lastFocusedChildren as? SingularTextModel {
             singularTextModel.showCaret = true
             switchToActive()
@@ -360,5 +361,33 @@ class ExpressionModel:ObservableObject,ArrowListener{
         }
         //then update previousState
         previousState = currentState;
+    }
+    
+    func replicate(_ sourceExpressionData: ExpressionData) {
+        doReplicate(sourceExpressionData)
+        self.id = sourceExpressionData.id
+        for child in children {
+            if child.id == sourceExpressionData.lastFocusedChildrenId {
+                //if the lastFocusedChildren in sourceData is replicated, means it's not endChar,
+                //so update lastFocusedChildrenId as the one in sourceData
+                //if not found, means not replicated, means the lastFocusedChildren in sourceData is endChar,
+                //in this case, no need to update, because here we already have a new endChar, and it's by default focused
+                self.lastFocusedChildrenId = sourceExpressionData.lastFocusedChildrenId
+                break
+            }
+        }
+    }
+    
+    func doReplicate(_ sourceExpressionData: ExpressionData) {
+        let sourceChildren = sourceExpressionData.children
+        for child in sourceChildren {
+            if let singularTextData = child as? SingularTextData {
+                let newSingularTextModel = doAddSingularText("")
+                newSingularTextModel.replicate(singularTextData)
+            } else if let fractionData = child as? FractionData {
+                let newFractionModel = doAddFraction()
+                newFractionModel.replicate(fractionData)
+            }
+        }
     }
 }

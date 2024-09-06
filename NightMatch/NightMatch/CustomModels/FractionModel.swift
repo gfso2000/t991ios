@@ -107,4 +107,14 @@ class FractionModel:Caretable,ObservableObject,ArrowListener{
     func getData() -> any ExpressionItemData {
         return FractionData(numeratorPartData:numeratorPartModel.getData(), denominatorPartData:denominatorPartModel.getData(), id:self.id);
     }
+    
+    func replicate(_ expressionItemData: any ExpressionItemData) {
+        if let fractionData = expressionItemData as? FractionData {
+            numeratorPartModel.replicate(fractionData.numeratorPartData);
+            denominatorPartModel.replicate(fractionData.denominatorPartData);
+            self.id = fractionData.id
+        } else {
+            fatalError("Not FractionData: \(expressionItemData)")
+        }
+    }
 }

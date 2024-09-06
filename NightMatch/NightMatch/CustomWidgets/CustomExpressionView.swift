@@ -24,6 +24,6 @@ struct CustomExpressionView: View {
 }
 
 #Preview {
-    var expressionContext = ExpressionContext()
+    let expressionContext = ExpressionContext()
     return CustomExpressionView(expressionModel: ExpressionModel(expressionContext:expressionContext, id:1,parentModel: nil,fontSize: 20))
 }

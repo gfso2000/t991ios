@@ -12,7 +12,7 @@ struct TestView: View {
     @StateObject var expressionModel:ExpressionModel
     
     init(){
-        var expressionModel: ExpressionModel = ExpressionModel(expressionContext: expressionContext, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: 20)
+        let expressionModel: ExpressionModel = ExpressionModel(expressionContext: expressionContext, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: 20)
         expressionModel.setFocus(FocusDirectionEnum.ORIGINAL)
         expressionContext.rootExpressionModel = expressionModel
         expressionContext.activeExpressionModelId = expressionModel.id
@@ -37,7 +37,7 @@ struct TestView: View {
                 .frame(height:geometry.size.height * 0.5)
                 .background(Color.yellow)
             }.background(Color.red)
-            .frame(height:.infinity)
+            //.frame(height:.infinity)
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KeyboardPanel: View {
     let btnSpacing:CGFloat = 5
-    var expressionContext: ExpressionContext
+    let expressionContext: ExpressionContext
     
     var body: some View {
         VStack(spacing:0){
@@ -21,7 +21,7 @@ struct KeyboardPanel: View {
                     expressionContext.getActiveExpressionModel().onUpArrow()
                 })
                 KeyboardButton(text: "Undo", secondText: "撤销", action:{
-                    print("Undo");
+                    expressionContext.onUndo()
                 })
             }
             HStack(spacing:btnSpacing){
@@ -56,8 +56,8 @@ struct KeyboardPanel: View {
 }
 
 #Preview {
-    var expressionContext = ExpressionContext()
-    var expressionModel = ExpressionModel(expressionContext:expressionContext, id: 1, parentModel: nil, fontSize: 20)
+    let expressionContext = ExpressionContext()
+    let expressionModel = ExpressionModel(expressionContext:expressionContext, id: 1, parentModel: nil, fontSize: 20)
     expressionContext.rootExpressionModel = expressionModel
     expressionContext.activeExpressionModelId = expressionModel.id
     

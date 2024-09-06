@@ -36,6 +36,9 @@
 		DAEEB3912C8993FF00246752 /* ExpressionItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */; };
 		DAEEB3932C899C1F00246752 /* FractionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3922C899C1F00246752 /* FractionData.swift */; };
 		DAEEB3952C899F6600246752 /* SingularTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3942C899F6600246752 /* SingularTextData.swift */; };
+		DAEEB3982C8AD4B500246752 /* CalculateHistoryBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3972C8AD4B400246752 /* CalculateHistoryBean.swift */; };
+		DAEEB39A2C8AD63D00246752 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3992C8AD63D00246752 /* HistoryItem.swift */; };
+		DAEEB39C2C8ADD0800246752 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB39B2C8ADD0800246752 /* HistoryList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionItemData.swift; sourceTree = "<group>"; };
 		DAEEB3922C899C1F00246752 /* FractionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionData.swift; sourceTree = "<group>"; };
 		DAEEB3942C899F6600246752 /* SingularTextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularTextData.swift; sourceTree = "<group>"; };
+		DAEEB3972C8AD4B400246752 /* CalculateHistoryBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateHistoryBean.swift; sourceTree = "<group>"; };
+		DAEEB3992C8AD63D00246752 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
+		DAEEB39B2C8ADD0800246752 /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 		DA076E1E2C22B0DF00F7A2C1 /* NightMatch */ = {
 			isa = PBXGroup;
 			children = (
+				DAEEB3962C8AD49700246752 /* CalculateHistory */,
 				DAC991212C6DD9B300744B5D /* Utils */,
 				DAEEB38F2C89937F00246752 /* CustomData */,
 				DAC991182C6C75A900744B5D /* CommonWidgets */,
@@ -231,6 +238,16 @@
 				DAEEB3922C899C1F00246752 /* FractionData.swift */,
 			);
 			path = CustomData;
+			sourceTree = "<group>";
+		};
+		DAEEB3962C8AD49700246752 /* CalculateHistory */ = {
+			isa = PBXGroup;
+			children = (
+				DAEEB3972C8AD4B400246752 /* CalculateHistoryBean.swift */,
+				DAEEB3992C8AD63D00246752 /* HistoryItem.swift */,
+				DAEEB39B2C8ADD0800246752 /* HistoryList.swift */,
+			);
+			path = CalculateHistory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEEB39C2C8ADD0800246752 /* HistoryList.swift in Sources */,
 				DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */,
 				DAC991232C6DD9C200744B5D /* CustomIdGenerator.swift in Sources */,
 				DAEEB3932C899C1F00246752 /* FractionData.swift in Sources */,
@@ -370,9 +388,11 @@
 				DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */,
 				DAEEB3952C899F6600246752 /* SingularTextData.swift in Sources */,
 				DABFAF5D2C65E23F008E8048 /* SingularTextModel.swift in Sources */,
+				DAEEB3982C8AD4B500246752 /* CalculateHistoryBean.swift in Sources */,
 				DAC991132C69E43600744B5D /* FocusDirectionEnum.swift in Sources */,
 				DABFAF612C65E488008E8048 /* ExpressionModel.swift in Sources */,
 				DABFAF632C65F7FD008E8048 /* TestView.swift in Sources */,
+				DAEEB39A2C8AD63D00246752 /* HistoryItem.swift in Sources */,
 				DAC991172C6C572C00744B5D /* KeyboardPanel.swift in Sources */,
 				DAD6C2FA2C75CE660020311E /* SwiftUIView.swift in Sources */,
 				DAEEB3912C8993FF00246752 /* ExpressionItemData.swift in Sources */,

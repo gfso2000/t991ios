@@ -42,12 +42,15 @@ struct KeyboardPanel: View {
                 KeyboardButton(text: "⬇︎", secondText: " ", action:{
                     expressionContext.getActiveExpressionModel().onDownArrow()
                 })
-                KeyboardButton(text: "X/Y", secondText: "向右", action:{
+                KeyboardButton(text: "X/Y", secondText: " ", action:{
                     expressionContext.getActiveExpressionModel().addFraction()
                 })
             }
             HStack(spacing:btnSpacing){
                 KeyboardButton(text: "AC", secondText: " ", action:{
+                    expressionContext.getActiveExpressionModel().onAC()
+                })
+                KeyboardButton(text: "History", secondText: " ", action:{
                     expressionContext.getActiveExpressionModel().onAC()
                 })
             }

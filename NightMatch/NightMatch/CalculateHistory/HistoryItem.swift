@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HistoryItem: View {
     var historyBean:CalculateHistoryBean
-    var parentMethod: (UUID) -> Void
+    var deleteItem: (UUID) -> Void
+    var rerunItem: (UUID) -> Void
     
     var body: some View {
         GeometryReader { geometry in
@@ -39,10 +40,12 @@ struct HistoryItem: View {
                 }
                 
                 VStack{
-                    Text("Rerun")
+                    Text("Rerun").onTapGesture {
+                        rerunItem(historyBean.id)
+                    }
                     Text("Copy")
                     Text("Delete").onTapGesture {
-                        parentMethod(historyBean.id)
+                        deleteItem(historyBean.id)
                     }
                 }
                 .frame(width:geometry.size.width * 0.4, height: geometry.size.height)
@@ -54,8 +57,10 @@ struct HistoryItem: View {
 }
 
 #Preview {
-    let historyBean:CalculateHistoryBean = CalculateHistoryBean(expressionDataJsonStr:"3+1", expressionDataLatexStr: "3+1", fractionResult: "4", decimalResult: "4.0000")
-    return HistoryItem(historyBean:historyBean, parentMethod: {id in
+    let historyBean:CalculateHistoryBean = CalculateHistoryBean(id:UUID(), expressionDataJsonStr:"3+1", expressionDataLatexStr: "3+1", fractionResult: "4", decimalResult: "4.0000")
+    return HistoryItem(historyBean:historyBean, deleteItem: {id in
+        print(id)
+    }, rerunItem: {id in
         print(id)
     })
 }

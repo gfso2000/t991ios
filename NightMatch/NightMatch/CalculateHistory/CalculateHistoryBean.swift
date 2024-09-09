@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct CalculateHistoryBean : Identifiable {
-    let id = UUID()
+struct CalculateHistoryBean : Identifiable, Codable {
+    let id: UUID
     let expressionDataJsonStr: String
     let expressionDataLatexStr: String
     let fractionResult: String
     let decimalResult: String
     
-    init(expressionDataJsonStr: String, expressionDataLatexStr: String, fractionResult: String, decimalResult: String) {
+    init(id:UUID, expressionDataJsonStr: String, expressionDataLatexStr: String, fractionResult: String, decimalResult: String) {
+        self.id = id
         self.expressionDataJsonStr = expressionDataJsonStr
         self.expressionDataLatexStr = expressionDataLatexStr
         self.fractionResult = fractionResult

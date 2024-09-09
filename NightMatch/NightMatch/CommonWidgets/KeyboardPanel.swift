@@ -54,11 +54,15 @@ struct KeyboardPanel: View {
                 KeyboardButton(text: "History", secondText: " ", action:{
                     showingHistory = true
                 }).sheet(isPresented: $showingHistory) {
-                    HistoryList()
+                    HistoryList(rerunItemCallback:rerunItemCallback)
                 }
                 
             }
         }.padding(btnSpacing)
+    }
+    
+    func rerunItemCallback(_ id:UUID) -> Void{
+        print(id)
     }
 }
 

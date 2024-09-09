@@ -29,13 +29,13 @@ struct TestView: View {
                         }
                     }
                 }
-                .frame(height:geometry.size.height * 0.5)
+                .frame(height:geometry.size.height * 0.2)
                 .background(Color.blue)
                 
                 HStack{
                     KeyboardPanel(expressionContext: self.expressionContext)
                 }
-                .frame(height:geometry.size.height * 0.5)
+                .frame(height:geometry.size.height * 0.8)
                 .background(Color.yellow)
             }.background(Color.red)
         }

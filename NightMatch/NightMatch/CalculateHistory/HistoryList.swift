@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HistoryList: View {
+    @Environment(\.dismiss) var dismiss
     @State var historyBeanList:[CalculateHistoryBean] = []
     var rerunItemCallback: (UUID) -> Void
     
@@ -53,6 +54,7 @@ struct HistoryList: View {
     
     func rerunItem(_ id:UUID) -> Void{
         rerunItemCallback(id)
+        dismiss()
     }
         
 }

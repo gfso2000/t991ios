@@ -17,58 +17,67 @@ struct KeyboardPanel: View {
         GeometryReader { geometry in
             VStack(spacing:0){
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonTextText(text: "DEL", secondText: "FUN", action:{
-                        expressionContext.getActiveExpressionModel().delete()
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: "ON/OFF", fontSize:12, imageScale:0.6, action:{
+                        showingHistory = true
                     })
-                    KeyboardButtonTextText(text: "⬆︎", secondText: " ", action:{
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: "MAIN", fontSize:16, imageScale:0.6, action:{
+                        showingHistory = true
+                    })
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: "PASTE", fontSize:16, imageScale:0.6, action:{
+                        showingHistory = true
+                    })
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: " ", imageScale:0.6, action:{
                         expressionContext.getActiveExpressionModel().onUpArrow()
                     })
-                    KeyboardButtonTextText(text: "Undo", secondText: "撤销", action:{
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: "UNDO", fontSize:16, imageScale:0.6, action:{
                         expressionContext.onUndo()
                     })
-                    KeyboardButtonTextText(text: "Undo", secondText: "撤销", action:{
-                        expressionContext.onUndo()
-                    })
-                    KeyboardButtonTextText(text: "Undo", secondText: "撤销", action:{
-                        expressionContext.onUndo()
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: " ", imageScale:0.6, action:{
+                        showingHistory = true
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonTextText(text: "⬅︎", secondText: "向左", action:{
+                    KeyboardButtonImageText(image: Image("custom_button_set"), secondText: "SET", imageScale:0.6, action:{
+                        showingHistory = true
+                    })
+                    KeyboardButtonImageText(image: Image("custom_button_return"), secondText: " ", imageScale:0.6, action:{
+                        showingHistory = true
+                    })
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: " ", imageScale:0.6, action:{
                         expressionContext.getActiveExpressionModel().onLeftArrow()
                     })
                     KeyboardButtonTextText(text: "OK", secondText: " ", action:{
                         print("OK");
                     })
-                    KeyboardButtonTextText(text: "➡︎", secondText: "向右", action:{
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: " ", imageScale:0.6, action:{
                         expressionContext.getActiveExpressionModel().onRightArrow()
                     })
-                    KeyboardButtonTextText(text: "➡︎", secondText: "向右", action:{
-                        expressionContext.getActiveExpressionModel().onRightArrow()
-                    })
-                    KeyboardButtonTextText(text: "➡︎", secondText: "向右", action:{
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: " ", imageScale:0.6, action:{
                         expressionContext.getActiveExpressionModel().onRightArrow()
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonImageText(image: Image("custom_button_shift"), secondText: "SHIFT", bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), action:{
+                    KeyboardButtonImageText(image: Image("custom_button_shift"), secondText: "SHIFT", fontSize:16, bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), action:{
                         showingHistory = true
                     })
-                    KeyboardButtonTextText(text: "⬇︎", secondText: " ", action:{
+                    KeyboardButtonImageText(image: Image("custom_button_var"), secondText: "VAR", imageScale:1.2, action:{
+                        showingHistory = true
+                    })
+                    KeyboardButtonImageText(image: Image("custom_button_fx"), secondText: "FUN", imageScale:0.6, action:{
+                        showingHistory = true
+                    })
+                    KeyboardButtonImageText(image: Image("custom_button_arrow_down"), secondText: " ", imageScale:0.6, action:{
                         expressionContext.getActiveExpressionModel().onDownArrow()
                     })
-                    KeyboardButtonTextText(text: "X/Y", secondText: " ", action:{
-                        expressionContext.getActiveExpressionModel().addFraction()
+                    KeyboardButtonImageText(image: Image("custom_button_cata"), secondText: "CATA", fontSize:16, imageScale:0.6, action:{
+                        expressionContext.getActiveExpressionModel().onDownArrow()
                     })
-                    KeyboardButtonTextText(text: "➡︎", secondText: "向右", action:{
-                        expressionContext.getActiveExpressionModel().onRightArrow()
-                    })
-                    KeyboardButtonTextText(text: "➡︎", secondText: "向右", action:{
-                        expressionContext.getActiveExpressionModel().onRightArrow()
+                    KeyboardButtonImageText(image: Image("custom_button_tool"), secondText: "TOOL", fontSize:16, imageScale:0.6, action:{
+                        expressionContext.getActiveExpressionModel().onDownArrow()
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
@@ -128,7 +137,7 @@ struct KeyboardPanel: View {
                         expressionContext.rootExpressionModel!.onAC()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_delete"), secondText: " ", action:{
-                        showingHistory = true
+                        expressionContext.getActiveExpressionModel().delete()
                     })
                     KeyboardButtonTextText(text: "AC", secondText: " ", action:{
                         expressionContext.rootExpressionModel!.onAC()

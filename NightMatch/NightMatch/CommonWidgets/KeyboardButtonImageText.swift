@@ -14,14 +14,16 @@ struct KeyboardButtonImageText: View {
     let topHeightPct = 0.35
     let bottomHeightPct = 0.55
     let widthPct = 0.8
-    let fontSize = 20
-    let imageScale = 0.6
+    var fontSize : Int
+    var imageScale : Double
     var bgColor : Color
     var buttonStyle : GrowingButtonStyle
     
-    init(image:Image, secondText:String, bgColor: Color = Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255), action:@escaping () -> Void){
+    init(image:Image, secondText:String, fontSize:Int=18, imageScale:Double = 0.6, bgColor: Color = Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255), action:@escaping () -> Void){
         self.image = image;
         self.secondText = secondText
+        self.fontSize = fontSize
+        self.imageScale = imageScale
         self.bgColor = bgColor
         self.buttonStyle = GrowingButtonStyle(bgColor: self.bgColor)
         self.action = action

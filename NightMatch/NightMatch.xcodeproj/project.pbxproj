@@ -17,6 +17,7 @@
 		DA076E3D2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076E3C2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift */; };
 		DA2A5B542C8EDE2600CE877A /* KeyboardButtonImageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A5B532C8EDE2600CE877A /* KeyboardButtonImageText.swift */; };
 		DA2A5B562C8EEFC700CE877A /* KeyboardButtonTextImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A5B552C8EEFC700CE877A /* KeyboardButtonTextImage.swift */; };
+		DA5D92A92C8FDFB2004F584E /* KeyboardButtonImageImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */; };
 		DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5A2C65E1FD008E8048 /* Caretable.swift */; };
 		DABFAF5D2C65E23F008E8048 /* SingularTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */; };
 		DABFAF5F2C65E420008E8048 /* FractionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5E2C65E420008E8048 /* FractionModel.swift */; };
@@ -74,6 +75,7 @@
 		DA076E3C2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightMatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DA2A5B532C8EDE2600CE877A /* KeyboardButtonImageText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonImageText.swift; sourceTree = "<group>"; };
 		DA2A5B552C8EEFC700CE877A /* KeyboardButtonTextImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButtonTextImage.swift; sourceTree = "<group>"; };
+		DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButtonImageImage.swift; sourceTree = "<group>"; };
 		DABFAF5A2C65E1FD008E8048 /* Caretable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caretable.swift; sourceTree = "<group>"; };
 		DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularTextModel.swift; sourceTree = "<group>"; };
 		DABFAF5E2C65E420008E8048 /* FractionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionModel.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				DAC9911F2C6D8CD600744B5D /* KeyboardButtonTextText.swift */,
 				DA2A5B552C8EEFC700CE877A /* KeyboardButtonTextImage.swift */,
 				DA2A5B532C8EDE2600CE877A /* KeyboardButtonImageText.swift */,
+				DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */,
 				DAC991162C6C572C00744B5D /* KeyboardPanel.swift */,
 			);
 			path = CommonWidgets;
@@ -398,6 +401,7 @@
 				DAC991132C69E43600744B5D /* FocusDirectionEnum.swift in Sources */,
 				DABFAF612C65E488008E8048 /* ExpressionModel.swift in Sources */,
 				DABFAF632C65F7FD008E8048 /* TestView.swift in Sources */,
+				DA5D92A92C8FDFB2004F584E /* KeyboardButtonImageImage.swift in Sources */,
 				DAEEB39A2C8AD63D00246752 /* HistoryItem.swift in Sources */,
 				DAC991172C6C572C00744B5D /* KeyboardPanel.swift in Sources */,
 				DAD6C2FA2C75CE660020311E /* SwiftUIView.swift in Sources */,

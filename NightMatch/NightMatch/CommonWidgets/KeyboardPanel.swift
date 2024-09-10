@@ -74,22 +74,23 @@ struct KeyboardPanel: View {
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
+                    KeyboardButtonTextImage(text: "𝑿", image:Image("custom_button_degree"), action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
-                    KeyboardButtonTextText(text: "History", secondText: " ", action:{
-                        showingHistory = true
-                    }).sheet(isPresented: $showingHistory) {
-                        HistoryList(rerunItemCallback:rerunItemCallback)
-                    }
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                    KeyboardButtonImageImage(imageBottom:Image("custom_button_fraction"),imageUp:Image("custom_button_mixedfraction"),action:{
+                        print("a")
                     })
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                    KeyboardButtonImageImage(imageBottom:Image("custom_button_sqrt"),imageUp:Image("custom_button_mixedsqrt"),action:{
+                        print("a")
                     })
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                    KeyboardButtonImageImage(imageBottom:Image("custom_button_xn"),imageUp:Image("custom_button_x1"),action:{
+                        print("a")
+                    })
+                    KeyboardButtonImageImage(imageBottom:Image("custom_button_x2"),imageUp:Image("custom_button_log"),action:{
+                        print("a")
+                    })
+                    KeyboardButtonImageImage(imageBottom:Image("custom_button_lognm"),imageUp:Image("custom_button_ln"),action:{
+                        print("a")
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)

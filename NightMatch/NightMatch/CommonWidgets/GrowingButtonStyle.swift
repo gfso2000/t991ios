@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct GrowingButtonStyle: ButtonStyle {
+    var bgColor = Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255)
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(5)
-            .background(Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255))
+            .background(bgColor)
             .foregroundStyle(.white)
             .cornerRadius(6)
             .overlay(

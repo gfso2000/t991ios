@@ -14,6 +14,7 @@ struct KeyboardButtonTextText: View {
     let topHeightPct = 0.35
     let bottomHeightPct = 0.55
     let widthPct = 0.8
+    let fontUpSize = 20
     let fontSize = 24
     
     var body: some View {
@@ -21,7 +22,7 @@ struct KeyboardButtonTextText: View {
             VStack(spacing:0){
                 Text(secondText)
                     .frame(width:geometry.size.width*widthPct, height:geometry.size.height * topHeightPct)
-                    .font(.system(size: CGFloat(fontSize)))
+                    .font(.system(size: CGFloat(fontUpSize)))
                     .foregroundColor(Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255))
                 Button {
                     action()

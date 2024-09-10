@@ -55,8 +55,8 @@ struct KeyboardPanel: View {
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonTextText(text: "X", secondText: " ", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("A")
+                    KeyboardButtonImageText(image: Image("custom_button_shift"), secondText: "SHIFT", bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), action:{
+                        showingHistory = true
                     })
                     KeyboardButtonTextText(text: "⬇︎", secondText: " ", action:{
                         expressionContext.getActiveExpressionModel().onDownArrow()

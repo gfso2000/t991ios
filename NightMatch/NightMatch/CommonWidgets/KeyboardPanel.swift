@@ -95,36 +95,39 @@ struct KeyboardPanel: View {
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
+                    KeyboardButtonTextImage(text: "(一)", image:Image("custom_button_e"), action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
-                    KeyboardButtonTextText(text: "History", secondText: " ", action:{
-                        showingHistory = true
-                    })
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
+                    KeyboardButtonTextImage(text: "sin", image:Image("custom_button_sin1"), action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
+                    KeyboardButtonTextImage(text: "cos", image:Image("custom_button_cos1"), action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
+                    KeyboardButtonTextImage(text: "tan", image:Image("custom_button_tan1"), action:{
+                        expressionContext.rootExpressionModel!.onAC()
+                    })
+                    KeyboardButtonTextImage(text: "(", image:Image("custom_button_equal"), action:{
+                        expressionContext.rootExpressionModel!.onAC()
+                    })
+                    KeyboardButtonTextImage(text: ")", image:Image("custom_button_comma"), action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
+                    KeyboardButtonTextText(text: "7", secondText: "π", action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
-                    KeyboardButtonTextText(text: "History", secondText: " ", action:{
+                    KeyboardButtonTextText(text: "8", secondText: "∠", action:{
                         showingHistory = true
                     })
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
+                    KeyboardButtonTextText(text: "9", secondText: "i", action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
-                    KeyboardButtonTextText(text: "AC", secondText: " ", action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                    KeyboardButtonImageText(image: Image("custom_button_delete"), secondText: " ", action:{
+                        showingHistory = true
                     })
                     KeyboardButtonTextText(text: "AC", secondText: " ", action:{
                         expressionContext.rootExpressionModel!.onAC()
@@ -142,10 +145,10 @@ struct KeyboardPanel: View {
                     KeyboardButtonTextText(text: "6", secondText: "C", action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
-                    KeyboardButtonTextImage(text: "×", image:Image("custom_button_x10n"), action:{
+                    KeyboardButtonTextImage(text: "×", image:Image("custom_button_int"), action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
-                    KeyboardButtonTextText(text: "÷", secondText: " ", action:{
+                    KeyboardButtonTextImage(text: "÷", image:Image("custom_button_dx"), action:{
                         expressionContext.rootExpressionModel!.onAC()
                     })
                 }

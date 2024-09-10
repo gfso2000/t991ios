@@ -15,12 +15,14 @@ struct KeyboardButtonTextImage: View {
     let bottomHeightPct = 0.55
     let widthPct = 0.8
     let fontSize = 24
+    let imageScale = 0.8
     
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing:0){
                 image.resizable()
                     .frame(width:geometry.size.width*widthPct, height:geometry.size.height * topHeightPct)
+                    .scaleEffect(CGSize(width: imageScale, height: imageScale))
                 Button {
                     action()
                 }label: {

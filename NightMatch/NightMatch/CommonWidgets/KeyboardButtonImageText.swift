@@ -13,7 +13,7 @@ struct KeyboardButtonImageText: View {
     var action:() -> Void
     let topHeightPct = 0.35
     let bottomHeightPct = 0.55
-    let widthPct = 0.9
+    let widthPct = 0.8
     let fontSize = 24
     
     var body: some View {
@@ -22,6 +22,7 @@ struct KeyboardButtonImageText: View {
                 Text(secondText)
                     .frame(width:geometry.size.width*widthPct, height:geometry.size.height * topHeightPct)
                     .font(.system(size: CGFloat(fontSize)))
+                    .foregroundColor(Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255))
                 Button {
                     action()
                 }label: {

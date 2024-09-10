@@ -13,7 +13,7 @@ struct KeyboardButtonTextImage: View {
     var action:() -> Void
     let topHeightPct = 0.35
     let bottomHeightPct = 0.55
-    let widthPct = 0.9
+    let widthPct = 0.8
     let fontSize = 24
     
     var body: some View {

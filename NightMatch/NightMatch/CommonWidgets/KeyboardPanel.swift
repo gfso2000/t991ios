@@ -190,7 +190,7 @@ struct KeyboardPanel: View {
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
             }
             .padding(btnSpacing)
-            .background(Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255))
+            .background(Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255))
         }
     }
     

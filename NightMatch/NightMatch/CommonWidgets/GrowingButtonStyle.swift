@@ -11,7 +11,7 @@ struct GrowingButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(5)
-            .background(Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255))
+            .background(Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255))
             .foregroundStyle(.white)
             .cornerRadius(6)
             .overlay(

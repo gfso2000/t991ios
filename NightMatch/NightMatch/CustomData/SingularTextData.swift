@@ -13,9 +13,27 @@ class SingularTextData:ExpressionItemData{
     init(id: Int, text: String) {
         self.id = id
         self.text = text
+        super.init()
     }
     
-    func getText() -> String{
-        return self.text
+//    func getText() -> String{
+//        return self.text
+//    }
+    
+    required init(_ jsonObject:[String: Any]){
+        self.id = jsonObject["id"] as! Int
+        self.text = jsonObject["text"] as! String
+        super.init(jsonObject)
+    }
+    override func getDataAsJson() -> [String: Any] {
+        var jsonObject: [String: Any] = [:]
+        jsonObject["className"] = String(describing: Self.self)
+        jsonObject["id"] = self.id
+        jsonObject["text"] = self.text
+        return jsonObject
+    }
+    
+    override func getDataAsQalculate() -> String {
+        return text
     }
 }

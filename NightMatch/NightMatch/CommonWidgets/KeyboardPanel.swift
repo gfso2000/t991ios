@@ -17,10 +17,10 @@ struct KeyboardPanel: View {
         GeometryReader { geometry in
             VStack(spacing:0){
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonImageText(image: Image("custom_button_onoff"), secondText: "ON/OFF", fontSize:12, imageScale:0.6, action:{
+                    KeyboardButtonImageText(image: Image("custom_button_onoff"), secondText: "ON/OFF", fontSize:12,  imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
                         showingHistory = true
                     })
-                    KeyboardButtonImageText(image: Image("custom_button_main"), secondText: "MAIN", fontSize:16, imageScale:0.6, action:{
+                    KeyboardButtonImageText(image: Image("custom_button_main"), secondText: "MAIN", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
                         showingHistory = true
                     })
                     KeyboardButtonImageText(image: Image("custom_button_history"), secondText: "PASTE", fontSize:16, imageScale:0.6, action:{
@@ -31,7 +31,7 @@ struct KeyboardPanel: View {
                     KeyboardButtonImageText(image: Image("custom_button_arrow_up"), secondText: " ", imageScale:0.6, action:{
                         expressionContext.getActiveExpressionModel().onUpArrow()
                     })
-                    KeyboardButtonImageText(image: Image("custom_button_undo"), secondText: "UNDO", fontSize:16, imageScale:0.6, action:{
+                    KeyboardButtonImageText(image: Image("custom_button_undo"), secondText: "UNDO", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
                         expressionContext.onUndo()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_head"), secondText: " ", imageScale:0.6, action:{
@@ -41,7 +41,7 @@ struct KeyboardPanel: View {
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonImageText(image: Image("custom_button_set"), secondText: "SET", imageScale:0.6, action:{
+                    KeyboardButtonImageText(image: Image("custom_button_set"), secondText: "SET", imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
                         showingHistory = true
                     })
                     KeyboardButtonImageText(image: Image("custom_button_return"), secondText: " ", imageScale:0.6, action:{
@@ -51,7 +51,7 @@ struct KeyboardPanel: View {
                         expressionContext.getActiveExpressionModel().onLeftArrow()
                     })
                     KeyboardButtonTextText(text: "OK", secondText: " ", action:{
-                        print("OK");
+                        print(expressionContext.getMathExpression());
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_right"), secondText: " ", imageScale:0.5, action:{
                         expressionContext.getActiveExpressionModel().onRightArrow()
@@ -63,22 +63,22 @@ struct KeyboardPanel: View {
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
-                    KeyboardButtonImageText(image: Image("custom_button_shift"), secondText: "SHIFT", fontSize:16, bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), action:{
+                    KeyboardButtonImageText(image: Image("custom_button_shift"), secondText: "SHIFT", fontSize:16, bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
                         showingHistory = true
                     })
-                    KeyboardButtonImageText(image: Image("custom_button_var"), secondText: "VAR", imageScale:1.2, action:{
+                    KeyboardButtonImageText(image: Image("custom_button_var"), secondText: "VAR", imageScale:1.2, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
                         showingHistory = true
                     })
-                    KeyboardButtonImageText(image: Image("custom_button_fx"), secondText: "FUN", imageScale:0.6, action:{
+                    KeyboardButtonImageText(image: Image("custom_button_fx"), secondText: "FUN", imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
                         showingHistory = true
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_down"), secondText: " ", imageScale:0.6, action:{
                         expressionContext.getActiveExpressionModel().onDownArrow()
                     })
-                    KeyboardButtonImageText(image: Image("custom_button_cata"), secondText: "CATA", fontSize:16, imageScale:0.6, action:{
+                    KeyboardButtonImageText(image: Image("custom_button_cata"), secondText: "CATA", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
                         expressionContext.getActiveExpressionModel().onDownArrow()
                     })
-                    KeyboardButtonImageText(image: Image("custom_button_tool"), secondText: "TOOL", fontSize:16, imageScale:0.6, action:{
+                    KeyboardButtonImageText(image: Image("custom_button_tool"), secondText: "TOOL", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
                         expressionContext.getActiveExpressionModel().onDownArrow()
                     })
                 }
@@ -210,7 +210,8 @@ struct KeyboardPanel: View {
     }
     
     func rerunItemCallback(_ id:UUID) -> Void{
-        print(id)
+        let expression = HistoryUtil.loadItemExpressionDataStr(id)
+        expressionContext.rerun(expression)
     }
 }
 

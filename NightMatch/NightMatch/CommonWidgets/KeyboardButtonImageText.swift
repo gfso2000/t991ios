@@ -17,14 +17,16 @@ struct KeyboardButtonImageText: View {
     var fontSize : Int
     var imageScale : Double
     var bgColor : Color
+    var textColor: Color
     var buttonStyle : GrowingButtonStyle
     
-    init(image:Image, secondText:String, fontSize:Int=18, imageScale:Double = 0.6, bgColor: Color = Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255), action:@escaping () -> Void){
+    init(image:Image, secondText:String, fontSize:Int=18, imageScale:Double = 0.6, bgColor: Color = Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255), textColor: Color = Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), action:@escaping () -> Void){
         self.image = image;
         self.secondText = secondText
         self.fontSize = fontSize
         self.imageScale = imageScale
         self.bgColor = bgColor
+        self.textColor = textColor
         self.buttonStyle = GrowingButtonStyle(bgColor: self.bgColor)
         self.action = action
     }
@@ -35,7 +37,7 @@ struct KeyboardButtonImageText: View {
                 Text(secondText)
                     .frame(width:geometry.size.width*widthPct, height:geometry.size.height * topHeightPct)
                     .font(.system(size: CGFloat(fontSize)))
-                    .foregroundColor(Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255))
+                    .foregroundColor(textColor)
                 Button {
                     action()
                 }label: {
@@ -50,7 +52,7 @@ struct KeyboardButtonImageText: View {
 }
 
 #Preview {
-    KeyboardButtonImageText(image:Image("custom_button_x10n"),secondText:"FUN", bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), action:{
+    KeyboardButtonImageText(image:Image("custom_button_x10n"),secondText:"FUN", bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
         print("a")
     })
 }

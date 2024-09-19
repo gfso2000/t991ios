@@ -39,7 +39,7 @@ struct HistoryItem: View {
                     .background(Color.yellow)
                 }
                 
-                VStack{
+                VStack(spacing:15){
                     Text("Rerun").onTapGesture {
                         rerunItem(historyBean.id)
                     }
@@ -57,7 +57,7 @@ struct HistoryItem: View {
 }
 
 #Preview {
-    let historyBean:CalculateHistoryBean = CalculateHistoryBean(id:UUID(), expressionDataJsonStr:"3+1", expressionDataLatexStr: "3+1", fractionResult: "4", decimalResult: "4.0000")
+    let historyBean:CalculateHistoryBean = CalculateHistoryBean(id:UUID(), expressionDataJsonStr:"333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333+1", expressionDataLatexStr: "33333333333333\r\n333333333333333\r\n33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333331", fractionResult: "4", decimalResult: "4.0000")
     return HistoryItem(historyBean:historyBean, deleteItem: {id in
         print(id)
     }, rerunItem: {id in

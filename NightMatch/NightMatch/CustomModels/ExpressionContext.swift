@@ -39,4 +39,43 @@ class ExpressionContext{
             undoExpressionModel!.undo();
         }
     }
+    
+    func getMathExpression() -> String{
+        let expressionData = rootExpressionModel!.getData()
+        addToHistory(expressionData)
+        return expressionData.getDataAsQalculate()
+    }
+    
+    func addToHistory(_ expressionData:ExpressionData) -> Void{
+        if(expressionData.children.isEmpty){
+            return
+        }
+        var historyBeanList:[CalculateHistoryBean] = HistoryUtil.loadHistory()
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: expressionData.getDataAsJson(), options: .prettyPrinted)
+            if let jsonString = String(data: jsonData, encoding: .utf8){
+                print(jsonString)
+                historyBeanList.insert(CalculateHistoryBean(id:UUID(), expressionDataJsonStr:jsonString, expressionDataLatexStr: expressionData.getDataAsQalculate(), fractionResult: "4", decimalResult: "4.0000"), at:0)
+                HistoryUtil.saveHistory(historyBeanList)
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+    }
+    
+    func rerun(_ expression:String) -> Void{
+        if let jsonData = expression.data(using: .utf8) {
+            do {
+                let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                var decodedExpressionData = ExpressionData(jsonObject as! [String : Any]);
+                rootExpressionModel!.loseFocus();
+                rootExpressionModel!.replicate(decodedExpressionData)
+                activeExpressionModelId = rootExpressionModel!.id
+                getActiveExpressionModel().setFocus(FocusDirectionEnum.RIGHT);
+            } catch {
+                print("Error: \(error)")
+            }
+        }
+    }
 }

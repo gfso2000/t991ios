@@ -7,6 +7,19 @@
 
 import Foundation
 
-protocol ExpressionItemData{
-    var id:Int{get set}
+class ExpressionItemData{
+    init(){
+        
+    }
+    required init(_ jsonObject:[String: Any]){
+        
+    }
+    func getDataAsQalculate() -> String
+    {
+        return ""
+    }
+    
+    func getDataAsJson() -> [String: Any] {
+        return [:]
+    }
 }

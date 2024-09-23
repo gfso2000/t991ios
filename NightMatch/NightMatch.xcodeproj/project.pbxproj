@@ -17,6 +17,8 @@
 		DA076E3D2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076E3C2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift */; };
 		DA2A5B542C8EDE2600CE877A /* KeyboardButtonImageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A5B532C8EDE2600CE877A /* KeyboardButtonImageText.swift */; };
 		DA2A5B562C8EEFC700CE877A /* KeyboardButtonTextImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A5B552C8EEFC700CE877A /* KeyboardButtonTextImage.swift */; };
+		DA3866B22CA0F71B00CFAD4F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DA3866B12CA0F71B00CFAD4F /* Localizable.xcstrings */; };
+		DA3866B42CA0F77700CFAD4F /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DA3866B32CA0F77700CFAD4F /* InfoPlist.xcstrings */; };
 		DA5D92A92C8FDFB2004F584E /* KeyboardButtonImageImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */; };
 		DA5D92AB2C9410B1004F584E /* HistoryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D92AA2C9410B1004F584E /* HistoryUtil.swift */; };
 		DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5A2C65E1FD008E8048 /* Caretable.swift */; };
@@ -65,7 +67,7 @@
 /* Begin PBXFileReference section */
 		DA03B8582C65A438003626B8 /* CustomSingularTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSingularTextView.swift; sourceTree = "<group>"; };
 		DA03B85A2C65A9B5003626B8 /* CustomExpressionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExpressionView.swift; sourceTree = "<group>"; };
-		DA076E1C2C22B0DF00F7A2C1 /* NightMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA076E1C2C22B0DF00F7A2C1 /* T991.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T991.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA076E1F2C22B0DF00F7A2C1 /* NightMatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightMatchApp.swift; sourceTree = "<group>"; };
 		DA076E232C22B0E400F7A2C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA076E262C22B0E400F7A2C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -76,6 +78,8 @@
 		DA076E3C2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightMatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DA2A5B532C8EDE2600CE877A /* KeyboardButtonImageText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonImageText.swift; sourceTree = "<group>"; };
 		DA2A5B552C8EEFC700CE877A /* KeyboardButtonTextImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButtonTextImage.swift; sourceTree = "<group>"; };
+		DA3866B12CA0F71B00CFAD4F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		DA3866B32CA0F77700CFAD4F /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButtonImageImage.swift; sourceTree = "<group>"; };
 		DA5D92AA2C9410B1004F584E /* HistoryUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUtil.swift; sourceTree = "<group>"; };
 		DABFAF5A2C65E1FD008E8048 /* Caretable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caretable.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		DA076E132C22B0DF00F7A2C1 = {
 			isa = PBXGroup;
 			children = (
+				DA3866B02CA0F6D000CFAD4F /* Resources */,
 				DA076E1E2C22B0DF00F7A2C1 /* NightMatch */,
 				DA076E2F2C22B0E500F7A2C1 /* NightMatchTests */,
 				DA076E392C22B0E500F7A2C1 /* NightMatchUITests */,
@@ -154,7 +159,7 @@
 		DA076E1D2C22B0DF00F7A2C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA076E1C2C22B0DF00F7A2C1 /* NightMatch.app */,
+				DA076E1C2C22B0DF00F7A2C1 /* T991.app */,
 				DA076E2C2C22B0E500F7A2C1 /* NightMatchTests.xctest */,
 				DA076E362C22B0E500F7A2C1 /* NightMatchUITests.xctest */,
 			);
@@ -200,6 +205,15 @@
 				DA076E3C2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift */,
 			);
 			path = NightMatchUITests;
+			sourceTree = "<group>";
+		};
+		DA3866B02CA0F6D000CFAD4F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA3866B12CA0F71B00CFAD4F /* Localizable.xcstrings */,
+				DA3866B32CA0F77700CFAD4F /* InfoPlist.xcstrings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DABFAF592C65D613008E8048 /* CustomModels */ = {
@@ -279,7 +293,7 @@
 			);
 			name = NightMatch;
 			productName = NightMatch;
-			productReference = DA076E1C2C22B0DF00F7A2C1 /* NightMatch.app */;
+			productReference = DA076E1C2C22B0DF00F7A2C1 /* T991.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DA076E2B2C22B0E500F7A2C1 /* NightMatchTests */ = {
@@ -348,6 +362,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = DA076E132C22B0DF00F7A2C1;
 			productRefGroup = DA076E1D2C22B0DF00F7A2C1 /* Products */;
@@ -368,6 +383,8 @@
 			files = (
 				DA076E272C22B0E400F7A2C1 /* Preview Assets.xcassets in Resources */,
 				DA076E242C22B0E400F7A2C1 /* Assets.xcassets in Resources */,
+				DA3866B42CA0F77700CFAD4F /* InfoPlist.xcstrings in Resources */,
+				DA3866B22CA0F71B00CFAD4F /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +535,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -574,6 +592,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -589,6 +608,7 @@
 				DEVELOPMENT_TEAM = 7U784SRHW3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -599,8 +619,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gfso.NightMatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gfso.t991;
+				PRODUCT_NAME = T991;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -622,6 +642,7 @@
 				DEVELOPMENT_TEAM = 7U784SRHW3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -632,8 +653,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gfso.NightMatch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gfso.t991;
+				PRODUCT_NAME = T991;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

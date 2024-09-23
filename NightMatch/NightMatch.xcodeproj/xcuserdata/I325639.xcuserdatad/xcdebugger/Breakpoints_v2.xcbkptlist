@@ -14,10 +14,40 @@
             filePath = "NightMatch/CustomModels/ExpressionContext.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "rerun(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B52E2718-85A5-4012-BD7A-378AEE657B7B - 8c5bcdfbcdda8232"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991_Scientific_Calculator.ExpressionContext.rerun(Swift.String) -&gt; ()"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionContext.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69">
+               </Location>
+               <Location
+                  uuid = "B52E2718-85A5-4012-BD7A-378AEE657B7B - 8c5bcdfbcdda8232"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991_Scientific_Calculator.ExpressionContext.rerun(Swift.String) -&gt; ()"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionContext.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -34,6 +64,36 @@
             endingLineNumber = "214"
             landmarkName = "rerunItemCallback(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2EB0D814-66AB-456C-B26E-0DEE09B0BAD4 - dd74e287ab7b7bd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991_Scientific_Calculator.KeyboardPanel.rerunItemCallback(Foundation.UUID) -&gt; ()"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CommonWidgets/KeyboardPanel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214">
+               </Location>
+               <Location
+                  uuid = "2EB0D814-66AB-456C-B26E-0DEE09B0BAD4 - 63854c4121db5069"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991.KeyboardPanel.rerunItemCallback(Foundation.UUID) -&gt; ()"
+                  moduleName = "T991.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CommonWidgets/KeyboardPanel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,38 +154,66 @@
             filePath = "NightMatch/CustomData/ExpressionData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "init(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5A5BFC2C-DF4C-4870-BB4D-C12361FBAFBF - 61d6a603d355bee"
+                  uuid = "5A5BFC2C-DF4C-4870-BB4D-C12361FBAFBF - 42eef8cbbcc03450"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "NightMatch.ExpressionData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; NightMatch.ExpressionData"
-                  moduleName = "NightMatch.debug.dylib"
+                  symbolName = "T991_Scientific_Calculator.ExpressionData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; T991_Scientific_Calculator.ExpressionData"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomData/ExpressionData.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28">
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
                </Location>
                <Location
-                  uuid = "5A5BFC2C-DF4C-4870-BB4D-C12361FBAFBF - 61d6a603d355bee"
+                  uuid = "5A5BFC2C-DF4C-4870-BB4D-C12361FBAFBF - 42eef8cbbcc03450"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "NightMatch.ExpressionData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; NightMatch.ExpressionData"
-                  moduleName = "NightMatch.debug.dylib"
+                  symbolName = "T991_Scientific_Calculator.ExpressionData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; T991_Scientific_Calculator.ExpressionData"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomData/ExpressionData.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28">
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
+               </Location>
+               <Location
+                  uuid = "5A5BFC2C-DF4C-4870-BB4D-C12361FBAFBF - 77465722a491a75e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991.ExpressionData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; T991.ExpressionData"
+                  moduleName = "T991.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomData/ExpressionData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
+               </Location>
+               <Location
+                  uuid = "5A5BFC2C-DF4C-4870-BB4D-C12361FBAFBF - 77465722a491a75e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991.ExpressionData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; T991.ExpressionData"
+                  moduleName = "T991.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomData/ExpressionData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -144,6 +232,36 @@
             endingLineNumber = "24"
             landmarkName = "init(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B4A42496-1A46-4CD1-A9D0-C6F8E7FD46EE - a43b12ad065f550b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991_Scientific_Calculator.SingularTextData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; T991_Scientific_Calculator.SingularTextData"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomData/SingularTextData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+               <Location
+                  uuid = "B4A42496-1A46-4CD1-A9D0-C6F8E7FD46EE - de10fbb07be7ee96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991.SingularTextData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; T991.SingularTextData"
+                  moduleName = "T991.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomData/SingularTextData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,6 +278,36 @@
             endingLineNumber = "23"
             landmarkName = "init(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1595EBCC-3F41-4FFE-ABCA-9D0706476781 - 60aaf815c28bc834"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991_Scientific_Calculator.FractionData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; T991_Scientific_Calculator.FractionData"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomData/FractionData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23">
+               </Location>
+               <Location
+                  uuid = "1595EBCC-3F41-4FFE-ABCA-9D0706476781 - 4b14b734f7044cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991.FractionData.init(Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; T991.FractionData"
+                  moduleName = "T991.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomData/FractionData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -172,38 +320,38 @@
             filePath = "NightMatch/CustomModels/ExpressionContext.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "rerun(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "059D58D2-C294-4D9D-8248-73375E831004 - 19ccfe2034a6e0de"
+                  uuid = "059D58D2-C294-4D9D-8248-73375E831004 - 8c5bcdfbcdda8389"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "NightMatch.ExpressionContext.rerun(Swift.String) -&gt; ()"
-                  moduleName = "NightMatch.debug.dylib"
+                  symbolName = "T991_Scientific_Calculator.ExpressionContext.rerun(Swift.String) -&gt; ()"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionContext.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73">
+                  startingLineNumber = "74"
+                  endingLineNumber = "74">
                </Location>
                <Location
-                  uuid = "059D58D2-C294-4D9D-8248-73375E831004 - 19ccfe2034a6e0de"
+                  uuid = "059D58D2-C294-4D9D-8248-73375E831004 - 3198b2953cae8689"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "NightMatch.ExpressionContext.rerun(Swift.String) -&gt; ()"
-                  moduleName = "NightMatch.debug.dylib"
+                  symbolName = "T991.ExpressionContext.rerun(Swift.String) -&gt; ()"
+                  moduleName = "T991.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionContext.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73">
+                  startingLineNumber = "74"
+                  endingLineNumber = "74">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -222,6 +370,36 @@
             endingLineNumber = "330"
             landmarkName = "getData()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "67D48671-A6A1-44FE-B2A1-B11CE9FC9DC6 - 38321e931b53a6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991_Scientific_Calculator.ExpressionModel.getData() -&gt; T991_Scientific_Calculator.ExpressionData"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330">
+               </Location>
+               <Location
+                  uuid = "67D48671-A6A1-44FE-B2A1-B11CE9FC9DC6 - c54bb60118623a35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991.ExpressionModel.getData() -&gt; T991.ExpressionData"
+                  moduleName = "T991.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,6 +416,36 @@
             endingLineNumber = "368"
             landmarkName = "replicate(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "528AE8C5-F833-48F2-8D7E-17E42A1682E9 - adc189060a103ddb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991_Scientific_Calculator.ExpressionModel.replicate(T991_Scientific_Calculator.ExpressionData) -&gt; ()"
+                  moduleName = "T991 Scientific Calculator.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "368"
+                  endingLineNumber = "368">
+               </Location>
+               <Location
+                  uuid = "528AE8C5-F833-48F2-8D7E-17E42A1682E9 - d3cbf27d61c5e9b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "T991.ExpressionModel.replicate(T991.ExpressionData) -&gt; ()"
+                  moduleName = "T991.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "368"
+                  endingLineNumber = "368">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -254,36 +462,22 @@
             endingLineNumber = "369"
             landmarkName = "replicate(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "75DE0D0D-16C6-4FE0-8F73-05141073879E - bc1e9722e0974a36"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NightMatch.ExpressionModel.replicate(NightMatch.ExpressionData) -&gt; ()"
-                  moduleName = "NightMatch.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "369"
-                  endingLineNumber = "369">
-               </Location>
-               <Location
-                  uuid = "75DE0D0D-16C6-4FE0-8F73-05141073879E - bc1e9722e0974a36"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NightMatch.ExpressionModel.replicate(NightMatch.ExpressionData) -&gt; ()"
-                  moduleName = "NightMatch.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/I325639/jack/notes/github/t991ios/NightMatch/NightMatch/CustomModels/ExpressionModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "369"
-                  endingLineNumber = "369">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B36E3A7-5891-4569-A801-11779066940A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NightMatch/CustomModels/ExpressionContext.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "rerun(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -40,7 +40,7 @@ struct HistoryItem: View {
                 }
                 
                 VStack(spacing:15){
-                    Text("Rerun").onTapGesture {
+                    Text(LocalizedStringKey("Rerun")).onTapGesture {
                         rerunItem(historyBean.id)
                     }
                     Text("Copy")
@@ -62,5 +62,5 @@ struct HistoryItem: View {
         print(id)
     }, rerunItem: {id in
         print(id)
-    })
+    }).environment(\.locale, .init(identifier: "zh"))
 }

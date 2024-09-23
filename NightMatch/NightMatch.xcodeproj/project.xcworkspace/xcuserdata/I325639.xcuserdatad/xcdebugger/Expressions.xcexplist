@@ -3,10 +3,36 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "SingularTextData.init(_:):SingularTextData.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ExpressionModel.getData():ExpressionModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ExpressionModel.replicate(_:):ExpressionModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ExpressionContext.rerun(_:):ExpressionContext.swift">
+      </ContextState>
+      <ContextState
          contextName = "ExpressionData.init(_:):ExpressionData.swift">
          <PersistentStrings>
             <PersistentString
                value = "Bundle.main.infoDictionary?[&quot;CFBundleDisplayName&quot;] as? String ?? &quot;&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "Bundle.main.infoDictionary?[&quot;CFBundleName&quot;] as? String">
+            </PersistentString>
+            <PersistentString
+               value = "NSClassFromString(&quot;T991.&quot;+className)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ExpressionContext.addToHistory(_:):ExpressionContext.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "expressionData.children.isEmpty">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -18,17 +44,6 @@
             </PersistentString>
             <PersistentString
                value = "self.historyBeanList.isEmpty">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ExpressionContext.rerun(_:):ExpressionContext.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ExpressionContext.addToHistory(_:):ExpressionContext.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "expressionData.children.isEmpty">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -65,6 +65,7 @@ class ExpressionContext{
     }
     
     func rerun(_ expression:String) -> Void{
+        onAC()
         if let jsonData = expression.data(using: .utf8) {
             do {
                 let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])

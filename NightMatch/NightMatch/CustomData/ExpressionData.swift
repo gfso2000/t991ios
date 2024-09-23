@@ -25,7 +25,8 @@ class ExpressionData {
         var childrenJsonObject:[[String: Any]] = jsonObject["children"] as! [[String : Any]]
         for childJsonObject in childrenJsonObject {
             let className:String = childJsonObject["className"] as! String
-            if let classType = NSClassFromString("NightMatch."+className) as? ExpressionItemData.Type {
+            let cfBundleName:String = Bundle.main.infoDictionary?["CFBundleName"] as! String
+            if let classType = NSClassFromString(cfBundleName+"."+className) as? ExpressionItemData.Type {
                 let instance = classType.init(childJsonObject)
                 self.children.append(instance)
             }

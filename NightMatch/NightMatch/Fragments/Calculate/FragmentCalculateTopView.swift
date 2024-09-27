@@ -23,6 +23,8 @@ struct FragmentCalculateTopView: View {
         self._expressionModel = StateObject(wrappedValue: expressionModel)
         
         self.fragmentCalculateController.setExpressionContext(expressionContext)
+        //todo, change to readonly result model
+        self.fragmentCalculateController.setModel(expressionModel)
     }
     
     var body: some View {

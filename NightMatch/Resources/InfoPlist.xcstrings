@@ -28,7 +28,8 @@
             "value" : "T991"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"

@@ -8,88 +8,117 @@
 import SwiftUI
 
 struct KeyboardPanel: View {
-    @State private var showingHistory = false
+    let directionListener: DirectionListener?
+    let undoListener: UndoListener?
+    let okExeListener: OkExeListener?
+    let mathListener: MathListener?
+    let deleteListener: DeleteListener?
+    let acListener: ACListener?
+    let historyListener: HistoryListener?
+    
+    init(directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+        self.directionListener = directionListener
+        self.undoListener = undoListener
+        self.okExeListener = okExeListener
+        self.mathListener = mathListener
+        self.deleteListener = deleteListener
+        self.acListener = acListener
+        self.historyListener = historyListener
+    }
+    
     let btnSpacing:CGFloat = 2
-    let expressionContext: ExpressionContext
     let rowWidthPct = 1.0
+
+    @State var showingHistory:Bool = false
+    func rerunItemCallback(_ id:UUID) -> Void{
+        let expression = HistoryUtil.loadItemExpressionDataStr(id)
+        historyListener?.rerun(expression)
+    }
     
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing:0){
                 HStack(spacing:btnSpacing){
                     KeyboardButtonImageText(image: Image("custom_button_onoff"), secondText: "ON/OFF", fontSize:12,  imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_main"), secondText: "MAIN", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_history"), secondText: "PASTE", fontSize:16, imageScale:0.6, action:{
-                        showingHistory = true
+                        // Checking if the optionalBool has a value and it's true
+                        if let unwrappedBool = historyListener?.showHistory(), unwrappedBool {
+                            // The optionalBool has a value and it's true
+                            showingHistory = true
+                        } else {
+                            // The optionalBool is either nil or false
+                            showingHistory = false
+                        }
                     }).sheet(isPresented: $showingHistory) {
                         HistoryList(rerunItemCallback:rerunItemCallback)
                     }
                     KeyboardButtonImageText(image: Image("custom_button_arrow_up"), secondText: " ", imageScale:0.6, action:{
-                        expressionContext.getActiveExpressionModel().onUpArrow()
+                        directionListener?.onUpArrow()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_undo"), secondText: "UNDO", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
-                        expressionContext.onUndo()
+                        undoListener?.undo()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_head"), secondText: " ", imageScale:0.6, action:{
-                        showingHistory = true
+                        //
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
                     KeyboardButtonImageText(image: Image("custom_button_set"), secondText: "SET", imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_return"), secondText: " ", imageScale:0.6, action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_left"), secondText: " ", imageScale:0.6, action:{
-                        expressionContext.getActiveExpressionModel().onLeftArrow()
+                        directionListener?.onLeftArrow()
                     })
                     KeyboardButtonTextText(text: "OK", secondText: " ", action:{
-                        print(expressionContext.getMathExpression());
+                        okExeListener?.onOK()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_right"), secondText: " ", imageScale:0.5, action:{
-                        expressionContext.getActiveExpressionModel().onRightArrow()
+                        directionListener?.onRightArrow()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_tail"), secondText: " ", imageScale:0.6, action:{
-                        expressionContext.getActiveExpressionModel().onRightArrow()
+                        directionListener?.onRightArrow()
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
                     KeyboardButtonImageText(image: Image("custom_button_shift"), secondText: "SHIFT", fontSize:16, bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_var"), secondText: "VAR", imageScale:1.2, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_fx"), secondText: "FUN", imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_down"), secondText: " ", imageScale:0.6, action:{
-                        expressionContext.getActiveExpressionModel().onDownArrow()
+                        directionListener?.onDownArrow()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_cata"), secondText: "CATA", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        expressionContext.getActiveExpressionModel().onDownArrow()
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_tool"), secondText: "TOOL", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        expressionContext.getActiveExpressionModel().onDownArrow()
+                        //
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextImage(text: "𝑿", image:Image("custom_button_degree"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                     KeyboardButtonImageImage(imageBottom:Image("custom_button_fraction"),imageUp:Image("custom_button_mixedfraction"),action:{
-                        expressionContext.getActiveExpressionModel().addFraction()
+                        mathListener?.addFraction()
                     })
                     KeyboardButtonImageImage(imageBottom:Image("custom_button_sqrt"),imageUp:Image("custom_button_mixedsqrt"),action:{
                         print("a")
@@ -108,98 +137,98 @@ struct KeyboardPanel: View {
                 
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextImage(text: "(一)", image:Image("custom_button_e"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                     KeyboardButtonTextImage(text: "sin", image:Image("custom_button_sin1"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                     KeyboardButtonTextImage(text: "cos", image:Image("custom_button_cos1"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                     KeyboardButtonTextImage(text: "tan", image:Image("custom_button_tan1"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                     KeyboardButtonTextImage(text: "(", image:Image("custom_button_equal"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                     KeyboardButtonTextImage(text: ")", image:Image("custom_button_comma"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "7", secondText: "π", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("7")
+                        mathListener?.addSingularText("7")
                     })
                     KeyboardButtonTextText(text: "8", secondText: "∠", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("8")
+                        mathListener?.addSingularText("8")
                     })
                     KeyboardButtonTextText(text: "9", secondText: "i", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("9")
+                        mathListener?.addSingularText("9")
                     })
                     KeyboardButtonImageText(image: Image("custom_button_delete"), secondText: " ", action:{
-                        expressionContext.getActiveExpressionModel().delete()
+                        deleteListener?.onDelete()
                     })
                     KeyboardButtonTextText(text: "AC", secondText: " ", action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        acListener?.onAC()
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "4", secondText: "A", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("4")
+                        mathListener?.addSingularText("4")
                     })
                     KeyboardButtonTextText(text: "5", secondText: "B", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("5")
+                        mathListener?.addSingularText("5")
                     })
                     KeyboardButtonTextText(text: "6", secondText: "C", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("6")
+                        mathListener?.addSingularText("6")
                     })
                     KeyboardButtonTextImage(text: "×", image:Image("custom_button_int"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                     KeyboardButtonTextImage(text: "÷", image:Image("custom_button_dx"), action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "1", secondText: "D", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("1")
+                        mathListener?.addSingularText("1")
                     })
                     KeyboardButtonTextText(text: "2", secondText: "E", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("2")
+                        mathListener?.addSingularText("2")
                     })
                     KeyboardButtonTextText(text: "3", secondText: "F", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("3")
+                        mathListener?.addSingularText("3")
                     })
                     KeyboardButtonTextText(text: "+", secondText: "nPr", action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                     KeyboardButtonTextText(text: "-", secondText: "nCr", action:{
-                        expressionContext.rootExpressionModel!.onAC()
+                        //
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "0", secondText: "x", action:{
-                        expressionContext.getActiveExpressionModel().addSingularText("0")
+                        mathListener?.addSingularText("0")
                     })
                     KeyboardButtonTextText(text: ".", secondText: "y", action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_x10n"), secondText: "z", action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonTextText(text: ".", secondText: "Ans", action:{
-                        showingHistory = true
+                        //
                     })
                     KeyboardButtonTextText(text: "EXE", secondText: " ", action:{
-                        showingHistory = true
+                        //
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
@@ -207,11 +236,6 @@ struct KeyboardPanel: View {
             .padding(btnSpacing)
             .background(Color(red: 37 / 255, green: 37 / 255, blue: 37 / 255))
         }
-    }
-    
-    func rerunItemCallback(_ id:UUID) -> Void{
-        let expression = HistoryUtil.loadItemExpressionDataStr(id)
-        expressionContext.rerun(expression)
     }
 }
 
@@ -221,5 +245,8 @@ struct KeyboardPanel: View {
     expressionContext.rootExpressionModel = expressionModel
     expressionContext.activeExpressionModelId = expressionModel.id
     
-    return KeyboardPanel(expressionContext: expressionContext)
+    let fragmentCalculateController: FragmentCalulateController = FragmentCalulateController()
+    fragmentCalculateController.setExpressionContext(expressionContext)
+    
+    return KeyboardPanel(directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
 }

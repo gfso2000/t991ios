@@ -11,7 +11,7 @@ import SwiftUI
 struct NightMatchApp: App {
     var body: some Scene {
         WindowGroup {
-            TestView()
+            FragmentCalculateView()
         }
     }
 }

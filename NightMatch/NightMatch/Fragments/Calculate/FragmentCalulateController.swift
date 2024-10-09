@@ -9,15 +9,17 @@ import Foundation
 
 class FragmentCalulateController:UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener {
     var expressionContext:ExpressionContext? = nil
-    var expressionModel:ExpressionModel? = nil
+    var resultModel:ExpressionModel? = nil
     
     func setExpressionContext(_ expressionContext: ExpressionContext) {
+        //this expressionContext is used for editable expressionModel
         self.expressionContext = expressionContext
     }
-    //todo, use readonly model. after OK, set result model. also the format list should be stored in controller, not context
-    func setModel(_ expressionModel:ExpressionModel){
-        self.expressionModel = expressionModel
+    func setResultModel(_ resultModel:ExpressionModel){
+        //result model is readonly, no need delete/focus/left/right/undo, so no need expressionContext
+        self.resultModel = resultModel
     }
+    
     func showHistory()->Bool {
         return true
     }
@@ -26,15 +28,12 @@ class FragmentCalulateController:UndoListener, HistoryListener, DirectionListene
     }
     
     func onDelete() {
-        //expressionContext!.getActiveExpressionModel().delete()
-        //todo, just test see if stateobject can work in non-view class
-        expressionModel!.delete()
+        expressionContext!.getActiveExpressionModel().delete()
     }
     
     func onAC() {
-        expressionContext!.getActiveExpressionModel().onAC()
+        expressionContext!.onAC()
     }
-    
     
     func addFraction() {
         expressionContext!.getActiveExpressionModel().addFraction()
@@ -46,7 +45,8 @@ class FragmentCalulateController:UndoListener, HistoryListener, DirectionListene
     
     func onOK() {
         //evaluate in expression context, and save result
-        print(expressionContext!.getMathExpression());
+        resultModel!.onAC()
+        resultModel!.replicate(expressionContext!.getMathExpression())
     }
     
     func onUpArrow() {

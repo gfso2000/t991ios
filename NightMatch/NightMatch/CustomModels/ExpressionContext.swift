@@ -40,10 +40,10 @@ class ExpressionContext{
         }
     }
     
-    func getMathExpression() -> String{
+    func getMathExpression() -> ExpressionData{
         let expressionData = rootExpressionModel!.getData()
         addToHistory(expressionData)
-        return expressionData.getDataAsQalculate()
+        return expressionData
     }
     
     func addToHistory(_ expressionData:ExpressionData) -> Void{

@@ -21,15 +21,16 @@ struct FragmentCalculateTopView: View {
         expressionModel.setFocus(FocusDirectionEnum.ORIGINAL)
         expressionContext.rootExpressionModel = expressionModel
         expressionContext.activeExpressionModelId = expressionModel.id
+        //stateful, so that expressionView can update
         self._expressionModel = StateObject(wrappedValue: expressionModel)
         
-        self.fragmentCalculateController.setExpressionContext(expressionContext)
-        //todo, change to readonly result model
-        self.fragmentCalculateController.setModel(expressionModel)
-        
         let resultModel: ExpressionModel = ExpressionModel(expressionContext: nil, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: 16)
+        //stateful, so that resultView can update
         self._resultModel = StateObject(wrappedValue: resultModel)
-        
+
+        //pass context,resultModel to controller, let controller operate them, and they in turn update view
+        self.fragmentCalculateController.setExpressionContext(expressionContext)
+        self.fragmentCalculateController.setResultModel(self.resultModel)
     }
     
     var body: some View {
@@ -58,7 +59,7 @@ struct FragmentCalculateTopView: View {
                                     HStack(spacing: 0) {
                                         Spacer()
                                         //todo, change to resultModel
-                                        CustomExpressionView(expressionModel: self.expressionModel)
+                                        CustomExpressionView(expressionModel: self.resultModel)
                                             .background(Color.blue)
                                     }
                                 }

@@ -8,7 +8,7 @@
 import Foundation
 
 class FractionModel:Caretable,ObservableObject,ArrowListener{
-    var expressionContext: ExpressionContext
+    var expressionContext: ExpressionContext?
     var parentModel: ArrowListener?
     var fontSize: CGFloat
     
@@ -17,7 +17,7 @@ class FractionModel:Caretable,ObservableObject,ArrowListener{
     var numeratorPartModel:ExpressionModel
     var denominatorPartModel:ExpressionModel
     
-    init(expressionContext:ExpressionContext, id: Int, showCaret: Bool, parentModel: ArrowListener?) {
+    init(expressionContext:ExpressionContext?, id: Int, showCaret: Bool, parentModel: ArrowListener?) {
         self.expressionContext = expressionContext
         self.id = id
         self.showCaret = showCaret

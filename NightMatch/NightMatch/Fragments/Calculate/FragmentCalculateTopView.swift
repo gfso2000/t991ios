@@ -12,6 +12,7 @@ struct FragmentCalculateTopView: View {
     
     var expressionContext: ExpressionContext = ExpressionContext()
     @StateObject var expressionModel:ExpressionModel
+    @StateObject var resultModel:ExpressionModel
     
     init(fragmentCalculateController: FragmentCalulateController){
         self.fragmentCalculateController = fragmentCalculateController
@@ -25,10 +26,53 @@ struct FragmentCalculateTopView: View {
         self.fragmentCalculateController.setExpressionContext(expressionContext)
         //todo, change to readonly result model
         self.fragmentCalculateController.setModel(expressionModel)
+        
+        let resultModel: ExpressionModel = ExpressionModel(expressionContext: nil, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: 16)
+        self._resultModel = StateObject(wrappedValue: resultModel)
+        
     }
     
     var body: some View {
-        CustomExpressionView(expressionModel: self.expressionModel)
+        GeometryReader { geometry in
+            VStack(spacing:0){
+                HStack{
+                    ScrollView(.vertical) {
+                        ScrollView(.horizontal) {
+                            CustomExpressionView(expressionModel: self.expressionModel)
+                                //.frame(maxWidth: .infinity, maxHeight:.infinity, alignment: .leading)
+                                .background(Color.red)
+                        }
+                    }
+                    .background(Color.green)
+                }
+                //always use stack to get a fixed width/height, then set stack's child to scrollView
+                .frame(height:geometry.size.height * 0.7)
+                
+                HStack{
+                    GeometryReader { proxy in
+                        //scrollView auto fill parent(HStack)
+                        ScrollView(.vertical) {
+                            ScrollView(.horizontal) {
+                                VStack(spacing: 0) {
+                                    Spacer()
+                                    HStack(spacing: 0) {
+                                        Spacer()
+                                        //todo, change to resultModel
+                                        CustomExpressionView(expressionModel: self.expressionModel)
+                                            .background(Color.blue)
+                                    }
+                                }
+                                //make VStack match scrollView width/height by minWidth/minHeight, because width/height will increase to show scrollBar
+                                .frame(minWidth: proxy.size.width, minHeight: proxy.size.height)
+                            }
+                        }.background(Color.black)
+                    }
+                }
+                .frame(height:geometry.size.height * 0.3)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.green)
+        }
     }
 }
 

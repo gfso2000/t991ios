@@ -8,7 +8,7 @@
 import Foundation
 
 class ExpressionModel:ObservableObject,ArrowListener{
-    var expressionContext:ExpressionContext
+    var expressionContext:ExpressionContext?
     var parentModel: ArrowListener?
     var fontSize: CGFloat
     var id: Int
@@ -16,7 +16,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     @Published var children:[Caretable] = []
     @Published var lastFocusedChildrenId:Int = -1
     
-    init(expressionContext:ExpressionContext,id:Int, parentModel: ArrowListener? = nil, fontSize: CGFloat) {
+    init(expressionContext:ExpressionContext?,id:Int, parentModel: ArrowListener? = nil, fontSize: CGFloat) {
         self.expressionContext = expressionContext
         self.id = id
         self.parentModel = parentModel
@@ -95,7 +95,9 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
     
     func doAddFraction() -> FractionModel {
-        let fractionModel = FractionModel(expressionContext:self.expressionContext, id:CustomIdGenerator.generateId(), showCaret: false, parentModel: self);
+        let fractionModel = FractionModel(expressionContext:self.expressionContext,
+                                          id:CustomIdGenerator.generateId(),
+                                          showCaret: false, parentModel: self);
         insertChild(fractionModel);
         return fractionModel;
     }
@@ -256,6 +258,10 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
     
     func setFocus(_ direction: FocusDirectionEnum) {
+        if(self.expressionContext == nil){
+            //nil means readonly, no need set focus
+            return;
+        }
         if (direction == FocusDirectionEnum.LEFT) {
             lastFocusedChildrenId = children[0].id
         } else if (direction == FocusDirectionEnum.RIGHT) {
@@ -293,7 +299,9 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
     
     func switchToActive() {
-        expressionContext.activeExpressionModelId = self.id
+        if(expressionContext != nil){
+            expressionContext!.activeExpressionModelId = self.id
+        }
     }
     
     func findExpressionModelById(_ expressionModelId:Int ) -> ExpressionModel? {
@@ -312,7 +320,9 @@ class ExpressionModel:ObservableObject,ArrowListener{
     var previousState:ExpressionData?
     func savePreviousState() -> Void {
         self.previousState = getData();
-        self.expressionContext.handleUndoExpressionModelId = self.id;
+        if(self.expressionContext != nil){
+            self.expressionContext!.handleUndoExpressionModelId = self.id;
+        }
     }
     func canUndo() -> Bool {
         if (previousState == nil) {

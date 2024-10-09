@@ -14,11 +14,7 @@ struct FragmentCalculateView: View {
         GeometryReader { geometry in
             VStack(spacing:0){
                 HStack{
-                    ScrollView(.vertical) {
-                        ScrollView(.horizontal) {
-                            FragmentCalculateTopView(fragmentCalculateController: fragmentCalculateController)
-                        }
-                    }
+                    FragmentCalculateTopView(fragmentCalculateController: fragmentCalculateController)
                 }
                 .frame(height:geometry.size.height * 0.2)
                 .background(Color.blue)

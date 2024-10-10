@@ -16,17 +16,10 @@ struct FormatItem: View {
         resultModel.replicate(formatBean.expressionData)
     }
     var body: some View {
-        //GeometryReader { geometry3 in
-            VStack(spacing:0){
-//                Text(formatBean.name)
-//                    //.frame(width: geometry3.size.width / 1)
-//                    .background(Color.green)
-                GroupBox(formatBean.name) {
-                    CustomExpressionView(expressionModel: self.resultModel)
-                        .background(Color.blue)
-                }
-            }
-        //}
+        GroupBox(LocalizedStringKey(formatBean.name)) {
+            CustomExpressionView(expressionModel: self.resultModel)
+                .background(Color.blue)
+        }
     }
 }
 

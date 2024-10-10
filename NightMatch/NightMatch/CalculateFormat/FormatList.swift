@@ -14,7 +14,6 @@ struct FormatList: View {
         ScrollView {
             ForEach(formatList) { item in
                 FormatItem(formatBean: item)
-                    //.frame(minHeight: 50)
             }
         }
     }
@@ -28,5 +27,5 @@ struct FormatList: View {
     var formatBean:FormatBean = FormatBean(id: 3, name: "Decimal", expressionData: expressionData)
     var formatBean2:FormatBean = FormatBean(id: 4, name: "Fraction", expressionData: expressionData)
     let formatList:[FormatBean] = [formatBean,formatBean2]
-    return FormatList(formatList:formatList)
+    return FormatList(formatList:formatList).environment(\.locale, .init(identifier: "zh"))
 }

@@ -7,9 +7,10 @@
 
 import Foundation
 
-class FragmentCalulateController:UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener {
+class FragmentCalulateController:UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener, FormatListener {
     var expressionContext:ExpressionContext? = nil
     var resultModel:ExpressionModel? = nil
+    var formatData:FormatData? = nil
     
     func setExpressionContext(_ expressionContext: ExpressionContext) {
         //this expressionContext is used for editable expressionModel
@@ -45,10 +46,34 @@ class FragmentCalulateController:UndoListener, HistoryListener, DirectionListene
     
     func onOK() {
         //evaluate in expression context, and save result
+        formatData = FormatData()
+        formatData?.defaultExpressionData = expressionContext!.getMathExpression()
+        let decimalFormatBean = FormatBean(id: 1, name: "decimal", expressionData: expressionContext!.getMathExpression())
+        formatData?.formatList.append(decimalFormatBean)
+        let fractionFormatBean = FormatBean(id: 2, name: "fraction", expressionData: expressionContext!.getMathExpression())
+        formatData?.formatList.append(fractionFormatBean)
+        let fractionFormatBean2 = FormatBean(id: 2, name: "fraction", expressionData: expressionContext!.getMathExpression())
+        formatData?.formatList.append(fractionFormatBean2)
+        let fractionFormatBean3 = FormatBean(id: 2, name: "fraction", expressionData: expressionContext!.getMathExpression())
+        formatData?.formatList.append(fractionFormatBean3)
+        let fractionFormatBean4 = FormatBean(id: 2, name: "fraction", expressionData: expressionContext!.getMathExpression())
+        formatData?.formatList.append(fractionFormatBean4)
+        let fractionFormatBean5 = FormatBean(id: 2, name: "fraction", expressionData: expressionContext!.getMathExpression())
+        formatData?.formatList.append(fractionFormatBean5)
+        let fractionFormatBean6 = FormatBean(id: 2, name: "fraction", expressionData: expressionContext!.getMathExpression())
+        formatData?.formatList.append(fractionFormatBean6)
+        let fractionFormatBean7 = FormatBean(id: 2, name: "fraction", expressionData: expressionContext!.getMathExpression())
+        formatData?.formatList.append(fractionFormatBean7)
+
         resultModel!.onAC()
-        resultModel!.replicate(expressionContext!.getMathExpression())
+        if(formatData?.defaultExpressionData != nil){
+            resultModel!.replicate(formatData!.defaultExpressionData!)
+        }
     }
     
+    func getFormat() -> FormatData? {
+        return formatData
+    }
     func onUpArrow() {
         expressionContext!.getActiveExpressionModel().onUpArrow()
     }

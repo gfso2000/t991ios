@@ -15,8 +15,12 @@ struct KeyboardPanel: View {
     let deleteListener: DeleteListener?
     let acListener: ACListener?
     let historyListener: HistoryListener?
+    let formatListener: FormatListener?
+    @State var showingFormat:Bool = false
+    @StateObject var formatData:FormatData = FormatData()
     
-    init(directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+    init(formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+        self.formatListener = formatListener
         self.directionListener = directionListener
         self.undoListener = undoListener
         self.okExeListener = okExeListener
@@ -225,8 +229,22 @@ struct KeyboardPanel: View {
                         //
                     })
                     KeyboardButtonTextText(text: ".", secondText: "Ans", action:{
-                        //
+                        if(formatListener == nil){
+                            return
+                        }
+                        let formatData = formatListener!.getFormat()
+                          if(formatData == nil){
+                            return
+                        }
+                        if(formatData!.formatList.isEmpty) {
+                            return
+                        }
+                        self.showingFormat = true
+                        self.formatData.formatList = formatData!.formatList
                     })
+                    .sheet(isPresented: $showingFormat) {
+                        FormatList(formatList:self.formatData.formatList)
+                    }
                     KeyboardButtonTextText(text: "EXE", secondText: " ", action:{
                         //
                     })
@@ -248,5 +266,5 @@ struct KeyboardPanel: View {
     let fragmentCalculateController: FragmentCalulateController = FragmentCalulateController()
     fragmentCalculateController.setExpressionContext(expressionContext)
     
-    return KeyboardPanel(directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
+    return KeyboardPanel(formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
 }

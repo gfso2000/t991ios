@@ -30,6 +30,11 @@
 		DA3866C92CA6902C00CFAD4F /* ACListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3866C82CA6902C00CFAD4F /* ACListener.swift */; };
 		DA5D92A92C8FDFB2004F584E /* KeyboardButtonImageImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */; };
 		DA5D92AB2C9410B1004F584E /* HistoryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D92AA2C9410B1004F584E /* HistoryUtil.swift */; };
+		DA6061732CB762AC0091779E /* FormatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061722CB762AC0091779E /* FormatData.swift */; };
+		DA6061752CB764920091779E /* FormatListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061742CB764920091779E /* FormatListener.swift */; };
+		DA6061782CB7AB4D0091779E /* FormatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061772CB7AB4D0091779E /* FormatList.swift */; };
+		DA60617A2CB7AD220091779E /* FormatBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061792CB7AD220091779E /* FormatBean.swift */; };
+		DA60617C2CB7AD850091779E /* FormatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60617B2CB7AD850091779E /* FormatItem.swift */; };
 		DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5A2C65E1FD008E8048 /* Caretable.swift */; };
 		DABFAF5D2C65E23F008E8048 /* SingularTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */; };
 		DABFAF5F2C65E420008E8048 /* FractionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5E2C65E420008E8048 /* FractionModel.swift */; };
@@ -99,6 +104,11 @@
 		DA3866C82CA6902C00CFAD4F /* ACListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACListener.swift; sourceTree = "<group>"; };
 		DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButtonImageImage.swift; sourceTree = "<group>"; };
 		DA5D92AA2C9410B1004F584E /* HistoryUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUtil.swift; sourceTree = "<group>"; };
+		DA6061722CB762AC0091779E /* FormatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatData.swift; sourceTree = "<group>"; };
+		DA6061742CB764920091779E /* FormatListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListener.swift; sourceTree = "<group>"; };
+		DA6061772CB7AB4D0091779E /* FormatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatList.swift; sourceTree = "<group>"; };
+		DA6061792CB7AD220091779E /* FormatBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatBean.swift; sourceTree = "<group>"; };
+		DA60617B2CB7AD850091779E /* FormatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatItem.swift; sourceTree = "<group>"; };
 		DABFAF5A2C65E1FD008E8048 /* Caretable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caretable.swift; sourceTree = "<group>"; };
 		DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularTextModel.swift; sourceTree = "<group>"; };
 		DABFAF5E2C65E420008E8048 /* FractionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionModel.swift; sourceTree = "<group>"; };
@@ -185,6 +195,7 @@
 			children = (
 				DA3866BD2CA6861600CFAD4F /* Fragments */,
 				DA3866B52CA683AA00CFAD4F /* KeyboardListener */,
+				DA6061762CB7AB030091779E /* CalculateFormat */,
 				DAEEB3962C8AD49700246752 /* CalculateHistory */,
 				DAEEB38F2C89937F00246752 /* CustomData */,
 				DABFAF592C65D613008E8048 /* CustomModels */,
@@ -242,6 +253,7 @@
 				DA3866C42CA68E3700CFAD4F /* MathListener.swift */,
 				DA3866C62CA68FFF00CFAD4F /* DeleteListener.swift */,
 				DA3866C82CA6902C00CFAD4F /* ACListener.swift */,
+				DA6061742CB764920091779E /* FormatListener.swift */,
 			);
 			path = KeyboardListener;
 			sourceTree = "<group>";
@@ -262,6 +274,16 @@
 				DABFAF622C65F7FC008E8048 /* FragmentCalculateView.swift */,
 			);
 			path = Calculate;
+			sourceTree = "<group>";
+		};
+		DA6061762CB7AB030091779E /* CalculateFormat */ = {
+			isa = PBXGroup;
+			children = (
+				DA6061792CB7AD220091779E /* FormatBean.swift */,
+				DA60617B2CB7AD850091779E /* FormatItem.swift */,
+				DA6061772CB7AB4D0091779E /* FormatList.swift */,
+			);
+			path = CalculateFormat;
 			sourceTree = "<group>";
 		};
 		DABFAF592C65D613008E8048 /* CustomModels */ = {
@@ -309,6 +331,7 @@
 				DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */,
 				DAEEB3942C899F6600246752 /* SingularTextData.swift */,
 				DAEEB3922C899C1F00246752 /* FractionData.swift */,
+				DA6061722CB762AC0091779E /* FormatData.swift */,
 			);
 			path = CustomData;
 			sourceTree = "<group>";
@@ -457,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6061782CB7AB4D0091779E /* FormatList.swift in Sources */,
 				DAEEB39C2C8ADD0800246752 /* HistoryList.swift in Sources */,
 				DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */,
 				DAC991232C6DD9C200744B5D /* CustomIdGenerator.swift in Sources */,
@@ -471,14 +495,17 @@
 				DA3866C32CA68D3D00CFAD4F /* OkExeListener.swift in Sources */,
 				DAC991132C69E43600744B5D /* FocusDirectionEnum.swift in Sources */,
 				DABFAF612C65E488008E8048 /* ExpressionModel.swift in Sources */,
+				DA6061752CB764920091779E /* FormatListener.swift in Sources */,
 				DA3866C52CA68E3700CFAD4F /* MathListener.swift in Sources */,
 				DABFAF632C65F7FD008E8048 /* FragmentCalculateView.swift in Sources */,
 				DA5D92A92C8FDFB2004F584E /* KeyboardButtonImageImage.swift in Sources */,
 				DAEEB39A2C8AD63D00246752 /* HistoryItem.swift in Sources */,
+				DA60617A2CB7AD220091779E /* FormatBean.swift in Sources */,
 				DAC991172C6C572C00744B5D /* KeyboardPanel.swift in Sources */,
 				DAEEB3912C8993FF00246752 /* ExpressionItemData.swift in Sources */,
 				DA3866BF2CA6863400CFAD4F /* FragmentCalculateTopView.swift in Sources */,
 				DA3866BC2CA6854100CFAD4F /* FragmentCalulateController.swift in Sources */,
+				DA60617C2CB7AD850091779E /* FormatItem.swift in Sources */,
 				DAC991202C6D8CD600744B5D /* KeyboardButtonTextText.swift in Sources */,
 				DA3866B92CA6845200CFAD4F /* HistoryListener.swift in Sources */,
 				DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */,
@@ -487,6 +514,7 @@
 				DA2A5B542C8EDE2600CE877A /* KeyboardButtonImageText.swift in Sources */,
 				DA3866C92CA6902C00CFAD4F /* ACListener.swift in Sources */,
 				DAEEB38E2C89928700246752 /* ExpressionData.swift in Sources */,
+				DA6061732CB762AC0091779E /* FormatData.swift in Sources */,
 				DAC9911C2C6C769400744B5D /* GrowingButtonStyle.swift in Sources */,
 				DAEEB38C2C89817300246752 /* ExpressionContext.swift in Sources */,
 				DA3866C12CA68A4D00CFAD4F /* DirectionListener.swift in Sources */,

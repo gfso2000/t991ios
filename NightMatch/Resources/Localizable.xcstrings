@@ -38,11 +38,19 @@
         }
       }
     },
+    "Int Detail %lld" : {
+
+    },
+    "Jump to random" : {
+
+    },
+    "Navigation" : {
+
+    },
     "No History Records" : {
 
     },
     "Rerun" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -51,6 +59,12 @@
           }
         }
       }
+    },
+    "Row %lld" : {
+
+    },
+    "String Detail %@" : {
+
     }
   },
   "version" : "1.0"

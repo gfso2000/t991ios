@@ -7,10 +7,11 @@
 
 import Foundation
 
-class FragmentCalulateController:UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener, FormatListener {
+class FragmentCalulateController:UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener, FormatListener, MainListener {
     var expressionContext:ExpressionContext? = nil
     var resultModel:ExpressionModel? = nil
     var formatData:FormatData? = nil
+    var activeFragment:ActiveFragment? = nil
     
     func setExpressionContext(_ expressionContext: ExpressionContext) {
         //this expressionContext is used for editable expressionModel
@@ -20,6 +21,10 @@ class FragmentCalulateController:UndoListener, HistoryListener, DirectionListene
         //result model is readonly, no need delete/focus/left/right/undo, so no need expressionContext
         self.resultModel = resultModel
     }
+    func setActiveFragmentObject(_ activeFragment: ActiveFragment){
+        //environmentObject, used to switch main/calculate view
+        self.activeFragment = activeFragment
+    }
     
     func showHistory()->Bool {
         return true
@@ -28,6 +33,11 @@ class FragmentCalulateController:UndoListener, HistoryListener, DirectionListene
         expressionContext!.rerun(expression)
     }
     
+    func gotoMain() {
+        if(self.activeFragment != nil){
+            self.activeFragment?.currentFragmentName = "Main"
+        }
+    }
     func onDelete() {
         expressionContext!.getActiveExpressionModel().delete()
     }

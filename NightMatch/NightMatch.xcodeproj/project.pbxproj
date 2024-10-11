@@ -28,6 +28,10 @@
 		DA3866C52CA68E3700CFAD4F /* MathListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3866C42CA68E3700CFAD4F /* MathListener.swift */; };
 		DA3866C72CA68FFF00CFAD4F /* DeleteListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3866C62CA68FFF00CFAD4F /* DeleteListener.swift */; };
 		DA3866C92CA6902C00CFAD4F /* ACListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3866C82CA6902C00CFAD4F /* ACListener.swift */; };
+		DA5918712CB8EC3F00A98368 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5918702CB8EC3F00A98368 /* TestView.swift */; };
+		DA5918742CB8FA0800A98368 /* FragmentMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5918732CB8FA0800A98368 /* FragmentMain.swift */; };
+		DA5918762CB9139300A98368 /* ActiveFragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5918752CB9139300A98368 /* ActiveFragment.swift */; };
+		DA5918782CB9167B00A98368 /* MainListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5918772CB9167B00A98368 /* MainListener.swift */; };
 		DA5D92A92C8FDFB2004F584E /* KeyboardButtonImageImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */; };
 		DA5D92AB2C9410B1004F584E /* HistoryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5D92AA2C9410B1004F584E /* HistoryUtil.swift */; };
 		DA6061732CB762AC0091779E /* FormatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061722CB762AC0091779E /* FormatData.swift */; };
@@ -102,6 +106,10 @@
 		DA3866C42CA68E3700CFAD4F /* MathListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathListener.swift; sourceTree = "<group>"; };
 		DA3866C62CA68FFF00CFAD4F /* DeleteListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteListener.swift; sourceTree = "<group>"; };
 		DA3866C82CA6902C00CFAD4F /* ACListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACListener.swift; sourceTree = "<group>"; };
+		DA5918702CB8EC3F00A98368 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		DA5918732CB8FA0800A98368 /* FragmentMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentMain.swift; sourceTree = "<group>"; };
+		DA5918752CB9139300A98368 /* ActiveFragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveFragment.swift; sourceTree = "<group>"; };
+		DA5918772CB9167B00A98368 /* MainListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListener.swift; sourceTree = "<group>"; };
 		DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardButtonImageImage.swift; sourceTree = "<group>"; };
 		DA5D92AA2C9410B1004F584E /* HistoryUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUtil.swift; sourceTree = "<group>"; };
 		DA6061722CB762AC0091779E /* FormatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatData.swift; sourceTree = "<group>"; };
@@ -205,6 +213,7 @@
 				DA076E1F2C22B0DF00F7A2C1 /* NightMatchApp.swift */,
 				DA076E232C22B0E400F7A2C1 /* Assets.xcassets */,
 				DA076E252C22B0E400F7A2C1 /* Preview Content */,
+				DA5918702CB8EC3F00A98368 /* TestView.swift */,
 			);
 			path = NightMatch;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 				DA3866C62CA68FFF00CFAD4F /* DeleteListener.swift */,
 				DA3866C82CA6902C00CFAD4F /* ACListener.swift */,
 				DA6061742CB764920091779E /* FormatListener.swift */,
+				DA5918772CB9167B00A98368 /* MainListener.swift */,
 			);
 			path = KeyboardListener;
 			sourceTree = "<group>";
@@ -261,7 +271,9 @@
 		DA3866BD2CA6861600CFAD4F /* Fragments */ = {
 			isa = PBXGroup;
 			children = (
+				DA5918722CB8F9BD00A98368 /* Main */,
 				DA3866CC2CA6A94B00CFAD4F /* Calculate */,
+				DA5918752CB9139300A98368 /* ActiveFragment.swift */,
 			);
 			path = Fragments;
 			sourceTree = "<group>";
@@ -274,6 +286,14 @@
 				DABFAF622C65F7FC008E8048 /* FragmentCalculateView.swift */,
 			);
 			path = Calculate;
+			sourceTree = "<group>";
+		};
+		DA5918722CB8F9BD00A98368 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DA5918732CB8FA0800A98368 /* FragmentMain.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		DA6061762CB7AB030091779E /* CalculateFormat */ = {
@@ -483,9 +503,12 @@
 				DA6061782CB7AB4D0091779E /* FormatList.swift in Sources */,
 				DAEEB39C2C8ADD0800246752 /* HistoryList.swift in Sources */,
 				DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */,
+				DA5918762CB9139300A98368 /* ActiveFragment.swift in Sources */,
 				DAC991232C6DD9C200744B5D /* CustomIdGenerator.swift in Sources */,
 				DAEEB3932C899C1F00246752 /* FractionData.swift in Sources */,
 				DA03B85B2C65A9B5003626B8 /* CustomExpressionView.swift in Sources */,
+				DA5918712CB8EC3F00A98368 /* TestView.swift in Sources */,
+				DA5918782CB9167B00A98368 /* MainListener.swift in Sources */,
 				DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */,
 				DAEEB3952C899F6600246752 /* SingularTextData.swift in Sources */,
 				DABFAF5D2C65E23F008E8048 /* SingularTextModel.swift in Sources */,
@@ -511,6 +534,7 @@
 				DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */,
 				DA076E202C22B0DF00F7A2C1 /* NightMatchApp.swift in Sources */,
 				DA03B8592C65A438003626B8 /* CustomSingularTextView.swift in Sources */,
+				DA5918742CB8FA0800A98368 /* FragmentMain.swift in Sources */,
 				DA2A5B542C8EDE2600CE877A /* KeyboardButtonImageText.swift in Sources */,
 				DA3866C92CA6902C00CFAD4F /* ACListener.swift in Sources */,
 				DAEEB38E2C89928700246752 /* ExpressionData.swift in Sources */,

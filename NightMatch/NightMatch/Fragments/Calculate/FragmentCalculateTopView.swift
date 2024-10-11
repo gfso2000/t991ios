@@ -14,6 +14,8 @@ struct FragmentCalculateTopView: View {
     @StateObject var expressionModel:ExpressionModel
     @StateObject var resultModel:ExpressionModel
     
+    @EnvironmentObject var activeFragment:ActiveFragment
+    
     init(fragmentCalculateController: FragmentCalulateController){
         self.fragmentCalculateController = fragmentCalculateController
         
@@ -73,11 +75,15 @@ struct FragmentCalculateTopView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.green)
+            .onAppear(){
+                //environmentObject can't be visited in init(), so visit here
+                fragmentCalculateController.setActiveFragmentObject(activeFragment)
+            }
         }
     }
 }
 
 #Preview {
     let fragmentCalculateController: FragmentCalulateController = FragmentCalulateController()
-    return FragmentCalculateTopView(fragmentCalculateController: fragmentCalculateController)
+    return FragmentCalculateTopView(fragmentCalculateController: fragmentCalculateController).environmentObject(ActiveFragment())
 }

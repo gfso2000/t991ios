@@ -16,10 +16,12 @@ struct KeyboardPanel: View {
     let acListener: ACListener?
     let historyListener: HistoryListener?
     let formatListener: FormatListener?
+    let mainListener: MainListener?
     @State var showingFormat:Bool = false
     @StateObject var formatData:FormatData = FormatData()
     
-    init(formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+    init(mainListener: MainListener?, formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+        self.mainListener = mainListener
         self.formatListener = formatListener
         self.directionListener = directionListener
         self.undoListener = undoListener
@@ -47,7 +49,9 @@ struct KeyboardPanel: View {
                         //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_main"), secondText: "MAIN", fontSize:16, imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
-                        //
+                        if(self.mainListener != nil){
+                            self.mainListener!.gotoMain()
+                        }
                     })
                     KeyboardButtonImageText(image: Image("custom_button_history"), secondText: "PASTE", fontSize:16, imageScale:0.6, action:{
                         // Checking if the optionalBool has a value and it's true
@@ -266,5 +270,5 @@ struct KeyboardPanel: View {
     let fragmentCalculateController: FragmentCalulateController = FragmentCalulateController()
     fragmentCalculateController.setExpressionContext(expressionContext)
     
-    return KeyboardPanel(formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
+    return KeyboardPanel(mainListener:fragmentCalculateController, formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
 }

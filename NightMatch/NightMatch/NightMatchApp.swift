@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct NightMatchApp: App {
+    @StateObject var activeFragment:ActiveFragment = ActiveFragment()
     var body: some Scene {
         WindowGroup {
-            FragmentCalculateView()
+            if(activeFragment.currentFragmentName == "Calculate"){
+                FragmentCalculateView().environmentObject(activeFragment)
+            }else if(activeFragment.currentFragmentName == "Main"){
+                FragmentMain().environmentObject(activeFragment)
+            }
         }
     }
 }

@@ -69,7 +69,7 @@ class ExpressionContext{
         if let jsonData = expression.data(using: .utf8) {
             do {
                 let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
-                var decodedExpressionData = ExpressionData(jsonObject as! [String : Any]);
+                let decodedExpressionData = ExpressionData(jsonObject as! [String : Any]);
                 rootExpressionModel!.loseFocus();
                 rootExpressionModel!.replicate(decodedExpressionData)
                 activeExpressionModelId = rootExpressionModel!.id

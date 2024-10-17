@@ -61,7 +61,14 @@ struct FragmentMain: View {
                     FragmentMainItem(size: geometry.size.width, text:"Calculate", image:"fragment_main_calculate")
                 }
             }
-            //.background(Color.blue)
+            //make sure top safeArea is white
+            .safeAreaInset(edge: .top) {
+                Text("")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .background(.white)
+            }
+//            .background(Color.red)
 //            .aspectRatio(1, contentMode: .fit)
 //                    .border(.black, width: 1)
         }

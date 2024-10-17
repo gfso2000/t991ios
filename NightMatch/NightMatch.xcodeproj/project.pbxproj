@@ -54,6 +54,11 @@
 		DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991242C6F27EC00744B5D /* LeftTopStrokeShape.swift */; };
 		DAC991272C6F2E7000744B5D /* GrowingButtonStyle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991262C6F2E7000744B5D /* GrowingButtonStyle2.swift */; };
 		DAC991292C6F2ECD00744B5D /* KeyboardButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC991282C6F2ECD00744B5D /* KeyboardButton2.swift */; };
+		DAD729B62CBF858D00ACE021 /* VarListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD729B52CBF858D00ACE021 /* VarListener.swift */; };
+		DAD729B92CBF861100ACE021 /* VarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD729B82CBF861100ACE021 /* VarList.swift */; };
+		DAD729BB2CBF863F00ACE021 /* VarBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD729BA2CBF863F00ACE021 /* VarBean.swift */; };
+		DAD729BD2CBF935400ACE021 /* VarUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD729BC2CBF935400ACE021 /* VarUtil.swift */; };
+		DAD729BF2CBF9D8700ACE021 /* VarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD729BE2CBF9D8700ACE021 /* VarItem.swift */; };
 		DAEEB38C2C89817300246752 /* ExpressionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB38B2C89817300246752 /* ExpressionContext.swift */; };
 		DAEEB38E2C89928700246752 /* ExpressionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB38D2C89928700246752 /* ExpressionData.swift */; };
 		DAEEB3912C8993FF00246752 /* ExpressionItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */; };
@@ -132,6 +137,11 @@
 		DAC991242C6F27EC00744B5D /* LeftTopStrokeShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftTopStrokeShape.swift; sourceTree = "<group>"; };
 		DAC991262C6F2E7000744B5D /* GrowingButtonStyle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButtonStyle2.swift; sourceTree = "<group>"; };
 		DAC991282C6F2ECD00744B5D /* KeyboardButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton2.swift; sourceTree = "<group>"; };
+		DAD729B52CBF858D00ACE021 /* VarListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarListener.swift; sourceTree = "<group>"; };
+		DAD729B82CBF861100ACE021 /* VarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarList.swift; sourceTree = "<group>"; };
+		DAD729BA2CBF863F00ACE021 /* VarBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarBean.swift; sourceTree = "<group>"; };
+		DAD729BC2CBF935400ACE021 /* VarUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarUtil.swift; sourceTree = "<group>"; };
+		DAD729BE2CBF9D8700ACE021 /* VarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarItem.swift; sourceTree = "<group>"; };
 		DAEEB38B2C89817300246752 /* ExpressionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionContext.swift; sourceTree = "<group>"; };
 		DAEEB38D2C89928700246752 /* ExpressionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionData.swift; sourceTree = "<group>"; };
 		DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionItemData.swift; sourceTree = "<group>"; };
@@ -203,6 +213,7 @@
 			children = (
 				DA3866BD2CA6861600CFAD4F /* Fragments */,
 				DA3866B52CA683AA00CFAD4F /* KeyboardListener */,
+				DAD729B72CBF85DA00ACE021 /* CalculateVar */,
 				DA6061762CB7AB030091779E /* CalculateFormat */,
 				DAEEB3962C8AD49700246752 /* CalculateHistory */,
 				DAEEB38F2C89937F00246752 /* CustomData */,
@@ -264,6 +275,7 @@
 				DA3866C82CA6902C00CFAD4F /* ACListener.swift */,
 				DA6061742CB764920091779E /* FormatListener.swift */,
 				DA5918772CB9167B00A98368 /* MainListener.swift */,
+				DAD729B52CBF858D00ACE021 /* VarListener.swift */,
 			);
 			path = KeyboardListener;
 			sourceTree = "<group>";
@@ -342,6 +354,17 @@
 				DAC991222C6DD9C200744B5D /* CustomIdGenerator.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DAD729B72CBF85DA00ACE021 /* CalculateVar */ = {
+			isa = PBXGroup;
+			children = (
+				DAD729BA2CBF863F00ACE021 /* VarBean.swift */,
+				DAD729BE2CBF9D8700ACE021 /* VarItem.swift */,
+				DAD729B82CBF861100ACE021 /* VarList.swift */,
+				DAD729BC2CBF935400ACE021 /* VarUtil.swift */,
+			);
+			path = CalculateVar;
 			sourceTree = "<group>";
 		};
 		DAEEB38F2C89937F00246752 /* CustomData */ = {
@@ -525,8 +548,10 @@
 				DAEEB39A2C8AD63D00246752 /* HistoryItem.swift in Sources */,
 				DA60617A2CB7AD220091779E /* FormatBean.swift in Sources */,
 				DAC991172C6C572C00744B5D /* KeyboardPanel.swift in Sources */,
+				DAD729B62CBF858D00ACE021 /* VarListener.swift in Sources */,
 				DAEEB3912C8993FF00246752 /* ExpressionItemData.swift in Sources */,
 				DA3866BF2CA6863400CFAD4F /* FragmentCalculateTopView.swift in Sources */,
+				DAD729BB2CBF863F00ACE021 /* VarBean.swift in Sources */,
 				DA3866BC2CA6854100CFAD4F /* FragmentCalulateController.swift in Sources */,
 				DA60617C2CB7AD850091779E /* FormatItem.swift in Sources */,
 				DAC991202C6D8CD600744B5D /* KeyboardButtonTextText.swift in Sources */,
@@ -537,6 +562,7 @@
 				DA5918742CB8FA0800A98368 /* FragmentMain.swift in Sources */,
 				DA2A5B542C8EDE2600CE877A /* KeyboardButtonImageText.swift in Sources */,
 				DA3866C92CA6902C00CFAD4F /* ACListener.swift in Sources */,
+				DAD729BD2CBF935400ACE021 /* VarUtil.swift in Sources */,
 				DAEEB38E2C89928700246752 /* ExpressionData.swift in Sources */,
 				DA6061732CB762AC0091779E /* FormatData.swift in Sources */,
 				DAC9911C2C6C769400744B5D /* GrowingButtonStyle.swift in Sources */,
@@ -546,6 +572,8 @@
 				DA2A5B562C8EEFC700CE877A /* KeyboardButtonTextImage.swift in Sources */,
 				DAC991292C6F2ECD00744B5D /* KeyboardButton2.swift in Sources */,
 				DA5D92AB2C9410B1004F584E /* HistoryUtil.swift in Sources */,
+				DAD729B92CBF861100ACE021 /* VarList.swift in Sources */,
+				DAD729BF2CBF9D8700ACE021 /* VarItem.swift in Sources */,
 				DAC991272C6F2E7000744B5D /* GrowingButtonStyle2.swift in Sources */,
 				DABFAF5F2C65E420008E8048 /* FractionModel.swift in Sources */,
 			);

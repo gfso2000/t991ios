@@ -17,9 +17,10 @@ struct KeyboardPanel: View {
     let historyListener: HistoryListener?
     let formatListener: FormatListener?
     let mainListener: MainListener?
-    @State var showingFormat:Bool = false
-    @StateObject var formatData:FormatData = FormatData()
     
+    let btnSpacing:CGFloat = 2
+    let rowWidthPct = 1.0
+
     init(mainListener: MainListener?, formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
         self.mainListener = mainListener
         self.formatListener = formatListener
@@ -32,13 +33,18 @@ struct KeyboardPanel: View {
         self.historyListener = historyListener
     }
     
-    let btnSpacing:CGFloat = 2
-    let rowWidthPct = 1.0
-
+    @State var showingFormat:Bool = false
+    @StateObject var formatData:FormatData = FormatData()
+    
     @State var showingHistory:Bool = false
     func rerunItemCallback(_ id:UUID) -> Void{
         let expression = HistoryUtil.loadItemExpressionDataStr(id)
         historyListener?.rerun(expression)
+    }
+    
+    @State var showingVar:Bool = false
+    func selectItemCallback(_ varName:String) -> Void{
+        
     }
     
     var body: some View {
@@ -104,8 +110,10 @@ struct KeyboardPanel: View {
                         //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_var"), secondText: "VAR", imageScale:1.2, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        //
-                    })
+                        showingVar = true
+                    }).sheet(isPresented: $showingVar) {
+                        VarList(selectItemCallback:selectItemCallback)
+                    }
                     KeyboardButtonImageText(image: Image("custom_button_fx"), secondText: "FUN", imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
                         //
                     })

@@ -12,6 +12,9 @@
          contextName = "ExpressionModel.replicate(_:):ExpressionModel.swift">
       </ContextState>
       <ContextState
+         contextName = "static VarUtil.resetVar(_:):VarUtil.swift">
+      </ContextState>
+      <ContextState
          contextName = "ExpressionContext.rerun(_:):ExpressionContext.swift">
       </ContextState>
       <ContextState
@@ -44,6 +47,14 @@
             </PersistentString>
             <PersistentString
                value = "self.historyBeanList.isEmpty">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VarList.resetItemCallback(_:):VarList.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.varBeanList">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

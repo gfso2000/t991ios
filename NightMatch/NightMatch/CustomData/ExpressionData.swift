@@ -22,7 +22,7 @@ class ExpressionData {
         self.id = jsonObject["id"] as! Int
         self.lastFocusedChildrenId = jsonObject["lastFocusedChildrenId"] as! Int
         self.children = []
-        var childrenJsonObject:[[String: Any]] = jsonObject["children"] as! [[String : Any]]
+        let childrenJsonObject:[[String: Any]] = jsonObject["children"] as! [[String : Any]]
         for childJsonObject in childrenJsonObject {
             let className:String = childJsonObject["className"] as! String
             let cfBundleName:String = Bundle.main.infoDictionary?["CFBundleName"] as! String
@@ -51,5 +51,19 @@ class ExpressionData {
             str.append(expressionItemData.getDataAsQalculate())
         }
         return str
+    }
+    
+    static func zeroExpressionData()->ExpressionData {
+        let expressionItemData:SingularTextData = SingularTextData(id: 1, text: "000000000000000000000000000000")
+        let children:[ExpressionItemData] = [expressionItemData]
+        let expressionData: ExpressionData = ExpressionData(lastFocusedChildrenId: 1, children: children, id: 2)
+        return expressionData
+    }
+    
+    static func oneExpressionData()->ExpressionData {
+        let expressionItemData:SingularTextData = SingularTextData(id: 1, text: "123")
+        let children:[ExpressionItemData] = [expressionItemData]
+        let expressionData: ExpressionData = ExpressionData(lastFocusedChildrenId: 1, children: children, id: 2)
+        return expressionData
     }
 }

@@ -38,7 +38,6 @@ struct HistoryList: View {
         rerunItemCallback(id)
         dismiss()
     }
-        
 }
 
 #Preview {

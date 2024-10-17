@@ -20,7 +20,7 @@ struct FragmentCalculateView: View {
                 .background(Color.blue)
                 
                 HStack{
-                    KeyboardPanel(mainListener:fragmentCalculateController, formatListener:fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
+                    KeyboardPanel(varListener:fragmentCalculateController, mainListener:fragmentCalculateController, formatListener:fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
                 }
                 .frame(height:geometry.size.height * 0.8)
                 .background(Color.yellow)

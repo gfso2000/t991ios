@@ -15,7 +15,7 @@ struct VarList: View {
     var body: some View {
         ScrollView {
             ForEach(varBeanList) { item in
-                VarItem(varBean: item, selectItem: selectItemCallback, resetItem: resetItemCallback)
+                VarItem(varBean: item, selectItem: selectItem, resetItem: resetItemCallback)
                     .frame(minHeight: 50)
             }
         }
@@ -31,8 +31,8 @@ struct VarList: View {
         self.varBeanList = VarUtil.loadVar()
     }
     
-    func rerunItem(_ id:UUID) -> Void{
-        selectItemCallback("A")
+    func selectItem(_ varName:String) -> Void{
+        selectItemCallback(varName)
         dismiss()
     }
 }

@@ -17,11 +17,13 @@ struct KeyboardPanel: View {
     let historyListener: HistoryListener?
     let formatListener: FormatListener?
     let mainListener: MainListener?
+    let varListener: VarListener?
     
     let btnSpacing:CGFloat = 2
     let rowWidthPct = 1.0
 
-    init(mainListener: MainListener?, formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+    init(varListener: VarListener?, mainListener: MainListener?, formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+        self.varListener = varListener
         self.mainListener = mainListener
         self.formatListener = formatListener
         self.directionListener = directionListener
@@ -44,12 +46,13 @@ struct KeyboardPanel: View {
     
     @State var showingVar:Bool = false
     func selectItemCallback(_ varName:String) -> Void{
-        
+        varListener?.addVar(varName)
     }
     
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing:0){
+                //row 1
                 HStack(spacing:btnSpacing){
                     KeyboardButtonImageText(image: Image("custom_button_onoff"), secondText: "ON/OFF", fontSize:12,  imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
                         //
@@ -83,6 +86,7 @@ struct KeyboardPanel: View {
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
+                //row 2
                 HStack(spacing:btnSpacing){
                     KeyboardButtonImageText(image: Image("custom_button_set"), secondText: "SET", imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255), action:{
                         //
@@ -105,12 +109,20 @@ struct KeyboardPanel: View {
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
+                //row 3
                 HStack(spacing:btnSpacing){
                     KeyboardButtonImageText(image: Image("custom_button_shift"), secondText: "SHIFT", fontSize:16, bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
                         //
                     })
                     KeyboardButtonImageText(image: Image("custom_button_var"), secondText: "VAR", imageScale:1.2, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        showingVar = true
+                        // Checking if the optionalBool has a value and it's true
+                        if let unwrappedBool = historyListener?.showHistory(), unwrappedBool {
+                            // The optionalBool has a value and it's true
+                            showingVar = true
+                        } else {
+                            // The optionalBool is either nil or false
+                            showingVar = false
+                        }
                     }).sheet(isPresented: $showingVar) {
                         VarList(selectItemCallback:selectItemCallback)
                     }
@@ -129,6 +141,7 @@ struct KeyboardPanel: View {
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
+                //row 4
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextImage(text: "𝑿", image:Image("custom_button_degree"), action:{
                         //
@@ -151,6 +164,7 @@ struct KeyboardPanel: View {
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
+                //row 5
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextImage(text: "(一)", image:Image("custom_button_e"), action:{
                         //
@@ -173,6 +187,7 @@ struct KeyboardPanel: View {
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
+                //row 6
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "7", secondText: "π", action:{
                         mathListener?.addSingularText("7")
@@ -192,6 +207,7 @@ struct KeyboardPanel: View {
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
+                //row 7
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "4", secondText: "A", action:{
                         mathListener?.addSingularText("4")
@@ -211,6 +227,7 @@ struct KeyboardPanel: View {
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
+                //row 8
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "1", secondText: "D", action:{
                         mathListener?.addSingularText("1")
@@ -230,6 +247,7 @@ struct KeyboardPanel: View {
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
+                //row 9
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "0", secondText: "x", action:{
                         mathListener?.addSingularText("0")
@@ -278,5 +296,5 @@ struct KeyboardPanel: View {
     let fragmentCalculateController: FragmentCalulateController = FragmentCalulateController()
     fragmentCalculateController.setExpressionContext(expressionContext)
     
-    return KeyboardPanel(mainListener:fragmentCalculateController, formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
+    return KeyboardPanel(varListener: fragmentCalculateController, mainListener:fragmentCalculateController, formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
 }

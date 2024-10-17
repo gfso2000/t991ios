@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct VarItem: View {
+    @EnvironmentObject var activeFragment:ActiveFragment
     var varBean: VarBean
     @StateObject var resultModel:ExpressionModel
     let fontSize:CGFloat = 30
@@ -47,8 +48,17 @@ struct VarItem: View {
                     }
                     .buttonStyle(.bordered)
                     
+                    Button {
+                        resetItem(varBean.varName)
+                    } label: {
+                        Image("custom_button_ans")
+                            .resizable()
+                            .frame(width:imageSize,height:imageSize)
+                    }
+                    .buttonStyle(.bordered)
+                    
                     Button(role: .destructive) {
-                        print("Image tapped!")
+                        activeFragment.currentFragmentName = "Main"
                     } label: {
                         Image(systemName: "pencil").resizable()
                             .frame(width:imageSize,height:imageSize)
@@ -78,5 +88,5 @@ struct VarItem: View {
         print(varName)
     }, resetItem: {varName in
         print(varName)
-    })
+    }).environmentObject(ActiveFragment())
 }

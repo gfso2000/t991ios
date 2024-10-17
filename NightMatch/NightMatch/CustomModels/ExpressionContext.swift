@@ -42,7 +42,6 @@ class ExpressionContext{
     
     func getMathExpression() -> ExpressionData{
         let expressionData = rootExpressionModel!.getData()
-        addToHistory(expressionData)
         return expressionData
     }
     

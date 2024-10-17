@@ -30,9 +30,9 @@ struct FragmentCalculateTopView: View {
         //stateful, so that resultView can update
         self._resultModel = StateObject(wrappedValue: resultModel)
 
-        //pass context,resultModel to controller, let controller operate them, and they in turn update view
-        self.fragmentCalculateController.setExpressionContext(expressionContext)
-        self.fragmentCalculateController.setResultModel(self.resultModel)
+//        //pass context,resultModel to controller, let controller operate them, and they in turn update view
+//        self.fragmentCalculateController.setExpressionContext(expressionContext)
+//        self.fragmentCalculateController.setResultModel(self.resultModel)
     }
     
     var body: some View {
@@ -78,6 +78,10 @@ struct FragmentCalculateTopView: View {
             .onAppear(){
                 //environmentObject can't be visited in init(), so visit here
                 fragmentCalculateController.setActiveFragmentObject(activeFragment)
+                
+                //pass context,resultModel to controller, let controller operate them, and they in turn update view
+                self.fragmentCalculateController.setExpressionContext(expressionContext)
+                self.fragmentCalculateController.setResultModel(self.resultModel)
             }
         }
     }

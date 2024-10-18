@@ -57,14 +57,6 @@ struct VarItem: View {
                     }
                     .buttonStyle(.bordered)
                     
-                    Button(role: .destructive) {
-                        activeFragment.currentFragmentName = "Main"
-                    } label: {
-                        Image(systemName: "pencil").resizable()
-                            .frame(width:imageSize,height:imageSize)
-                    }
-                    .buttonStyle(.bordered)
-                    
                     Button {
                         selectItem(varBean.varName)
                     } label: {

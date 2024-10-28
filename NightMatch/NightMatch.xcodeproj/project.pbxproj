@@ -14,6 +14,7 @@
 		DA076E272C22B0E400F7A2C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA076E262C22B0E400F7A2C1 /* Preview Assets.xcassets */; };
 		DA076E3B2C22B0E500F7A2C1 /* NightMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076E3A2C22B0E500F7A2C1 /* NightMatchUITests.swift */; };
 		DA076E3D2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076E3C2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift */; };
+		DA2072242CCF829000E02D44 /* LaTeXSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DA2072232CCF829000E02D44 /* LaTeXSwiftUI */; };
 		DA2A5B542C8EDE2600CE877A /* KeyboardButtonImageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A5B532C8EDE2600CE877A /* KeyboardButtonImageText.swift */; };
 		DA2A5B562C8EEFC700CE877A /* KeyboardButtonTextImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A5B552C8EEFC700CE877A /* KeyboardButtonTextImage.swift */; };
 		DA3866B22CA0F71B00CFAD4F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DA3866B12CA0F71B00CFAD4F /* Localizable.xcstrings */; };
@@ -161,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2072242CCF829000E02D44 /* LaTeXSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +487,9 @@
 				"zh-Hans",
 			);
 			mainGroup = DA076E132C22B0DF00F7A2C1;
+			packageReferences = (
+				DA2072222CCF829000E02D44 /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */,
+			);
 			productRefGroup = DA076E1D2C22B0DF00F7A2C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -922,6 +927,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA2072222CCF829000E02D44 /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/colinc86/LaTeXSwiftUI";
+			requirement = {
+				kind = exactVersion;
+				version = 1.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA2072232CCF829000E02D44 /* LaTeXSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA2072222CCF829000E02D44 /* XCRemoteSwiftPackageReference "LaTeXSwiftUI" */;
+			productName = LaTeXSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA076E142C22B0DF00F7A2C1 /* Project object */;
 }

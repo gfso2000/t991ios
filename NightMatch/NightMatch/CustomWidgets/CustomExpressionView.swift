@@ -25,8 +25,6 @@ struct CustomExpressionView: View {
                 .accessibilityIdentifier(accessibilityIdentifier)
                 .frame(width:0,height:0)
         }
-//        .accessibilityIdentifier(accessibilityIdentifier)
-//        .accessibilityValue(expressionModel.getData().getDataAsQalculate())
     }
 }
 

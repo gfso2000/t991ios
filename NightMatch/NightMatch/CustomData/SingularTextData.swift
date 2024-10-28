@@ -36,4 +36,11 @@ class SingularTextData:ExpressionItemData{
     override func getDataAsQalculate() -> String {
         return text
     }
+    
+    override func getDataAsLatex() -> String {
+        if(text == "%"){
+            return "\\%";
+        }
+        return text
+    }
 }

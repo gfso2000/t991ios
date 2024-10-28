@@ -33,6 +33,8 @@ final class NightMatchUITests: XCTestCase {
         
         XCTAssertTrue(app.staticTexts["TopView_resultView"].exists)
         XCTAssertEqual(app.staticTexts["TopView_resultView"].label, "90")
+        
+        printAllElements(on:app)
     }
 
     func testLaunchPerformance() throws {
@@ -42,5 +44,13 @@ final class NightMatchUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+    
+    /// This private method prints the debug description of all elements in the provided XCUIApplication.
+    /// - Parameters:
+    ///    - app: The XCUIApplication instance to inspect for elements.
+    private func printAllElements(on app: XCUIApplication) {
+        let element = app.otherElements.element
+        debugPrint("ELEMENT - \(element.debugDescription)")
     }
 }

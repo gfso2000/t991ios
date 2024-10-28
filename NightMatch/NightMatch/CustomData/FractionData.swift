@@ -70,4 +70,8 @@ class FractionData : ExpressionItemData{
     override func getDataAsQalculate() -> String {
         return "(("+numeratorPartData.getDataAsQalculate()+")/("+denominatorPartData.getDataAsQalculate()+"))";
     }
+    
+    override func getDataAsLatex() -> String {
+        return "\\frac{"+numeratorPartData.getDataAsLatex()+"}{"+denominatorPartData.getDataAsLatex()+"}";
+    }
 }

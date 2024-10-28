@@ -55,7 +55,7 @@ class ExpressionContext{
             let jsonData = try JSONSerialization.data(withJSONObject: expressionData.getDataAsJson(), options: .prettyPrinted)
             if let jsonString = String(data: jsonData, encoding: .utf8){
                 print(jsonString)
-                historyBeanList.insert(CalculateHistoryBean(id:UUID(), expressionDataJsonStr:jsonString, expressionDataLatexStr: expressionData.getDataAsQalculate(), fractionResult: "4", decimalResult: "4.0000"), at:0)
+                historyBeanList.insert(CalculateHistoryBean(id:UUID(), expressionDataJsonStr:jsonString, expressionDataLatexStr: expressionData.getDataAsLatex(), fractionResult: "4", decimalResult: "4.0000"), at:0)
                 HistoryUtil.saveHistory(historyBeanList)
             }
         } catch {

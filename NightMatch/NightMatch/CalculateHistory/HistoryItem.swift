@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LaTeXSwiftUI
 
 struct HistoryItem: View {
     var historyBean:CalculateHistoryBean
@@ -18,17 +19,18 @@ struct HistoryItem: View {
                 GeometryReader { geometry2 in
                     VStack{
                         HStack{
-                            Text(historyBean.expressionDataLatexStr)
+                            LaTeX("$"+historyBean.expressionDataLatexStr+"$")
+                            //Text(historyBean.expressionDataLatexStr)
                                 .background(Color.green)
                         }
                         .frame(height: geometry2.size.height / 2)
                         
                         GeometryReader { geometry3 in
                             HStack(spacing:0){
-                                Text(historyBean.decimalResult)
+                                LaTeX(historyBean.decimalResult)
                                     .frame(width: geometry3.size.width / 2)
                                     .background(Color.green)
-                                Text(historyBean.fractionResult)
+                                LaTeX(historyBean.fractionResult)
                                     .frame(width: geometry3.size.width / 2)
                                     .background(Color.gray)
                             }
@@ -57,7 +59,7 @@ struct HistoryItem: View {
 }
 
 #Preview {
-    let historyBean:CalculateHistoryBean = CalculateHistoryBean(id:UUID(), expressionDataJsonStr:"333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333+1", expressionDataLatexStr: "33333333333333\r\n333333333333333\r\n33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333331", fractionResult: "4", decimalResult: "4.0000")
+    let historyBean:CalculateHistoryBean = CalculateHistoryBean(id:UUID(), expressionDataJsonStr:"333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333+1", expressionDataLatexStr: "33333", fractionResult: "$"+"3"+"$", decimalResult: "$4.0000$")
     return HistoryItem(historyBean:historyBean, deleteItem: {id in
         print(id)
     }, rerunItem: {id in

@@ -52,7 +52,13 @@ class ExpressionData {
         }
         return str
     }
-    
+    func getDataAsLatex() -> String{
+        var str:String = ""
+        for expressionItemData in children {
+            str.append(expressionItemData.getDataAsLatex())
+        }
+        return str
+    }
     static func zeroExpressionData()->ExpressionData {
         let expressionItemData:SingularTextData = SingularTextData(id: 1, text: "000000000000000000000000000000")
         let children:[ExpressionItemData] = [expressionItemData]

@@ -22,4 +22,8 @@ class ExpressionItemData{
     func getDataAsJson() -> [String: Any] {
         return [:]
     }
+    
+    func getDataAsLatex() -> String {
+        return ""
+    }
 }

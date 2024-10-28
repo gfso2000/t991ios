@@ -72,7 +72,9 @@ class ExpressionModel:ObservableObject,ArrowListener{
         }
         self.lastFocusedChildrenId = self.children[0].id
         endCharTextModel.text = "$"
-        endCharTextModel.showCaret = true
+        if(expressionContext != nil){
+            endCharTextModel.showCaret = true
+        }
     }
     
     func addFraction() {

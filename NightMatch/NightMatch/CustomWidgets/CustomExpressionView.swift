@@ -23,7 +23,7 @@ struct CustomExpressionView: View {
             }
             Text(expressionModel.getData().getDataAsQalculate())
                 .accessibilityIdentifier(accessibilityIdentifier)
-                .frame(width:1,height:1)
+                .frame(width:0,height:0)
         }
 //        .accessibilityIdentifier(accessibilityIdentifier)
 //        .accessibilityValue(expressionModel.getData().getDataAsQalculate())

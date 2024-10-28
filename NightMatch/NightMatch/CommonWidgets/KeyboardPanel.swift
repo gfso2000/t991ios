@@ -99,7 +99,7 @@ struct KeyboardPanel: View {
                     })
                     KeyboardButtonTextText(text: "OK", secondText: " ", action:{
                         okExeListener?.onOK()
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.ok)
                     KeyboardButtonImageText(image: Image("custom_button_arrow_right"), secondText: " ", imageScale:0.5, action:{
                         directionListener?.onRightArrow()
                     })
@@ -191,19 +191,19 @@ struct KeyboardPanel: View {
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "7", secondText: "π", action:{
                         mathListener?.addSingularText("7")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_7)
                     KeyboardButtonTextText(text: "8", secondText: "∠", action:{
                         mathListener?.addSingularText("8")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_8)
                     KeyboardButtonTextText(text: "9", secondText: "i", action:{
                         mathListener?.addSingularText("9")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_9)
                     KeyboardButtonImageText(image: Image("custom_button_delete"), secondText: " ", action:{
                         deleteListener?.onDelete()
                     })
                     KeyboardButtonTextText(text: "AC", secondText: " ", action:{
                         acListener?.onAC()
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.ac)
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
@@ -211,13 +211,13 @@ struct KeyboardPanel: View {
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "4", secondText: "A", action:{
                         mathListener?.addSingularText("4")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_4)
                     KeyboardButtonTextText(text: "5", secondText: "B", action:{
                         mathListener?.addSingularText("5")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_5)
                     KeyboardButtonTextText(text: "6", secondText: "C", action:{
                         mathListener?.addSingularText("6")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_6)
                     KeyboardButtonTextImage(text: "×", image:Image("custom_button_int"), action:{
                         //
                     })
@@ -231,19 +231,19 @@ struct KeyboardPanel: View {
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "1", secondText: "D", action:{
                         mathListener?.addSingularText("1")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_1)
                     KeyboardButtonTextText(text: "2", secondText: "E", action:{
                         mathListener?.addSingularText("2")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_2)
                     KeyboardButtonTextText(text: "3", secondText: "F", action:{
                         mathListener?.addSingularText("3")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_3)
                     KeyboardButtonTextText(text: "+", secondText: "nPr", action:{
                         //
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.add)
                     KeyboardButtonTextText(text: "-", secondText: "nCr", action:{
                         //
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.subtract)
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
@@ -251,14 +251,14 @@ struct KeyboardPanel: View {
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "0", secondText: "x", action:{
                         mathListener?.addSingularText("0")
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_0)
                     KeyboardButtonTextText(text: ".", secondText: "y", action:{
                         //
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.num_dot)
                     KeyboardButtonImageText(image: Image("custom_button_x10n"), secondText: "z", action:{
                         //
                     })
-                    KeyboardButtonTextText(text: ".", secondText: "Ans", action:{
+                    KeyboardButtonImageText(image: Image("custom_button_fmt"), secondText: "Ans", action:{
                         if(formatListener == nil){
                             return
                         }
@@ -277,7 +277,7 @@ struct KeyboardPanel: View {
                     }
                     KeyboardButtonTextText(text: "EXE", secondText: " ", action:{
                         //
-                    })
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.exe)
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
             }

@@ -58,5 +58,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "NightMatchUITests.testExample():NightMatchUITests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "app.otherElements[&quot;TopView_resultView&quot;].accessibilityValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

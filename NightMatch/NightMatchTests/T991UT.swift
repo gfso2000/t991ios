@@ -1,14 +1,15 @@
 //
-//  NightMatchTests.swift
+//  T991UT.swift
 //  NightMatchTests
 //
-//  Created by Yu, Jack on 2024/6/19.
+//  Created by Yu, Jack on 2024/10/25.
 //
 
 import XCTest
-@testable import NightMatch
 
-final class NightMatchTests: XCTestCase {
+@testable import T991
+
+final class T991UT: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,8 +21,11 @@ final class NightMatchTests: XCTestCase {
 
     func testExample() throws {
         var a:Int = 100
-        var b:Int = 60
+        var b:Int = 10
         XCTAssertNotEqual(a, b)
+        
+        var varBean = VarBean(varName: "A", expressionData: ExpressionData.oneExpressionData())
+        XCTAssertEqual("A", varBean.varName)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.

@@ -20,9 +20,9 @@ struct CustomFractionView: View {
                     Rectangle().frame(width: 1).foregroundColor(.clear)
                 }
                 VStack(spacing:0){
-                    CustomExpressionView(expressionModel:model.numeratorPartModel)
+                    CustomExpressionView(accessibilityIdentifier:"NA", expressionModel:model.numeratorPartModel)
                     Rectangle().frame(height: 1).foregroundColor(.black)
-                    CustomExpressionView(expressionModel:model.denominatorPartModel)
+                    CustomExpressionView(accessibilityIdentifier:"NA", expressionModel:model.denominatorPartModel)
                 }
             }
             .fixedSize(horizontal: false, vertical: true)

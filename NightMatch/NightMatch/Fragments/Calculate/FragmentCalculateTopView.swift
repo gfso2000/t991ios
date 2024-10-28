@@ -41,7 +41,7 @@ struct FragmentCalculateTopView: View {
                 HStack{
                     ScrollView(.vertical) {
                         ScrollView(.horizontal) {
-                            CustomExpressionView(expressionModel: self.expressionModel)
+                            CustomExpressionView(accessibilityIdentifier: TopViewIdentifiers.expressionView, expressionModel: self.expressionModel)
                                 //.frame(maxWidth: .infinity, maxHeight:.infinity, alignment: .leading)
                                 .background(Color.red)
                         }
@@ -60,8 +60,7 @@ struct FragmentCalculateTopView: View {
                                     Spacer()
                                     HStack(spacing: 0) {
                                         Spacer()
-                                        //todo, change to resultModel
-                                        CustomExpressionView(expressionModel: self.resultModel)
+                                        CustomExpressionView(accessibilityIdentifier: TopViewIdentifiers.resultView, expressionModel: self.resultModel)
                                             .background(Color.blue)
                                     }
                                 }

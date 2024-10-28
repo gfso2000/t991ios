@@ -32,7 +32,7 @@ struct VarItem: View {
                 HStack(spacing:0){
                     Text(varBean.varName+" = ").font(.system(size: fontSize))
                     ScrollView(.horizontal) {
-                        CustomExpressionView(expressionModel: self.resultModel)
+                        CustomExpressionView(accessibilityIdentifier: "Var_"+varBean.varName, expressionModel: self.resultModel)
                             .background(Color.blue)
                     }
                     .background(.green)

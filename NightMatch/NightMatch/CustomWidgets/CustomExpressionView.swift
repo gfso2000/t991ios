@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CustomExpressionView: View {
+    let accessibilityIdentifier:String
     @ObservedObject var expressionModel:ExpressionModel
+    
     var body: some View {
         HStack(spacing:0){
             ForEach(expressionModel.children.indices, id: \.self) { index in
@@ -19,11 +21,16 @@ struct CustomExpressionView: View {
                     CustomFractionView(model:fractionModel)
                 }
             }
+            Text(expressionModel.getData().getDataAsQalculate())
+                .accessibilityIdentifier(accessibilityIdentifier)
+                .frame(width:1,height:1)
         }
+//        .accessibilityIdentifier(accessibilityIdentifier)
+//        .accessibilityValue(expressionModel.getData().getDataAsQalculate())
     }
 }
 
 #Preview {
     let expressionContext = ExpressionContext()
-    return CustomExpressionView(expressionModel: ExpressionModel(expressionContext:expressionContext, id:1,parentModel: nil,fontSize: 20))
+    return CustomExpressionView(accessibilityIdentifier:"a", expressionModel: ExpressionModel(expressionContext:expressionContext, id:1,parentModel: nil,fontSize: 20))
 }

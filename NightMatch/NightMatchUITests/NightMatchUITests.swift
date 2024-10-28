@@ -26,8 +26,13 @@ final class NightMatchUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        app/*@START_MENU_TOKEN@*/.buttons["num_9"]/*[[".buttons[\"9\"]",".buttons[\"num_9\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["num_0"]/*[[".buttons[\"0\"]",".buttons[\"num_0\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["ok"]/*[[".buttons[\"OK\"]",".buttons[\"ok\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        XCTAssertTrue(app.staticTexts["TopView_resultView"].exists)
+        XCTAssertEqual(app.staticTexts["TopView_resultView"].label, "90")
     }
 
     func testLaunchPerformance() throws {

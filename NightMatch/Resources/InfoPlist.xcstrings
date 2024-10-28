@@ -7,13 +7,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "t991En"
+            "value" : "T991 Calculator"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "t991zh"
+            "state" : "needs_review",
+            "value" : "T991科学计算器"
           }
         }
       }

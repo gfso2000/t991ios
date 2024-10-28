@@ -12,7 +12,6 @@
 		DA076E202C22B0DF00F7A2C1 /* NightMatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076E1F2C22B0DF00F7A2C1 /* NightMatchApp.swift */; };
 		DA076E242C22B0E400F7A2C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA076E232C22B0E400F7A2C1 /* Assets.xcassets */; };
 		DA076E272C22B0E400F7A2C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA076E262C22B0E400F7A2C1 /* Preview Assets.xcassets */; };
-		DA076E312C22B0E500F7A2C1 /* NightMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076E302C22B0E500F7A2C1 /* NightMatchTests.swift */; };
 		DA076E3B2C22B0E500F7A2C1 /* NightMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076E3A2C22B0E500F7A2C1 /* NightMatchUITests.swift */; };
 		DA076E3D2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA076E3C2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift */; };
 		DA2A5B542C8EDE2600CE877A /* KeyboardButtonImageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A5B532C8EDE2600CE877A /* KeyboardButtonImageText.swift */; };
@@ -39,6 +38,9 @@
 		DA6061782CB7AB4D0091779E /* FormatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061772CB7AB4D0091779E /* FormatList.swift */; };
 		DA60617A2CB7AD220091779E /* FormatBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061792CB7AD220091779E /* FormatBean.swift */; };
 		DA60617C2CB7AD850091779E /* FormatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60617B2CB7AD850091779E /* FormatItem.swift */; };
+		DA9C3F492CCB554700170FF7 /* T991UT.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F482CCB554700170FF7 /* T991UT.swift */; };
+		DA9C3F582CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */; };
+		DA9C3F5A2CCB8BC100170FF7 /* TopViewIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */; };
 		DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5A2C65E1FD008E8048 /* Caretable.swift */; };
 		DABFAF5D2C65E23F008E8048 /* SingularTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */; };
 		DABFAF5F2C65E420008E8048 /* FractionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFAF5E2C65E420008E8048 /* FractionModel.swift */; };
@@ -94,7 +96,6 @@
 		DA076E232C22B0E400F7A2C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA076E262C22B0E400F7A2C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA076E2C2C22B0E500F7A2C1 /* NightMatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightMatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA076E302C22B0E500F7A2C1 /* NightMatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightMatchTests.swift; sourceTree = "<group>"; };
 		DA076E362C22B0E500F7A2C1 /* NightMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA076E3A2C22B0E500F7A2C1 /* NightMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightMatchUITests.swift; sourceTree = "<group>"; };
 		DA076E3C2C22B0E500F7A2C1 /* NightMatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightMatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -122,6 +123,9 @@
 		DA6061772CB7AB4D0091779E /* FormatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatList.swift; sourceTree = "<group>"; };
 		DA6061792CB7AD220091779E /* FormatBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatBean.swift; sourceTree = "<group>"; };
 		DA60617B2CB7AD850091779E /* FormatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatItem.swift; sourceTree = "<group>"; };
+		DA9C3F482CCB554700170FF7 /* T991UT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T991UT.swift; sourceTree = "<group>"; };
+		DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonIdentifiers.swift; sourceTree = "<group>"; };
+		DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewIdentifiers.swift; sourceTree = "<group>"; };
 		DABFAF5A2C65E1FD008E8048 /* Caretable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caretable.swift; sourceTree = "<group>"; };
 		DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularTextModel.swift; sourceTree = "<group>"; };
 		DABFAF5E2C65E420008E8048 /* FractionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionModel.swift; sourceTree = "<group>"; };
@@ -222,9 +226,9 @@
 				DA03B8572C65A418003626B8 /* CustomWidgets */,
 				DAC991212C6DD9B300744B5D /* Utils */,
 				DA076E1F2C22B0DF00F7A2C1 /* NightMatchApp.swift */,
+				DA5918702CB8EC3F00A98368 /* TestView.swift */,
 				DA076E232C22B0E400F7A2C1 /* Assets.xcassets */,
 				DA076E252C22B0E400F7A2C1 /* Preview Content */,
-				DA5918702CB8EC3F00A98368 /* TestView.swift */,
 			);
 			path = NightMatch;
 			sourceTree = "<group>";
@@ -240,7 +244,7 @@
 		DA076E2F2C22B0E500F7A2C1 /* NightMatchTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA076E302C22B0E500F7A2C1 /* NightMatchTests.swift */,
+				DA9C3F482CCB554700170FF7 /* T991UT.swift */,
 			);
 			path = NightMatchTests;
 			sourceTree = "<group>";
@@ -335,6 +339,7 @@
 		DAC991182C6C75A900744B5D /* CommonWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */,
 				DAC991242C6F27EC00744B5D /* LeftTopStrokeShape.swift */,
 				DAC991262C6F2E7000744B5D /* GrowingButtonStyle2.swift */,
 				DAC991282C6F2ECD00744B5D /* KeyboardButton2.swift */,
@@ -344,6 +349,7 @@
 				DA2A5B532C8EDE2600CE877A /* KeyboardButtonImageText.swift */,
 				DA5D92A82C8FDFB2004F584E /* KeyboardButtonImageImage.swift */,
 				DAC991162C6C572C00744B5D /* KeyboardPanel.swift */,
+				DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */,
 			);
 			path = CommonWidgets;
 			sourceTree = "<group>";
@@ -453,7 +459,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					DA076E1B2C22B0DF00F7A2C1 = {
@@ -556,6 +562,7 @@
 				DA60617C2CB7AD850091779E /* FormatItem.swift in Sources */,
 				DAC991202C6D8CD600744B5D /* KeyboardButtonTextText.swift in Sources */,
 				DA3866B92CA6845200CFAD4F /* HistoryListener.swift in Sources */,
+				DA9C3F582CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift in Sources */,
 				DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */,
 				DA076E202C22B0DF00F7A2C1 /* NightMatchApp.swift in Sources */,
 				DA03B8592C65A438003626B8 /* CustomSingularTextView.swift in Sources */,
@@ -575,6 +582,7 @@
 				DAD729B92CBF861100ACE021 /* VarList.swift in Sources */,
 				DAD729BF2CBF9D8700ACE021 /* VarItem.swift in Sources */,
 				DAC991272C6F2E7000744B5D /* GrowingButtonStyle2.swift in Sources */,
+				DA9C3F5A2CCB8BC100170FF7 /* TopViewIdentifiers.swift in Sources */,
 				DABFAF5F2C65E420008E8048 /* FractionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,7 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA076E312C22B0E500F7A2C1 /* NightMatchTests.swift in Sources */,
+				DA9C3F492CCB554700170FF7 /* T991UT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,8 +812,8 @@
 		DA076E442C22B0E500F7A2C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7U784SRHW3;
@@ -817,14 +825,13 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightMatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NightMatch";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T991.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/T991";
 			};
 			name = Debug;
 		};
 		DA076E452C22B0E500F7A2C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -837,14 +844,13 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightMatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NightMatch";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/T991.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/T991";
 			};
 			name = Release;
 		};
 		DA076E472C22B0E500F7A2C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7U784SRHW3;
@@ -862,7 +868,6 @@
 		DA076E482C22B0E500F7A2C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7U784SRHW3;

@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct KeyboardButtonTextText: View {
-    var text:String
-    var secondText:String
-    var action:() -> Void
+    let text:String
+    let secondText:String
+    let action:() -> Void
     let topHeightPct = 0.35
     let bottomHeightPct = 0.55
     let widthPct = 0.8
     let fontUpSize = 20
     let fontSize = 24
+    let accessibilityIdentifier:String
     
     var body: some View {
         GeometryReader { geometry in
@@ -32,6 +33,7 @@ struct KeyboardButtonTextText: View {
                         .font(.system(size: CGFloat(fontSize)))
                 }
                 .buttonStyle(GrowingButtonStyle())
+                .accessibilityIdentifier(accessibilityIdentifier)
             }
         }
     }
@@ -40,5 +42,5 @@ struct KeyboardButtonTextText: View {
 #Preview {
     KeyboardButtonTextText(text:"Del",secondText:"FUN",action:{
         print("a")
-    })
+    },accessibilityIdentifier:"a")
 }

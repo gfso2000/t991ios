@@ -17,7 +17,7 @@ struct FormatItem: View {
     }
     var body: some View {
         GroupBox(LocalizedStringKey(formatBean.name)) {
-            CustomExpressionView(expressionModel: self.resultModel)
+            CustomExpressionView(accessibilityIdentifier:"Format_"+formatBean.name, expressionModel: self.resultModel)
                 .background(Color.blue)
         }
     }

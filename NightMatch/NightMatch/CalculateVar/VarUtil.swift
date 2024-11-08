@@ -31,17 +31,17 @@ class VarUtil {
         if varBeanList.isEmpty {
             let expressionData: ExpressionData = ExpressionData.zeroExpressionData()
 
-            let varBeanA = VarBean(varName: "A", expressionData: expressionData)
-            let varBeanB = VarBean(varName: "B", expressionData: expressionData)
-            let varBeanC = VarBean(varName: "C", expressionData: expressionData)
+            let varBeanA = VarBean(varName: String(describing: SingularTextEnum.VAR_A), expressionData: expressionData)
+            let varBeanB = VarBean(varName: String(describing: SingularTextEnum.VAR_B), expressionData: expressionData)
+            let varBeanC = VarBean(varName: String(describing: SingularTextEnum.VAR_C), expressionData: expressionData)
             
-            let varBeanD = VarBean(varName: "D", expressionData: expressionData)
-            let varBeanE = VarBean(varName: "E", expressionData: expressionData)
-            let varBeanF = VarBean(varName: "F", expressionData: expressionData)
+            let varBeanD = VarBean(varName: String(describing: SingularTextEnum.VAR_D), expressionData: expressionData)
+            let varBeanE = VarBean(varName: String(describing: SingularTextEnum.VAR_E), expressionData: expressionData)
+            let varBeanF = VarBean(varName: String(describing: SingularTextEnum.VAR_F), expressionData: expressionData)
 
-            let varBeanX = VarBean(varName: "x", expressionData: expressionData)
-            let varBeanY = VarBean(varName: "y", expressionData: expressionData)
-            let varBeanZ = VarBean(varName: "z", expressionData: expressionData)
+            let varBeanX = VarBean(varName: String(describing: SingularTextEnum.VAR_X), expressionData: expressionData)
+            let varBeanY = VarBean(varName: String(describing: SingularTextEnum.VAR_Y), expressionData: expressionData)
+            let varBeanZ = VarBean(varName: String(describing: SingularTextEnum.VAR_Z), expressionData: expressionData)
             
             varBeanList.append(varBeanA)
             varBeanList.append(varBeanB)

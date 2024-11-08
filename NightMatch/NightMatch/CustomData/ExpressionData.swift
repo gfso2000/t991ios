@@ -60,14 +60,14 @@ class ExpressionData {
         return str
     }
     static func zeroExpressionData()->ExpressionData {
-        let expressionItemData:SingularTextData = SingularTextData(id: 1, text: "000000000000000000000000000000")
+        let expressionItemData:SingularTextData = SingularTextData(id: 1, text: .ZERO)
         let children:[ExpressionItemData] = [expressionItemData]
         let expressionData: ExpressionData = ExpressionData(lastFocusedChildrenId: 1, children: children, id: 2)
         return expressionData
     }
     
     static func oneExpressionData()->ExpressionData {
-        let expressionItemData:SingularTextData = SingularTextData(id: 1, text: "123")
+        let expressionItemData:SingularTextData = SingularTextData(id: 1, text: .ONE)
         let children:[ExpressionItemData] = [expressionItemData]
         let expressionData: ExpressionData = ExpressionData(lastFocusedChildrenId: 1, children: children, id: 2)
         return expressionData

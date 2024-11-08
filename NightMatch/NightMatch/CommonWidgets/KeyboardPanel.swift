@@ -45,7 +45,7 @@ struct KeyboardPanel: View {
     }
     
     @State var showingVar:Bool = false
-    func selectItemCallback(_ varName:String) -> Void{
+    func selectItemCallback(_ varName:SingularTextEnum) -> Void{
         varListener?.addVar(varName)
     }
     
@@ -190,13 +190,13 @@ struct KeyboardPanel: View {
                 //row 6
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "7", secondText: "π", action:{
-                        mathListener?.addSingularText("7")
+                        mathListener?.addSingularText(.SEVEN)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_7)
                     KeyboardButtonTextText(text: "8", secondText: "∠", action:{
-                        mathListener?.addSingularText("8")
+                        mathListener?.addSingularText(.EIGHT)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_8)
                     KeyboardButtonTextText(text: "9", secondText: "i", action:{
-                        mathListener?.addSingularText("9")
+                        mathListener?.addSingularText(.NINE)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_9)
                     KeyboardButtonImageText(image: Image("custom_button_delete"), secondText: " ", action:{
                         deleteListener?.onDelete()
@@ -210,13 +210,13 @@ struct KeyboardPanel: View {
                 //row 7
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "4", secondText: "A", action:{
-                        mathListener?.addSingularText("4")
+                        mathListener?.addSingularText(.FOUR)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_4)
                     KeyboardButtonTextText(text: "5", secondText: "B", action:{
-                        mathListener?.addSingularText("5")
+                        mathListener?.addSingularText(.FIVE)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_5)
                     KeyboardButtonTextText(text: "6", secondText: "C", action:{
-                        mathListener?.addSingularText("6")
+                        mathListener?.addSingularText(.SIX)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_6)
                     KeyboardButtonTextImage(text: "×", image:Image("custom_button_int"), action:{
                         //
@@ -230,13 +230,13 @@ struct KeyboardPanel: View {
                 //row 8
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "1", secondText: "D", action:{
-                        mathListener?.addSingularText("1")
+                        mathListener?.addSingularText(.ONE)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_1)
                     KeyboardButtonTextText(text: "2", secondText: "E", action:{
-                        mathListener?.addSingularText("2")
+                        mathListener?.addSingularText(.TWO)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_2)
                     KeyboardButtonTextText(text: "3", secondText: "F", action:{
-                        mathListener?.addSingularText("3")
+                        mathListener?.addSingularText(.THREE)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_3)
                     KeyboardButtonTextText(text: "+", secondText: "nPr", action:{
                         //
@@ -250,7 +250,7 @@ struct KeyboardPanel: View {
                 //row 9
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "0", secondText: "x", action:{
-                        mathListener?.addSingularText("0")
+                        mathListener?.addSingularText(.ZERO)
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_0)
                     KeyboardButtonTextText(text: ".", secondText: "y", action:{
                         //

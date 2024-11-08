@@ -31,7 +31,7 @@ class FragmentCalulateController:VarListener, UndoListener, HistoryListener, Dir
         return true
     }
     
-    func addVar(_ varName: String) {
+    func addVar(_ varName: SingularTextEnum) {
         expressionContext!.getActiveExpressionModel().addSingularText(varName)
     }
     
@@ -59,7 +59,7 @@ class FragmentCalulateController:VarListener, UndoListener, HistoryListener, Dir
         expressionContext!.getActiveExpressionModel().addFraction()
     }
     
-    func addSingularText(_ text:String) {
+    func addSingularText(_ text:SingularTextEnum) {
         expressionContext!.getActiveExpressionModel().addSingularText(text)
     }
     

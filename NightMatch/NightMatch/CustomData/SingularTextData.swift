@@ -9,8 +9,8 @@ import Foundation
 
 class SingularTextData:ExpressionItemData{
     var id:Int
-    var text:String
-    init(id: Int, text: String) {
+    var text:SingularTextEnum
+    init(id: Int, text: SingularTextEnum) {
         self.id = id
         self.text = text
         super.init()
@@ -22,25 +22,25 @@ class SingularTextData:ExpressionItemData{
     
     required init(_ jsonObject:[String: Any]){
         self.id = jsonObject["id"] as! Int
-        self.text = jsonObject["text"] as! String
+        self.text = SingularTextEnum(rawValue: jsonObject["text"] as! String) ?? .ZERO
         super.init(jsonObject)
     }
     override func getDataAsJson() -> [String: Any] {
         var jsonObject: [String: Any] = [:]
         jsonObject["className"] = String(describing: Self.self)
         jsonObject["id"] = self.id
-        jsonObject["text"] = self.text
+        jsonObject["text"] = String(describing: self.text)
         return jsonObject
     }
     
     override func getDataAsQalculate() -> String {
-        return text
+        return text.rawValue
     }
     
     override func getDataAsLatex() -> String {
-        if(text == "%"){
+        if(text.rawValue == "%"){
             return "\\%";
         }
-        return text
+        return text.rawValue
     }
 }

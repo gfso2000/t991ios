@@ -10,11 +10,11 @@ import Foundation
 class SingularTextModel : Caretable,ObservableObject{
     @Published var showCaret: Bool = false
     var id:Int = 0
-    var text:String = ""
+    var text:SingularTextEnum
     var isEndChar:Bool = false
     var fontSize: CGFloat
     
-    init(id:Int, text: String, showCaret: Bool, isEndChar:Bool, fontSize:CGFloat) {
+    init(id:Int, text: SingularTextEnum, showCaret: Bool, isEndChar:Bool, fontSize:CGFloat) {
         self.id = id
         self.text = text
         self.showCaret = showCaret

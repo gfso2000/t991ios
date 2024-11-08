@@ -9,5 +9,5 @@ import Foundation
 
 protocol VarListener {
     func showVar()->Bool
-    func addVar(_ varName:String)->Void
+    func addVar(_ varName:SingularTextEnum)->Void
 }

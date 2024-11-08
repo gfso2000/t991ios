@@ -39,6 +39,7 @@
 		DA6061782CB7AB4D0091779E /* FormatList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061772CB7AB4D0091779E /* FormatList.swift */; };
 		DA60617A2CB7AD220091779E /* FormatBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061792CB7AD220091779E /* FormatBean.swift */; };
 		DA60617C2CB7AD850091779E /* FormatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60617B2CB7AD850091779E /* FormatItem.swift */; };
+		DA8CF68F2CDDE5E3000472E4 /* SingularTextEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF68E2CDDE5E3000472E4 /* SingularTextEnum.swift */; };
 		DA9C3F492CCB554700170FF7 /* T991UT.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F482CCB554700170FF7 /* T991UT.swift */; };
 		DA9C3F582CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */; };
 		DA9C3F5A2CCB8BC100170FF7 /* TopViewIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */; };
@@ -124,6 +125,7 @@
 		DA6061772CB7AB4D0091779E /* FormatList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatList.swift; sourceTree = "<group>"; };
 		DA6061792CB7AD220091779E /* FormatBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatBean.swift; sourceTree = "<group>"; };
 		DA60617B2CB7AD850091779E /* FormatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatItem.swift; sourceTree = "<group>"; };
+		DA8CF68E2CDDE5E3000472E4 /* SingularTextEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularTextEnum.swift; sourceTree = "<group>"; };
 		DA9C3F482CCB554700170FF7 /* T991UT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T991UT.swift; sourceTree = "<group>"; };
 		DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonIdentifiers.swift; sourceTree = "<group>"; };
 		DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewIdentifiers.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		DABFAF592C65D613008E8048 /* CustomModels */ = {
 			isa = PBXGroup;
 			children = (
+				DA8CF68E2CDDE5E3000472E4 /* SingularTextEnum.swift */,
 				DAC991122C69E43600744B5D /* FocusDirectionEnum.swift */,
 				DABFAF5A2C65E1FD008E8048 /* Caretable.swift */,
 				DAC991142C69E6C000744B5D /* ArrowListener.swift */,
@@ -542,6 +545,7 @@
 				DAEEB3932C899C1F00246752 /* FractionData.swift in Sources */,
 				DA03B85B2C65A9B5003626B8 /* CustomExpressionView.swift in Sources */,
 				DA5918712CB8EC3F00A98368 /* TestView.swift in Sources */,
+				DA8CF68F2CDDE5E3000472E4 /* SingularTextEnum.swift in Sources */,
 				DA5918782CB9167B00A98368 /* MainListener.swift in Sources */,
 				DABFAF5B2C65E1FD008E8048 /* Caretable.swift in Sources */,
 				DAEEB3952C899F6600246752 /* SingularTextData.swift in Sources */,

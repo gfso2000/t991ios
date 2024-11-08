@@ -22,7 +22,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
         self.parentModel = parentModel
         self.fontSize = fontSize
         
-        endCharTextModel = SingularTextModel(id:999, text: "$", showCaret: false, isEndChar:true, fontSize: fontSize)
+        endCharTextModel = SingularTextModel(id:999, text: .DOLLAR, showCaret: false, isEndChar:true, fontSize: fontSize)
         children.append(endCharTextModel)
         lastFocusedChildrenId = endCharTextModel.id
         self.id = id
@@ -31,13 +31,13 @@ class ExpressionModel:ObservableObject,ArrowListener{
     func insertChild(_ caretable:Caretable) -> Void {
         let index:Int = childIndexForId(lastFocusedChildrenId) ?? children.count-1
         children.insert(caretable, at:index)
-        endCharTextModel.text=""
+        endCharTextModel.text = .EMPTY
     }
     
     func deleteChild(_ index:Int) {
         self.children.remove(at:index)
         if (self.children.count == 1) {
-            endCharTextModel.text = "$"
+            endCharTextModel.text = .DOLLAR
         }
     }
     
@@ -71,7 +71,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
             deleteChild(i)
         }
         self.lastFocusedChildrenId = self.children[0].id
-        endCharTextModel.text = "$"
+        endCharTextModel.text = .DOLLAR
         if(expressionContext != nil){
             endCharTextModel.showCaret = true
         }
@@ -104,12 +104,12 @@ class ExpressionModel:ObservableObject,ArrowListener{
         return fractionModel;
     }
     
-    func addSingularText(_ text:String) -> Void {
+    func addSingularText(_ text:SingularTextEnum) -> Void {
         savePreviousState()
         _ = doAddSingularText(text)
     }
     
-    func doAddSingularText(_ text:String) -> SingularTextModel {
+    func doAddSingularText(_ text:SingularTextEnum) -> SingularTextModel {
         let newChild = SingularTextModel(id: CustomIdGenerator.generateId(), text: text, showCaret:false,isEndChar:false,fontSize: self.fontSize)
         insertChild(newChild)
         return newChild
@@ -369,7 +369,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
         }
 
         if (self.children.count == 1) {
-            endCharTextModel.text="$"
+            endCharTextModel.text = .DOLLAR
         }
         //then update previousState
         previousState = currentState;
@@ -394,7 +394,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
         let sourceChildren = sourceExpressionData.children
         for child in sourceChildren {
             if let singularTextData = child as? SingularTextData {
-                let newSingularTextModel = doAddSingularText("")
+                let newSingularTextModel = doAddSingularText(.EMPTY)
                 newSingularTextModel.replicate(singularTextData)
             } else if let fractionData = child as? FractionData {
                 let newFractionModel = doAddFraction()

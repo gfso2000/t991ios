@@ -10,7 +10,7 @@ import SwiftUI
 struct VarList: View {
     @Environment(\.dismiss) var dismiss
     @State var varBeanList:[VarBean] = []
-    var selectItemCallback: (String) -> Void
+    var selectItemCallback: (SingularTextEnum) -> Void
     
     var body: some View {
         ScrollView {
@@ -31,7 +31,7 @@ struct VarList: View {
         self.varBeanList = VarUtil.loadVar()
     }
     
-    func selectItem(_ varName:String) -> Void{
+    func selectItem(_ varName:SingularTextEnum) -> Void{
         selectItemCallback(varName)
         dismiss()
     }

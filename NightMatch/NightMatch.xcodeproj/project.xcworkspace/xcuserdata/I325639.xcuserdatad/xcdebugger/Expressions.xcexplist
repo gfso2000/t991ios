@@ -4,9 +4,22 @@
    <ContextStates>
       <ContextState
          contextName = "SingularTextData.init(_:):SingularTextData.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String(jsonObject[&quot;text&quot;])">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ExpressionModel.getData():ExpressionModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in VarItem.body.getter:VarItem.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "varBean.varName">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ExpressionModel.replicate(_:):ExpressionModel.swift">

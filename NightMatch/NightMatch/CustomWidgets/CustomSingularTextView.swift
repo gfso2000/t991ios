@@ -19,7 +19,7 @@ struct CustomSingularTextView: View {
                 }else{
                     Rectangle().frame(width: 1).foregroundColor(.clear)
                 }
-                if model.text == "$"{
+                if model.text == .DOLLAR{
                     Text("    ").font(.system(size: model.fontSize))
                         .foregroundColor(.black)
                         .frame(height:model.fontSize)
@@ -30,7 +30,7 @@ struct CustomSingularTextView: View {
                         )
                     
                 }else{
-                    Text(model.text).font(.system(size: model.fontSize))
+                    Text(model.text.rawValue).font(.system(size: model.fontSize))
                         .foregroundColor(.black)
                         .frame(height:model.fontSize)
                 }
@@ -38,13 +38,13 @@ struct CustomSingularTextView: View {
             .fixedSize(horizontal: false, vertical: true)
             .padding(0)
             if isRectangleVisible {
-                if model.isEndChar && model.text == ""{
+                if model.isEndChar && model.text == .EMPTY{
                     Rectangle().frame(width:1,height: 1).foregroundColor(.red)
                 }else{
                     Rectangle().frame(height: 1).foregroundColor(.red)
                 }
             }else{
-                if model.isEndChar && model.text == ""{
+                if model.isEndChar && model.text == .EMPTY{
                     Rectangle().frame(width:1,height: 1).foregroundColor(.clear)
                 }else{
                     Rectangle().frame(height: 1).foregroundColor(.clear)
@@ -66,9 +66,9 @@ struct CustomSingularTextView: View {
 
 #Preview {
     VStack{
-        CustomSingularTextView(model:SingularTextModel(id:1, text: "$", showCaret: true, isEndChar:true, fontSize:20))
-        CustomSingularTextView(model:SingularTextModel(id:1, text: "A", showCaret: true, isEndChar:false, fontSize:20))
-        CustomSingularTextView(model:SingularTextModel(id:1, text: "", showCaret: true, isEndChar:true, fontSize:20))
+        CustomSingularTextView(model:SingularTextModel(id:1, text: .DOLLAR, showCaret: true, isEndChar:true, fontSize:20))
+        CustomSingularTextView(model:SingularTextModel(id:1, text: .ZERO, showCaret: true, isEndChar:false, fontSize:20))
+        CustomSingularTextView(model:SingularTextModel(id:1, text: .EMPTY, showCaret: true, isEndChar:true, fontSize:20))
     }
     
 }

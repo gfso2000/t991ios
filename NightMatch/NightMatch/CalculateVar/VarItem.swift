@@ -13,10 +13,10 @@ struct VarItem: View {
     @StateObject var resultModel:ExpressionModel
     let fontSize:CGFloat = 30
     let imageSize:CGFloat = 25
-    var selectItem: (String) -> Void
+    var selectItem: (SingularTextEnum) -> Void
     var resetItem: (String) -> Void
     
-    init(varBean: VarBean, selectItem : @escaping (String) -> Void, resetItem : @escaping (String) -> Void) {
+    init(varBean: VarBean, selectItem : @escaping (SingularTextEnum) -> Void, resetItem : @escaping (String) -> Void) {
         self.varBean = varBean
         let resultModel: ExpressionModel = ExpressionModel(expressionContext: nil, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: fontSize)
         resultModel.replicate(varBean.getExpressionData())
@@ -30,9 +30,9 @@ struct VarItem: View {
         GeometryReader { geometry in
             HStack(spacing:0){
                 HStack(spacing:0){
-                    Text(varBean.varName+" = ").font(.system(size: fontSize))
+                    Text(SingularTextEnum.getEnumCase(by: varBean.varName)!.rawValue+" = ").font(.system(size: fontSize))
                     ScrollView(.horizontal) {
-                        CustomExpressionView(accessibilityIdentifier: "Var_"+varBean.varName, expressionModel: self.resultModel)
+                        CustomExpressionView(accessibilityIdentifier: varBean.varName, expressionModel: self.resultModel)
                             .background(Color.blue)
                     }
                     .background(.green)
@@ -58,7 +58,7 @@ struct VarItem: View {
                     .buttonStyle(.bordered)
                     
                     Button {
-                        selectItem(varBean.varName)
+                        selectItem(SingularTextEnum.getEnumCase(by: varBean.varName)!)
                     } label: {
                         Image(systemName: "checkmark.circle")
                             .resizable()

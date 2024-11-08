@@ -32,6 +32,18 @@ class ExpressionContext{
         rootExpressionModel!.onAC();
     }
     
+    func onMoveHead() -> Void{
+        getActiveExpressionModel().loseFocus();
+        rootExpressionModel!.setFocus(FocusDirectionEnum.LEFT);
+        rootExpressionModel!.onShiftLeftArrow();
+    }
+    
+    func onMoveTail() -> Void{
+        getActiveExpressionModel().loseFocus();
+        rootExpressionModel!.setFocus(FocusDirectionEnum.LEFT);
+        rootExpressionModel!.onShiftRightArrow();
+    }
+    
     func onUndo() -> Void{
         let undoExpressionModel = getHandleUndoExpressionModel();
         if (undoExpressionModel != nil && undoExpressionModel!.canUndo()) {

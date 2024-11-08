@@ -116,6 +116,14 @@ class FragmentCalulateController:VarListener, UndoListener, HistoryListener, Dir
         expressionContext!.getActiveExpressionModel().onRightArrow()
     }
     
+    func onHeadArrow() {
+        expressionContext!.onMoveHead()
+    }
+    
+    func onTailArrow() {
+        expressionContext!.onMoveTail()
+    }
+    
     func undo() {
         expressionContext!.onUndo()
     }

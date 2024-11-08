@@ -81,7 +81,7 @@ struct KeyboardPanel: View {
                         undoListener?.undo()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_head"), secondText: " ", imageScale:0.6, action:{
-                        //
+                        directionListener?.onHeadArrow()
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
@@ -104,7 +104,7 @@ struct KeyboardPanel: View {
                         directionListener?.onRightArrow()
                     })
                     KeyboardButtonImageText(image: Image("custom_button_arrow_tail"), secondText: " ", imageScale:0.6, action:{
-                        directionListener?.onRightArrow()
+                        directionListener?.onTailArrow()
                     })
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)

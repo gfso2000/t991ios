@@ -12,4 +12,7 @@ protocol DirectionListener {
     func onDownArrow()->Void
     func onLeftArrow()->Void
     func onRightArrow()->Void
+    
+    func onHeadArrow()->Void
+    func onTailArrow()->Void
 }

@@ -16,13 +16,13 @@ struct FragmentCalculateView: View {
                 HStack{
                     FragmentCalculateTopView(fragmentCalculateController: fragmentCalculateController)
                 }
-                .frame(height:geometry.size.height * 0.2)
+                .frame(height:geometry.size.height * 0.25)
                 .background(Color.blue)
                 
                 HStack{
-                    KeyboardPanel(varListener:fragmentCalculateController, mainListener:fragmentCalculateController, formatListener:fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
+                    KeyboardPanel(shiftListener:fragmentCalculateController, varListener:fragmentCalculateController, mainListener:fragmentCalculateController, formatListener:fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
                 }
-                .frame(height:geometry.size.height * 0.8)
+                .frame(height:geometry.size.height * 0.75)
                 .background(Color.yellow)
             }
             .background(Color.red)

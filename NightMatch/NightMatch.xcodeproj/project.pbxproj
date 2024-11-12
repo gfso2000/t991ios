@@ -40,6 +40,8 @@
 		DA60617A2CB7AD220091779E /* FormatBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6061792CB7AD220091779E /* FormatBean.swift */; };
 		DA60617C2CB7AD850091779E /* FormatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60617B2CB7AD850091779E /* FormatItem.swift */; };
 		DA8CF68F2CDDE5E3000472E4 /* SingularTextEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF68E2CDDE5E3000472E4 /* SingularTextEnum.swift */; };
+		DA8CF6912CDE0FAA000472E4 /* ShiftListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6902CDE0FAA000472E4 /* ShiftListener.swift */; };
+		DA8CF6932CE19A88000472E4 /* IndicatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6922CE19A88000472E4 /* IndicatorState.swift */; };
 		DA9C3F492CCB554700170FF7 /* T991UT.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F482CCB554700170FF7 /* T991UT.swift */; };
 		DA9C3F582CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */; };
 		DA9C3F5A2CCB8BC100170FF7 /* TopViewIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */; };
@@ -126,6 +128,8 @@
 		DA6061792CB7AD220091779E /* FormatBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatBean.swift; sourceTree = "<group>"; };
 		DA60617B2CB7AD850091779E /* FormatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatItem.swift; sourceTree = "<group>"; };
 		DA8CF68E2CDDE5E3000472E4 /* SingularTextEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularTextEnum.swift; sourceTree = "<group>"; };
+		DA8CF6902CDE0FAA000472E4 /* ShiftListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftListener.swift; sourceTree = "<group>"; };
+		DA8CF6922CE19A88000472E4 /* IndicatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorState.swift; sourceTree = "<group>"; };
 		DA9C3F482CCB554700170FF7 /* T991UT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T991UT.swift; sourceTree = "<group>"; };
 		DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonIdentifiers.swift; sourceTree = "<group>"; };
 		DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewIdentifiers.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				DA6061742CB764920091779E /* FormatListener.swift */,
 				DA5918772CB9167B00A98368 /* MainListener.swift */,
 				DAD729B52CBF858D00ACE021 /* VarListener.swift */,
+				DA8CF6902CDE0FAA000472E4 /* ShiftListener.swift */,
 			);
 			path = KeyboardListener;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				DA5918722CB8F9BD00A98368 /* Main */,
 				DA3866CC2CA6A94B00CFAD4F /* Calculate */,
 				DA5918752CB9139300A98368 /* ActiveFragment.swift */,
+				DA8CF6922CE19A88000472E4 /* IndicatorState.swift */,
 			);
 			path = Fragments;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				DAEEB3982C8AD4B500246752 /* CalculateHistoryBean.swift in Sources */,
 				DA3866C72CA68FFF00CFAD4F /* DeleteListener.swift in Sources */,
 				DA3866B72CA6840D00CFAD4F /* UndoListener.swift in Sources */,
+				DA8CF6912CDE0FAA000472E4 /* ShiftListener.swift in Sources */,
 				DA3866C32CA68D3D00CFAD4F /* OkExeListener.swift in Sources */,
 				DAC991132C69E43600744B5D /* FocusDirectionEnum.swift in Sources */,
 				DABFAF612C65E488008E8048 /* ExpressionModel.swift in Sources */,
@@ -587,6 +594,7 @@
 				DAC991102C69CFF400744B5D /* CustomFractionView.swift in Sources */,
 				DA2A5B562C8EEFC700CE877A /* KeyboardButtonTextImage.swift in Sources */,
 				DAC991292C6F2ECD00744B5D /* KeyboardButton2.swift in Sources */,
+				DA8CF6932CE19A88000472E4 /* IndicatorState.swift in Sources */,
 				DA5D92AB2C9410B1004F584E /* HistoryUtil.swift in Sources */,
 				DAD729B92CBF861100ACE021 /* VarList.swift in Sources */,
 				DAD729BF2CBF9D8700ACE021 /* VarItem.swift in Sources */,

@@ -15,6 +15,7 @@ struct FragmentCalculateTopView: View {
     @StateObject var resultModel:ExpressionModel
     
     @EnvironmentObject var activeFragment:ActiveFragment
+    @StateObject var indicatorState: IndicatorState = IndicatorState()
     
     init(fragmentCalculateController: FragmentCalulateController){
         self.fragmentCalculateController = fragmentCalculateController
@@ -29,16 +30,12 @@ struct FragmentCalculateTopView: View {
         let resultModel: ExpressionModel = ExpressionModel(expressionContext: nil, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: 16)
         //stateful, so that resultView can update
         self._resultModel = StateObject(wrappedValue: resultModel)
-
-//        //pass context,resultModel to controller, let controller operate them, and they in turn update view
-//        self.fragmentCalculateController.setExpressionContext(expressionContext)
-//        self.fragmentCalculateController.setResultModel(self.resultModel)
     }
     
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing:0){
-                HStack{
+                VStack{
                     ScrollView(.vertical) {
                         ScrollView(.horizontal) {
                             CustomExpressionView(accessibilityIdentifier: TopViewIdentifiers.expressionView, expressionModel: self.expressionModel)
@@ -49,9 +46,12 @@ struct FragmentCalculateTopView: View {
                     .background(Color.green)
                 }
                 //always use stack to get a fixed width/height, then set stack's child to scrollView
-                .frame(height:geometry.size.height * 0.7)
+                .frame(height:geometry.size.height * 0.75)
                 
                 HStack{
+                    if(indicatorState.shiftPressed){
+                        Text("Shift")
+                    }
                     GeometryReader { proxy in
                         //scrollView auto fill parent(HStack)
                         ScrollView(.vertical) {
@@ -67,16 +67,17 @@ struct FragmentCalculateTopView: View {
                                 //make VStack match scrollView width/height by minWidth/minHeight, because width/height will increase to show scrollBar
                                 .frame(minWidth: proxy.size.width, minHeight: proxy.size.height)
                             }
-                        }.background(Color.black)
+                        }.background(Color.white)
                     }
                 }
-                .frame(height:geometry.size.height * 0.3)
+                .frame(height:geometry.size.height * 0.25)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.green)
             .onAppear(){
                 //environmentObject can't be visited in init(), so visit here
                 fragmentCalculateController.setActiveFragmentObject(activeFragment)
+                fragmentCalculateController.setIndicatorState(self.indicatorState)
                 
                 //pass context,resultModel to controller, let controller operate them, and they in turn update view
                 self.fragmentCalculateController.setExpressionContext(expressionContext)

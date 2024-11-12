@@ -18,11 +18,13 @@ struct KeyboardPanel: View {
     let formatListener: FormatListener?
     let mainListener: MainListener?
     let varListener: VarListener?
+    let shiftListener: ShiftListener?
     
     let btnSpacing:CGFloat = 2
     let rowWidthPct = 1.0
 
-    init(varListener: VarListener?, mainListener: MainListener?, formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+    init(shiftListener: ShiftListener?, varListener: VarListener?, mainListener: MainListener?, formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+        self.shiftListener = shiftListener
         self.varListener = varListener
         self.mainListener = mainListener
         self.formatListener = formatListener
@@ -112,7 +114,14 @@ struct KeyboardPanel: View {
                 //row 3
                 HStack(spacing:btnSpacing){
                     KeyboardButtonImageText(image: Image("custom_button_shift"), secondText: "SHIFT", fontSize:16, bgColor: Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        //
+                        if(self.shiftListener == nil){
+                            return
+                        }
+                        if(self.shiftListener!.isShiftPressed()){
+                            self.shiftListener!.resetShift()
+                        }else{
+                            self.shiftListener!.pressShift()
+                        }
                     })
                     KeyboardButtonImageText(image: Image("custom_button_var"), secondText: "VAR", imageScale:1.2, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
                         // Checking if the optionalBool has a value and it's true
@@ -250,7 +259,12 @@ struct KeyboardPanel: View {
                 //row 9
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "0", secondText: "x", action:{
-                        mathListener?.addSingularText(.ZERO)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_X)
+                        }else{
+                            mathListener?.addSingularText(.ZERO)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_0)
                     KeyboardButtonTextText(text: ".", secondText: "y", action:{
                         //
@@ -296,5 +310,5 @@ struct KeyboardPanel: View {
     let fragmentCalculateController: FragmentCalulateController = FragmentCalulateController()
     fragmentCalculateController.setExpressionContext(expressionContext)
     
-    return KeyboardPanel(varListener: fragmentCalculateController, mainListener:fragmentCalculateController, formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
+    return KeyboardPanel(shiftListener: fragmentCalculateController, varListener: fragmentCalculateController, mainListener:fragmentCalculateController, formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
 }

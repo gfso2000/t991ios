@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ExpressionContext.rerun(_:):ExpressionContext.swift">
+      </ContextState>
+      <ContextState
          contextName = "SingularTextData.init(_:):SingularTextData.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,24 +14,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ExpressionModel.getData():ExpressionModel.swift">
+         contextName = "ExpressionModel.replicate(_:):ExpressionModel.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in closure #1 in VarItem.body.getter:VarItem.swift">
+         contextName = "ExpressionContext.addToHistory(_:):ExpressionContext.swift">
          <PersistentStrings>
             <PersistentString
-               value = "varBean.varName">
+               value = "expressionData.children.isEmpty">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ExpressionModel.replicate(_:):ExpressionModel.swift">
+         contextName = "VarList.resetItemCallback(_:):VarList.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.varBeanList">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "static VarUtil.resetVar(_:):VarUtil.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ExpressionContext.rerun(_:):ExpressionContext.swift">
+         contextName = "HistoryList.init():HistoryList.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.historyBeanList">
+            </PersistentString>
+            <PersistentString
+               value = "self.historyBeanList.isEmpty">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ExpressionData.init(_:):ExpressionData.swift">
@@ -45,29 +58,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ExpressionContext.addToHistory(_:):ExpressionContext.swift">
+         contextName = "FragmentCalulateController.pressShift():FragmentCalulateController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "expressionData.children.isEmpty">
+               value = "self.activeFragment.shiftPressed">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HistoryList.init():HistoryList.swift">
+         contextName = "closure #1 in closure #1 in closure #1 in VarItem.body.getter:VarItem.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.historyBeanList">
-            </PersistentString>
-            <PersistentString
-               value = "self.historyBeanList.isEmpty">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "VarList.resetItemCallback(_:):VarList.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.varBeanList">
+               value = "varBean.varName">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -78,6 +80,31 @@
                value = "app.otherElements[&quot;TopView_resultView&quot;].accessibilityValue">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in closure #1 in FragmentCalculateTopView.body.getter:FragmentCalculateTopView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "fragmentCalculateController">
+            </PersistentString>
+            <PersistentString
+               value = "activeFragment">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static VarUtil.resetVar(_:):VarUtil.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #3 in closure #1 in closure #1 in KeyboardPanel.body.getter:KeyboardPanel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.shiftListener">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ExpressionModel.getData():ExpressionModel.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

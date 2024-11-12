@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct VarItem: View {
-    @EnvironmentObject var activeFragment:ActiveFragment
     var varBean: VarBean
     @StateObject var resultModel:ExpressionModel
     let fontSize:CGFloat = 30
@@ -80,5 +79,5 @@ struct VarItem: View {
         print(varName)
     }, resetItem: {varName in
         print(varName)
-    }).environmentObject(ActiveFragment())
+    })
 }

@@ -7,11 +7,12 @@
 
 import Foundation
 
-class FragmentCalulateController:VarListener, UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener, FormatListener, MainListener {
+class FragmentCalulateController:ShiftListener, VarListener, UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener, FormatListener, MainListener {
     var expressionContext:ExpressionContext? = nil
     var resultModel:ExpressionModel? = nil
     var formatData:FormatData? = nil
     var activeFragment:ActiveFragment? = nil
+    var indicatorState:IndicatorState? = nil
     
     func setExpressionContext(_ expressionContext: ExpressionContext) {
         //this expressionContext is used for editable expressionModel
@@ -40,6 +41,24 @@ class FragmentCalulateController:VarListener, UndoListener, HistoryListener, Dir
     }
     func rerun(_ expression:String) -> Void {
         expressionContext!.rerun(expression)
+    }
+    
+    func setIndicatorState(_ indicatorState:IndicatorState) {
+        self.indicatorState = indicatorState
+    }
+    func pressShift() {
+        self.indicatorState?.shiftPressed = true
+    }
+    
+    func resetShift() {
+        self.indicatorState?.shiftPressed = false
+    }
+    
+    func isShiftPressed() -> Bool {
+        if(self.indicatorState != nil){
+            return self.indicatorState!.shiftPressed
+        }
+        return false
     }
     
     func gotoMain() {

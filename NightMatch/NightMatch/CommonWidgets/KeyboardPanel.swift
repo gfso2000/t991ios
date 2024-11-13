@@ -42,7 +42,7 @@ struct KeyboardPanel: View {
     
     @State var showingHistory:Bool = false
     func rerunItemCallback(_ id:UUID) -> Void{
-        let expression = HistoryUtil.loadItemExpressionDataStr(id)
+        let expression = HistoryUtil.loadItemExpressionDataJsonStr(id)
         historyListener?.rerun(expression)
     }
     
@@ -65,13 +65,22 @@ struct KeyboardPanel: View {
                         }
                     })
                     KeyboardButtonImageText(image: Image("custom_button_history"), secondText: "PASTE", fontSize:16, imageScale:0.6, action:{
-                        // Checking if the optionalBool has a value and it's true
-                        if let unwrappedBool = historyListener?.showHistory(), unwrappedBool {
-                            // The optionalBool has a value and it's true
-                            showingHistory = true
-                        } else {
-                            // The optionalBool is either nil or false
-                            showingHistory = false
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            //paste
+                            if let text = UIPasteboard.general.string {
+                                historyListener?.rerun(text)
+                                // Use the clipboardText as needed
+                            }
+                        }else{
+                            // Checking if the optionalBool has a value and it's true
+                            if let unwrappedBool = historyListener?.showHistory(), unwrappedBool {
+                                // The optionalBool has a value and it's true
+                                showingHistory = true
+                            } else {
+                                // The optionalBool is either nil or false
+                                showingHistory = false
+                            }
                         }
                     }).sheet(isPresented: $showingHistory) {
                         HistoryList(rerunItemCallback:rerunItemCallback)

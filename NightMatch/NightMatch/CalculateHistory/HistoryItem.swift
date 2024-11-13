@@ -45,8 +45,10 @@ struct HistoryItem: View {
                     Text(LocalizedStringKey("Rerun")).onTapGesture {
                         rerunItem(historyBean.id)
                     }
-                    Text("Copy")
-                    Text("Delete").onTapGesture {
+                    Text(LocalizedStringKey("Copy")).onTapGesture {
+                        copyItem(historyBean.id)
+                    }
+                    Text(LocalizedStringKey("Delete")).onTapGesture {
                         deleteItem(historyBean.id)
                     }
                 }
@@ -54,6 +56,28 @@ struct HistoryItem: View {
                 .background(Color.blue)
             }
             .background(Color.red)
+            .overlay(
+                VStack {
+                    if showToast {
+                        Text(LocalizedStringKey("CopySuccess"))
+                            .padding()
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
+                .padding(.bottom, 100)
+                , alignment: .bottom
+            )
+        }
+    }
+    
+    @State private var showToast = false
+    func copyItem(_ id:UUID) -> Void {
+        UIPasteboard.general.string = HistoryUtil.loadItemExpressionDataJsonStr(id)
+        self.showToast = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.showToast = false
         }
     }
 }

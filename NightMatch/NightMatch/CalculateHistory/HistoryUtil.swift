@@ -46,7 +46,7 @@ class HistoryUtil{
         }
     }
     
-    static func loadItemExpressionDataStr(_ uuid:UUID) -> String {
+    static func loadItemExpressionDataJsonStr(_ uuid:UUID) -> String {
         let historyBeanList:[CalculateHistoryBean] = HistoryUtil.loadHistory()
         for item in historyBeanList {
             if item.id == uuid {

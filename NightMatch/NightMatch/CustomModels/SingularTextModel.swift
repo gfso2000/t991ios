@@ -41,4 +41,36 @@ class SingularTextModel : Caretable,ObservableObject{
             fatalError("Not SingularTextData: \(expressionItemData)")
         }
     }
+    
+    func isLeftParenthesis() -> Bool {
+        return self.text == .LEFT_PARENTHESIS
+    }
+    func isRightParenthesis() -> Bool {
+        return self.text == .RIGHT_PARENTHESIS
+    }
+    func isVariableABCEDEFxyz() -> Bool {
+        return self.text == .VAR_A || self.text == .VAR_B || self.text == .VAR_C || self.text == .VAR_D
+        || self.text == .VAR_E || self.text == .VAR_F
+        || self.text == .VAR_X || self.text == .VAR_Y || self.text == .VAR_Z;
+    }
+    func isX() -> Bool {
+        return self.text == .VAR_X
+    }
+    func isPI() -> Bool {
+        return self.text == .PI
+    }
+    func isE() -> Bool {
+        return self.text == .CONST_E
+    }
+    func isNumber() -> Bool {
+        return self.text == .ZERO || self.text == .ONE || self.text == .TWO || self.text == .THREE
+        || self.text == .FOUR || self.text == .FIVE || self.text == .SIX || self.text == .SEVEN
+        || self.text == .EIGHT || self.text == .NINE
+    }
+    func isDot() -> Bool {
+        return self.text == .DOT
+    }
+    func isMat() -> Bool {
+        return false
+    }
 }

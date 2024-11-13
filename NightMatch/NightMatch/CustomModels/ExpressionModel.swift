@@ -77,23 +77,29 @@ class ExpressionModel:ObservableObject,ArrowListener{
         }
     }
     
+    func canAddFraction() -> Bool {
+        if (expressionContext!.rootExpressionModel!.getData().getMaxFractionLevel() <= 5) {
+            return true;
+        }
+        return false;
+    }
     func addFraction() {
-        //            if (!canAddFraction()) {
-        //                //too many levels cause UI slow performance
-        //                return;
-        //            }
+        if (!canAddFraction()) {
+            //too many levels cause UI slow performance
+            return;
+        }
         savePreviousState();
         let fractionModel = doAddFraction();
         //hide caret, because the newly added Fraction will show caret
         loseFocus();
         self.lastFocusedChildrenId = fractionModel.id
-        //            let merged = initializeMergedExpression(fractionModel);
-        //            if (merged) {
-        //                fractionModel.setFocus(FocusDirectionEnum.RIGHT);
-        //            } else {
-        //                fractionModel.setFocus(FocusDirectionEnum.LEFT);
-        //            }
-        fractionModel.setFocus(FocusDirectionEnum.LEFT);
+        
+        let merged = initializeMergedExpression(fractionModel);
+        if (merged) {
+            fractionModel.setFocus(FocusDirectionEnum.RIGHT);
+        } else {
+            fractionModel.setFocus(FocusDirectionEnum.LEFT);
+        }
     }
     
     func doAddFraction() -> FractionModel {
@@ -102,6 +108,152 @@ class ExpressionModel:ObservableObject,ArrowListener{
                                           showCaret: false, parentModel: self);
         insertChild(fractionModel);
         return fractionModel;
+    }
+    
+    /**
+     * when add composite model(fraction/squareRoot),
+     * the previous numbers will be moved into them
+     * the previous (1+2...) also be moved
+     * <p>
+     * return false, means no previous numbers
+     */
+    func initializeMergedExpression(_ caretableModel:Caretable) -> Bool {
+        guard var index = children.firstIndex(where: { $0.id == caretableModel.id }) else {
+            return false
+        }
+
+        index -= 1
+        var endPos = index
+        var startPos = index
+
+        if isRightParenthesis(endPos) {
+            //find the matched leftParenthesis, merge all between the parenthesis
+            startPos = findLeftParenthesisIndex(endPos - 1)
+        } else if isX(endPos) || isPI(endPos) || isE(endPos) || isMat(endPos) || isVariableABCEDEFxyz(endPos) || isCompositeModel(endPos) {
+            //just merge X or PI or E or MatA/MatB/MatC/MatD/MatAns
+        } else {
+            if !canBeMerged(endPos) {
+                return false
+            }
+            while (startPos - 1 >= 0 && canBeMerged(startPos - 1)) {
+                startPos -= 1
+            }
+        }
+
+        //find out all the previous consecutive numbers;
+        var childrenData: [ExpressionItemData] = []
+        for i in startPos...endPos {
+            childrenData.append(children[i].getData())
+        }
+        var expressionData = ExpressionData(lastFocusedChildrenId: -1, children: childrenData, id: CustomIdGenerator.generateId())
+        //clear them
+        for i in (startPos...endPos).reversed() {
+            deleteChild(i);
+        }
+        //apply them to the new caretableModel
+        caretableModel.initializeNumberExpression(expressionData)
+        return true
+    }
+
+    func canBeMerged(_ index:Int) -> Bool {
+        //xx.xxxPI
+        var child = children[index]
+        if !(child is SingularTextModel) {
+            return false
+        }
+        let singularTextModel = child as! SingularTextModel
+        return singularTextModel.isNumber() || singularTextModel.isDot();
+    }
+
+    func isE(_ index:Int) -> Bool {
+        var child = children[index]
+        if !(child is SingularTextModel) {
+            return false
+        }
+        let singularTextModel = child as! SingularTextModel
+        return singularTextModel.isE()
+    }
+
+    func isPI(_ index:Int) -> Bool {
+        var child = children[index]
+        if !(child is SingularTextModel) {
+            return false
+        }
+        let singularTextModel = child as! SingularTextModel
+        return singularTextModel.isPI()
+    }
+
+    func isX(_ index:Int) -> Bool {
+        var child = children[index]
+        if !(child is SingularTextModel) {
+            return false
+        }
+        let singularTextModel = child as! SingularTextModel
+        return singularTextModel.isX()
+    }
+
+    func isMat(_ index:Int) -> Bool {
+        var child = children[index]
+        if !(child is SingularTextModel) {
+            return false
+        }
+        let singularTextModel = child as! SingularTextModel
+        return singularTextModel.isMat()
+    }
+
+    func isVariableABCEDEFxyz(_ index:Int) -> Bool {
+        var child = children[index]
+        if !(child is SingularTextModel) {
+            return false
+        }
+        
+        let singularTextModel = child as! SingularTextModel
+        return singularTextModel.isVariableABCEDEFxyz()
+    }
+
+    func isCompositeModel(_ index:Int) -> Bool {
+        var child = children[index]
+        if (child is SingularTextModel) {
+            return false
+        }
+        return true
+    }
+
+    func isRightParenthesis(_ index:Int) -> Bool {
+        var child = children[index]
+        if !(child is SingularTextModel) {
+            return false
+        }
+        
+        let singularTextModel = child as! SingularTextModel
+        return singularTextModel.isRightParenthesis()
+    }
+
+    func isLeftParenthesis(_ index:Int) -> Bool {
+        var child = children[index]
+        if !(child is SingularTextModel) {
+            return false
+        }
+        
+        let singularTextModel = child as! SingularTextModel
+        return singularTextModel.isLeftParenthesis()
+    }
+
+    func findLeftParenthesisIndex(_ index:Int) -> Int {
+        if (index <= 0) {
+            return 0
+        }
+        var index = index
+        var depth = 1
+        while (depth > 0 && index >= 0) {
+            if (isLeftParenthesis(index)) {
+                depth -= 1
+            } else if (isRightParenthesis(index)) {
+                depth += 1
+            }
+            index -= 1
+        }
+        return index + 1
     }
     
     func addSingularText(_ text:SingularTextEnum) -> Void {

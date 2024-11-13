@@ -11,6 +11,9 @@
             <PersistentString
                value = "String(jsonObject[&quot;text&quot;])">
             </PersistentString>
+            <PersistentString
+               value = "SingularTextEnum.getEnumCase(by: jsonObject[&quot;text&quot;] as! String)">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -42,6 +45,12 @@
                value = "self.historyBeanList.isEmpty">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SingularTextModel.replicate(_:):SingularTextModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ExpressionModel.doReplicate(_:):ExpressionModel.swift">
       </ContextState>
       <ContextState
          contextName = "ExpressionData.init(_:):ExpressionData.swift">

@@ -15,6 +15,8 @@ enum SingularTextEnum:String,CaseIterable {
     case VAR_A = "A", VAR_B = "B", VAR_C = "C",
          VAR_D = "D", VAR_E = "E", VAR_F = "F",
          VAR_X = "𝑿", VAR_Y = "𝒚", VAR_Z = "𝒛"
+    case LEFT_PARENTHESIS = "(", RIGHT_PARENTHESIS = ")"
+    case PI = "π", CONST_E = "e"
     
     static func getEnumCase(by name: String) -> SingularTextEnum? {
         return SingularTextEnum.allCases.first { "\($0)" == name }

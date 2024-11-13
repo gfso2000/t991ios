@@ -13,10 +13,14 @@ protocol Caretable{
     func findExpressionModelById(_ expressionModelId:Int) -> ExpressionModel?
     func getData() -> ExpressionItemData
     func replicate(_ expressionItemData:ExpressionItemData) -> Void
+    func initializeNumberExpression(_ expressionData:ExpressionData)
 }
 
-//extension Caretable {
+extension Caretable {
 //    static func == (lhs: Self, rhs: Self) -> Bool {
 //        return lhs.id == rhs.id
 //    }
-//}
+    func initializeNumberExpression(_ expressionData:ExpressionData) {
+        
+    }
+}

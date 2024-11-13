@@ -26,4 +26,7 @@ class ExpressionItemData{
     func getDataAsLatex() -> String {
         return ""
     }
+    func getMaxFractionLevel() -> Int {
+        return 0
+    }
 }

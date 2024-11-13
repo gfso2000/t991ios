@@ -59,6 +59,14 @@ class ExpressionData {
         }
         return str
     }
+    func getMaxFractionLevel() -> Int {
+        var maxLevel = 0;
+        for expressionItemData in children {
+            maxLevel = max(maxLevel, expressionItemData.getMaxFractionLevel());
+        }
+        return maxLevel;
+    }
+    
     static func zeroExpressionData()->ExpressionData {
         let expressionItemData:SingularTextData = SingularTextData(id: 1, text: .ZERO)
         let children:[ExpressionItemData] = [expressionItemData]

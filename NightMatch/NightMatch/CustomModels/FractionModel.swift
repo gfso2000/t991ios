@@ -117,4 +117,7 @@ class FractionModel:Caretable,ObservableObject,ArrowListener{
             fatalError("Not FractionData: \(expressionItemData)")
         }
     }
+    func initializeNumberExpression(_ expressionData:ExpressionData) {
+        numeratorPartModel.replicate(expressionData);
+    }
 }

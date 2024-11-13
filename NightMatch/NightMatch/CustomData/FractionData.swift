@@ -74,4 +74,8 @@ class FractionData : ExpressionItemData{
     override func getDataAsLatex() -> String {
         return "\\frac{"+numeratorPartData.getDataAsLatex()+"}{"+denominatorPartData.getDataAsLatex()+"}";
     }
+    
+    override func getMaxFractionLevel() -> Int {
+        return numeratorPartData.getMaxFractionLevel()+denominatorPartData.getMaxFractionLevel()+1
+    }
 }

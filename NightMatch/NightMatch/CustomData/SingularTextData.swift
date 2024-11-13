@@ -22,7 +22,7 @@ class SingularTextData:ExpressionItemData{
     
     required init(_ jsonObject:[String: Any]){
         self.id = jsonObject["id"] as! Int
-        self.text = SingularTextEnum(rawValue: jsonObject["text"] as! String) ?? .ZERO
+        self.text = SingularTextEnum.getEnumCase(by: jsonObject["text"] as! String) ?? .ZERO
         super.init(jsonObject)
     }
     override func getDataAsJson() -> [String: Any] {

@@ -126,8 +126,8 @@
             filePath = "NightMatch/CustomModels/ExpressionModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "494"
-            endingLineNumber = "494"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
             landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "NightMatch/CustomModels/ExpressionModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "493"
-            endingLineNumber = "493"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
             landmarkName = "getData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "NightMatch/CommonWidgets/KeyboardPanel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "NightMatch/Fragments/Calculate/FragmentCalulateController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "gotoMain()"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,9 +286,9 @@
             filePath = "NightMatch/CommonWidgets/KeyboardPanel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "init(shiftListener:varListener:mainListener:formatListener:directionListener:undoListener:okExeListener:mathListener:deleteListener:acListener:historyListener:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "init(shiftListener:varListener:funListener:mainListener:formatListener:directionListener:undoListener:okExeListener:mathListener:deleteListener:acListener:historyListener:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -302,8 +302,8 @@
             filePath = "NightMatch/Fragments/Calculate/FragmentCalulateController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "isShiftPressed()"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +318,8 @@
             filePath = "NightMatch/Fragments/Calculate/FragmentCalulateController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "pressShift()"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +334,8 @@
             filePath = "NightMatch/Fragments/Calculate/FragmentCalulateController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "resetShift()"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +350,8 @@
             filePath = "NightMatch/Fragments/Calculate/FragmentCalulateController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "resetShift()"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +366,8 @@
             filePath = "NightMatch/CommonWidgets/KeyboardPanel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "rerunItemCallback(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -385,6 +385,22 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "init(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C92CDF8-E213-4ADE-8863-AC4938B85600"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NightMatch/Fragments/Calculate/FragmentCalulateController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "addFun(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

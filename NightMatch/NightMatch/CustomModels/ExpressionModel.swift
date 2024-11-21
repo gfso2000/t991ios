@@ -48,15 +48,15 @@ class ExpressionModel:ObservableObject,ArrowListener{
         index-=1
         if (index >= 0) {
             let child = self.children[index]
-//            if (child is SquareModel) {
-//                //if delete after a square model, then inform square model to handle delete
-//                //we will see if needs support other model, currently we only support square model
-//                loseFocus()
-//                child.handleDeleteFromParent()
-//            } else {
-                savePreviousState()
-                deleteChild(index)
-//            }
+            //            if (child is SquareModel) {
+            //                //if delete after a square model, then inform square model to handle delete
+            //                //we will see if needs support other model, currently we only support square model
+            //                loseFocus()
+            //                child.handleDeleteFromParent()
+            //            } else {
+            savePreviousState()
+            deleteChild(index)
+            //            }
         } else {
             //suppose I'm the top part of square model
             //I'm already at the beginning position, then inform parent model(square model) to handle
@@ -110,6 +110,22 @@ class ExpressionModel:ObservableObject,ArrowListener{
         return fractionModel;
     }
     
+    func addMethodWithOneArgument(type:String) {
+        savePreviousState()
+        let methodOneModel = doAddMethodWithOneArgument(type)
+        loseFocus()
+        self.lastFocusedChildrenId = methodOneModel.id
+        methodOneModel.setFocus(FocusDirectionEnum.LEFT)
+    }
+    
+    func doAddMethodWithOneArgument(_ type:String) -> MethodOneModel{
+        let methodOneModel = MethodOneModel(expressionContext:self.expressionContext,
+                                            id:CustomIdGenerator.generateId(),
+                                            showCaret: false, parentModel: self, type:type)
+        insertChild(methodOneModel);
+        return methodOneModel;
+    }
+
     /**
      * when add composite model(fraction/squareRoot),
      * the previous numbers will be moved into them

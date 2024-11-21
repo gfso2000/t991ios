@@ -18,14 +18,16 @@ struct KeyboardPanel: View {
     let formatListener: FormatListener?
     let mainListener: MainListener?
     let varListener: VarListener?
+    let funListener: FunListener?
     let shiftListener: ShiftListener?
     
     let btnSpacing:CGFloat = 2
     let rowWidthPct = 1.0
 
-    init(shiftListener: ShiftListener?, varListener: VarListener?, mainListener: MainListener?, formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
+    init(shiftListener: ShiftListener?, varListener: VarListener?, funListener:FunListener?, mainListener: MainListener?, formatListener: FormatListener, directionListener: DirectionListener, undoListener: UndoListener, okExeListener: OkExeListener, mathListener: MathListener, deleteListener: DeleteListener, acListener: ACListener, historyListener: HistoryListener){
         self.shiftListener = shiftListener
         self.varListener = varListener
+        self.funListener = funListener
         self.mainListener = mainListener
         self.formatListener = formatListener
         self.directionListener = directionListener
@@ -47,8 +49,13 @@ struct KeyboardPanel: View {
     }
     
     @State var showingVar:Bool = false
-    func selectItemCallback(_ varName:SingularTextEnum) -> Void{
+    func selectVarItemCallback(_ varName:SingularTextEnum) -> Void{
         varListener?.addVar(varName)
+    }
+    
+    @State var showingFun:Bool = false
+    func selectFunItemCallback(_ funName:String) -> Void{
+        funListener?.addFun(funName)
     }
     
     var body: some View {
@@ -142,11 +149,13 @@ struct KeyboardPanel: View {
                             showingVar = false
                         }
                     }).sheet(isPresented: $showingVar) {
-                        VarList(selectItemCallback:selectItemCallback)
+                        VarList(selectItemCallback:selectVarItemCallback)
                     }
                     KeyboardButtonImageText(image: Image("custom_button_fx"), secondText: "FUN", imageScale:0.6, textColor: Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255),action:{
-                        //
-                    })
+                        showingFun = true
+                    }).sheet(isPresented: $showingFun) {
+                        FunList(selectItemCallback:selectFunItemCallback)
+                    }
                     KeyboardButtonImageText(image: Image("custom_button_arrow_down"), secondText: " ", imageScale:0.6, action:{
                         directionListener?.onDownArrow()
                     })
@@ -319,5 +328,5 @@ struct KeyboardPanel: View {
     let fragmentCalculateController: FragmentCalulateController = FragmentCalulateController()
     fragmentCalculateController.setExpressionContext(expressionContext)
     
-    return KeyboardPanel(shiftListener: fragmentCalculateController, varListener: fragmentCalculateController, mainListener:fragmentCalculateController, formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
+    return KeyboardPanel(shiftListener: fragmentCalculateController, varListener: fragmentCalculateController, funListener: fragmentCalculateController, mainListener:fragmentCalculateController, formatListener: fragmentCalculateController, directionListener: fragmentCalculateController, undoListener: fragmentCalculateController, okExeListener: fragmentCalculateController, mathListener: fragmentCalculateController, deleteListener: fragmentCalculateController, acListener: fragmentCalculateController, historyListener: fragmentCalculateController)
 }

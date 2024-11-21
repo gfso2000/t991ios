@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct VarItem: View {
-    var varBean: VarBean
+struct FunItem: View {
+    var funBean: FunBean
     @StateObject var resultModel:ExpressionModel
     let fontSize:CGFloat = 30
     let imageSize:CGFloat = 25
-    var selectItem: (SingularTextEnum) -> Void
+    var selectItem: (String) -> Void
     var resetItem: (String) -> Void
     
-    init(varBean: VarBean, selectItem : @escaping (SingularTextEnum) -> Void, resetItem : @escaping (String) -> Void) {
-        self.varBean = varBean
+    init(funBean: FunBean, selectItem : @escaping (String) -> Void, resetItem : @escaping (String) -> Void) {
+        self.funBean = funBean
         let resultModel: ExpressionModel = ExpressionModel(expressionContext: nil, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: fontSize)
-        resultModel.replicate(varBean.getExpressionData())
+        resultModel.replicate(funBean.getExpressionData())
         //stateful, so that resultView can update
         self._resultModel = StateObject(wrappedValue: resultModel)
         self.selectItem = selectItem
@@ -29,9 +29,9 @@ struct VarItem: View {
         GeometryReader { geometry in
             HStack(spacing:0){
                 HStack(spacing:0){
-                    Text(SingularTextEnum.getEnumCase(by: varBean.varName)!.rawValue+" = ").font(.system(size: fontSize))
+                    Text(funBean.funName+"(x) = ").font(.system(size: fontSize))
                     ScrollView(.horizontal) {
-                        CustomExpressionView(accessibilityIdentifier: varBean.varName, expressionModel: self.resultModel)
+                        CustomExpressionView(accessibilityIdentifier: funBean.funName, expressionModel: self.resultModel)
                             .background(Color.blue)
                     }
                     .background(.green)
@@ -40,7 +40,7 @@ struct VarItem: View {
                 
                 HStack(spacing:0){
                     Button(role: .destructive) {
-                        resetItem(varBean.varName)
+                        resetItem(funBean.funName)
                     } label: {
                         Image(systemName: "clear").resizable()
                             .frame(width:imageSize,height:imageSize)
@@ -48,16 +48,16 @@ struct VarItem: View {
                     .buttonStyle(.bordered)
                     
                     Button {
-                        resetItem(varBean.varName)
+                        resetItem(funBean.funName)
                     } label: {
-                        Image("custom_button_ans")
+                        Image(systemName: "pencil")
                             .resizable()
                             .frame(width:imageSize,height:imageSize)
                     }
                     .buttonStyle(.bordered)
                     
                     Button {
-                        selectItem(SingularTextEnum.getEnumCase(by: varBean.varName)!)
+                        selectItem(funBean.funName)
                     } label: {
                         Image(systemName: "checkmark.circle")
                             .resizable()
@@ -73,9 +73,9 @@ struct VarItem: View {
 
 #Preview {
     let expressionData: ExpressionData = ExpressionData.zeroExpressionData()
-    var varBeanA = VarBean(varName: "VAR_A", expressionData: expressionData)
+    var funBean = FunBean(funName: "f", expressionData: expressionData)
     
-    return VarItem(varBean: varBeanA, selectItem: {varName in
+    return FunItem(funBean: funBean, selectItem: {varName in
         print(varName)
     }, resetItem: {varName in
         print(varName)

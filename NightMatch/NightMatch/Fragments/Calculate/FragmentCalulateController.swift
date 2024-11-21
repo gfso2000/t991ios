@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FragmentCalulateController:ShiftListener, VarListener, UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener, FormatListener, MainListener {
+class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoListener, HistoryListener, DirectionListener, OkExeListener, MathListener, DeleteListener, ACListener, FormatListener, MainListener {
     var expressionContext:ExpressionContext? = nil
     var resultModel:ExpressionModel? = nil
     var formatData:FormatData? = nil
@@ -36,6 +36,10 @@ class FragmentCalulateController:ShiftListener, VarListener, UndoListener, Histo
         expressionContext!.getActiveExpressionModel().addSingularText(varName)
     }
     
+    func addFun(_ funName: String) {
+        expressionContext!.getActiveExpressionModel().addMethodWithOneArgument(type: funName)
+    }
+
     func showHistory()->Bool {
         return true
     }

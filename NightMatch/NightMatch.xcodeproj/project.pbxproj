@@ -42,6 +42,13 @@
 		DA8CF68F2CDDE5E3000472E4 /* SingularTextEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF68E2CDDE5E3000472E4 /* SingularTextEnum.swift */; };
 		DA8CF6912CDE0FAA000472E4 /* ShiftListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6902CDE0FAA000472E4 /* ShiftListener.swift */; };
 		DA8CF6932CE19A88000472E4 /* IndicatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6922CE19A88000472E4 /* IndicatorState.swift */; };
+		DA8CF6962CEEDBBD000472E4 /* FunBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6952CEEDBBC000472E4 /* FunBean.swift */; };
+		DA8CF6982CEEDE40000472E4 /* FunItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6972CEEDE40000472E4 /* FunItem.swift */; };
+		DA8CF69A2CEEE1C2000472E4 /* MethodOneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6992CEEE1C2000472E4 /* MethodOneModel.swift */; };
+		DA8CF69C2CEEE2AE000472E4 /* MethodOneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF69B2CEEE2AE000472E4 /* MethodOneData.swift */; };
+		DA8CF69E2CEEE430000472E4 /* FxGxUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF69D2CEEE430000472E4 /* FxGxUtil.swift */; };
+		DA8CF6A02CEEF8AB000472E4 /* FunList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF69F2CEEF8AB000472E4 /* FunList.swift */; };
+		DA8CF6A22CEEFDDE000472E4 /* FunListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6A12CEEFDDE000472E4 /* FunListener.swift */; };
 		DA9C3F492CCB554700170FF7 /* T991UT.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F482CCB554700170FF7 /* T991UT.swift */; };
 		DA9C3F582CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */; };
 		DA9C3F5A2CCB8BC100170FF7 /* TopViewIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */; };
@@ -130,6 +137,13 @@
 		DA8CF68E2CDDE5E3000472E4 /* SingularTextEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingularTextEnum.swift; sourceTree = "<group>"; };
 		DA8CF6902CDE0FAA000472E4 /* ShiftListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftListener.swift; sourceTree = "<group>"; };
 		DA8CF6922CE19A88000472E4 /* IndicatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorState.swift; sourceTree = "<group>"; };
+		DA8CF6952CEEDBBC000472E4 /* FunBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunBean.swift; sourceTree = "<group>"; };
+		DA8CF6972CEEDE40000472E4 /* FunItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunItem.swift; sourceTree = "<group>"; };
+		DA8CF6992CEEE1C2000472E4 /* MethodOneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodOneModel.swift; sourceTree = "<group>"; };
+		DA8CF69B2CEEE2AE000472E4 /* MethodOneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodOneData.swift; sourceTree = "<group>"; };
+		DA8CF69D2CEEE430000472E4 /* FxGxUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FxGxUtil.swift; sourceTree = "<group>"; };
+		DA8CF69F2CEEF8AB000472E4 /* FunList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunList.swift; sourceTree = "<group>"; };
+		DA8CF6A12CEEFDDE000472E4 /* FunListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunListener.swift; sourceTree = "<group>"; };
 		DA9C3F482CCB554700170FF7 /* T991UT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T991UT.swift; sourceTree = "<group>"; };
 		DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonIdentifiers.swift; sourceTree = "<group>"; };
 		DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewIdentifiers.swift; sourceTree = "<group>"; };
@@ -225,6 +239,7 @@
 			children = (
 				DA3866BD2CA6861600CFAD4F /* Fragments */,
 				DA3866B52CA683AA00CFAD4F /* KeyboardListener */,
+				DA8CF6942CEEDB34000472E4 /* CalculateFun */,
 				DAD729B72CBF85DA00ACE021 /* CalculateVar */,
 				DA6061762CB7AB030091779E /* CalculateFormat */,
 				DAEEB3962C8AD49700246752 /* CalculateHistory */,
@@ -288,6 +303,7 @@
 				DA6061742CB764920091779E /* FormatListener.swift */,
 				DA5918772CB9167B00A98368 /* MainListener.swift */,
 				DAD729B52CBF858D00ACE021 /* VarListener.swift */,
+				DA8CF6A12CEEFDDE000472E4 /* FunListener.swift */,
 				DA8CF6902CDE0FAA000472E4 /* ShiftListener.swift */,
 			);
 			path = KeyboardListener;
@@ -332,6 +348,17 @@
 			path = CalculateFormat;
 			sourceTree = "<group>";
 		};
+		DA8CF6942CEEDB34000472E4 /* CalculateFun */ = {
+			isa = PBXGroup;
+			children = (
+				DA8CF6952CEEDBBC000472E4 /* FunBean.swift */,
+				DA8CF6972CEEDE40000472E4 /* FunItem.swift */,
+				DA8CF69F2CEEF8AB000472E4 /* FunList.swift */,
+				DA8CF69D2CEEE430000472E4 /* FxGxUtil.swift */,
+			);
+			path = CalculateFun;
+			sourceTree = "<group>";
+		};
 		DABFAF592C65D613008E8048 /* CustomModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +370,7 @@
 				DABFAF602C65E488008E8048 /* ExpressionModel.swift */,
 				DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */,
 				DABFAF5E2C65E420008E8048 /* FractionModel.swift */,
+				DA8CF6992CEEE1C2000472E4 /* MethodOneModel.swift */,
 			);
 			path = CustomModels;
 			sourceTree = "<group>";
@@ -391,6 +419,7 @@
 				DAEEB3902C8993FF00246752 /* ExpressionItemData.swift */,
 				DAEEB3942C899F6600246752 /* SingularTextData.swift */,
 				DAEEB3922C899C1F00246752 /* FractionData.swift */,
+				DA8CF69B2CEEE2AE000472E4 /* MethodOneData.swift */,
 				DA6061722CB762AC0091779E /* FormatData.swift */,
 			);
 			path = CustomData;
@@ -545,6 +574,7 @@
 			files = (
 				DA6061782CB7AB4D0091779E /* FormatList.swift in Sources */,
 				DAEEB39C2C8ADD0800246752 /* HistoryList.swift in Sources */,
+				DA8CF6A22CEEFDDE000472E4 /* FunListener.swift in Sources */,
 				DAC991152C69E6C000744B5D /* ArrowListener.swift in Sources */,
 				DA5918762CB9139300A98368 /* ActiveFragment.swift in Sources */,
 				DAC991232C6DD9C200744B5D /* CustomIdGenerator.swift in Sources */,
@@ -571,6 +601,7 @@
 				DA60617A2CB7AD220091779E /* FormatBean.swift in Sources */,
 				DAC991172C6C572C00744B5D /* KeyboardPanel.swift in Sources */,
 				DAD729B62CBF858D00ACE021 /* VarListener.swift in Sources */,
+				DA8CF69A2CEEE1C2000472E4 /* MethodOneModel.swift in Sources */,
 				DAEEB3912C8993FF00246752 /* ExpressionItemData.swift in Sources */,
 				DA3866BF2CA6863400CFAD4F /* FragmentCalculateTopView.swift in Sources */,
 				DAD729BB2CBF863F00ACE021 /* VarBean.swift in Sources */,
@@ -579,12 +610,15 @@
 				DAC991202C6D8CD600744B5D /* KeyboardButtonTextText.swift in Sources */,
 				DA3866B92CA6845200CFAD4F /* HistoryListener.swift in Sources */,
 				DA9C3F582CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift in Sources */,
+				DA8CF6982CEEDE40000472E4 /* FunItem.swift in Sources */,
 				DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */,
 				DA076E202C22B0DF00F7A2C1 /* NightMatchApp.swift in Sources */,
 				DA03B8592C65A438003626B8 /* CustomSingularTextView.swift in Sources */,
+				DA8CF69C2CEEE2AE000472E4 /* MethodOneData.swift in Sources */,
 				DA5918742CB8FA0800A98368 /* FragmentMain.swift in Sources */,
 				DA2A5B542C8EDE2600CE877A /* KeyboardButtonImageText.swift in Sources */,
 				DA3866C92CA6902C00CFAD4F /* ACListener.swift in Sources */,
+				DA8CF6A02CEEF8AB000472E4 /* FunList.swift in Sources */,
 				DAD729BD2CBF935400ACE021 /* VarUtil.swift in Sources */,
 				DAEEB38E2C89928700246752 /* ExpressionData.swift in Sources */,
 				DA6061732CB762AC0091779E /* FormatData.swift in Sources */,
@@ -592,6 +626,7 @@
 				DAEEB38C2C89817300246752 /* ExpressionContext.swift in Sources */,
 				DA3866C12CA68A4D00CFAD4F /* DirectionListener.swift in Sources */,
 				DAC991102C69CFF400744B5D /* CustomFractionView.swift in Sources */,
+				DA8CF6962CEEDBBD000472E4 /* FunBean.swift in Sources */,
 				DA2A5B562C8EEFC700CE877A /* KeyboardButtonTextImage.swift in Sources */,
 				DAC991292C6F2ECD00744B5D /* KeyboardButton2.swift in Sources */,
 				DA8CF6932CE19A88000472E4 /* IndicatorState.swift in Sources */,
@@ -600,6 +635,7 @@
 				DAD729BF2CBF9D8700ACE021 /* VarItem.swift in Sources */,
 				DAC991272C6F2E7000744B5D /* GrowingButtonStyle2.swift in Sources */,
 				DA9C3F5A2CCB8BC100170FF7 /* TopViewIdentifiers.swift in Sources */,
+				DA8CF69E2CEEE430000472E4 /* FxGxUtil.swift in Sources */,
 				DABFAF5F2C65E420008E8048 /* FractionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

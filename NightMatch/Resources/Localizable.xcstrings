@@ -8,7 +8,6 @@
 
     },
     "Copy" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -36,7 +35,6 @@
       }
     },
     "Delete" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -84,7 +82,6 @@
 
     },
     "Rerun" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {

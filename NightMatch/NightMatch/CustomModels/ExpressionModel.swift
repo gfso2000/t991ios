@@ -567,6 +567,9 @@ class ExpressionModel:ObservableObject,ArrowListener{
             } else if let fractionData = child as? FractionData {
                 let newFractionModel = doAddFraction()
                 newFractionModel.replicate(fractionData)
+            } else if let methodOneData = child as? MethodOneData {
+                let newMethodOneModel = doAddMethodWithOneArgument("methodOne")
+                newMethodOneModel.replicate(methodOneData)
             }
         }
     }

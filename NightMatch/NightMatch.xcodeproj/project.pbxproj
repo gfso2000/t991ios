@@ -49,6 +49,7 @@
 		DA8CF69E2CEEE430000472E4 /* FxGxUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF69D2CEEE430000472E4 /* FxGxUtil.swift */; };
 		DA8CF6A02CEEF8AB000472E4 /* FunList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF69F2CEEF8AB000472E4 /* FunList.swift */; };
 		DA8CF6A22CEEFDDE000472E4 /* FunListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6A12CEEFDDE000472E4 /* FunListener.swift */; };
+		DA8CF6A42CEF0565000472E4 /* CustomMethodOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CF6A32CEF0565000472E4 /* CustomMethodOneView.swift */; };
 		DA9C3F492CCB554700170FF7 /* T991UT.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F482CCB554700170FF7 /* T991UT.swift */; };
 		DA9C3F582CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */; };
 		DA9C3F5A2CCB8BC100170FF7 /* TopViewIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */; };
@@ -144,6 +145,7 @@
 		DA8CF69D2CEEE430000472E4 /* FxGxUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FxGxUtil.swift; sourceTree = "<group>"; };
 		DA8CF69F2CEEF8AB000472E4 /* FunList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunList.swift; sourceTree = "<group>"; };
 		DA8CF6A12CEEFDDE000472E4 /* FunListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunListener.swift; sourceTree = "<group>"; };
+		DA8CF6A32CEF0565000472E4 /* CustomMethodOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMethodOneView.swift; sourceTree = "<group>"; };
 		DA9C3F482CCB554700170FF7 /* T991UT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T991UT.swift; sourceTree = "<group>"; };
 		DA9C3F572CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButtonIdentifiers.swift; sourceTree = "<group>"; };
 		DA9C3F592CCB8BC100170FF7 /* TopViewIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewIdentifiers.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				DA03B8582C65A438003626B8 /* CustomSingularTextView.swift */,
 				DAC9910F2C69CFF400744B5D /* CustomFractionView.swift */,
+				DA8CF6A32CEF0565000472E4 /* CustomMethodOneView.swift */,
 				DA03B85A2C65A9B5003626B8 /* CustomExpressionView.swift */,
 			);
 			path = CustomWidgets;
@@ -609,6 +612,7 @@
 				DA60617C2CB7AD850091779E /* FormatItem.swift in Sources */,
 				DAC991202C6D8CD600744B5D /* KeyboardButtonTextText.swift in Sources */,
 				DA3866B92CA6845200CFAD4F /* HistoryListener.swift in Sources */,
+				DA8CF6A42CEF0565000472E4 /* CustomMethodOneView.swift in Sources */,
 				DA9C3F582CCB72C300170FF7 /* KeyboardButtonIdentifiers.swift in Sources */,
 				DA8CF6982CEEDE40000472E4 /* FunItem.swift in Sources */,
 				DAC991252C6F27EC00744B5D /* LeftTopStrokeShape.swift in Sources */,

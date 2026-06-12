@@ -78,9 +78,12 @@ struct FragmentCalculateTopView: View {
                 //environmentObject can't be visited in init(), so visit here
                 fragmentCalculateController.setActiveFragmentObject(activeFragment)
                 fragmentCalculateController.setIndicatorState(self.indicatorState)
-                
-                //pass context,resultModel to controller, let controller operate them, and they in turn update view
-                self.fragmentCalculateController.setExpressionContext(expressionContext)
+
+                // Use expressionModel.expressionContext (not the struct's expressionContext property)
+                // because @StateObject keeps the model from the first init(), but the struct's
+                // expressionContext property may be a newer instance from a subsequent re-render,
+                // pointing to a different (unobserved) expressionModel.
+                self.fragmentCalculateController.setExpressionContext(self.expressionModel.expressionContext!)
                 self.fragmentCalculateController.setResultModel(self.resultModel)
             }
         }

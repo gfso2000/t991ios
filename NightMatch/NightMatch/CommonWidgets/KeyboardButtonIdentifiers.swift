@@ -19,14 +19,30 @@ struct KeyboardButtonIdentifiers {
     static let num_1 = "num_1"
     static let num_0 = "num_0"
     static let num_dot = "num_dot"
-    
+    static let num_power10 = "num_power10"
+
     static let ok = "ok"
-    static let ac = "ac"
     static let exe = "exe"
-    
+    static let ac = "ac"
+
     static let add = "add"
     static let subtract = "subtract"
-    
+    static let multiply = "multiply"
+    static let divide = "divide"
+
+    static let fraction = "fraction"
+    static let sqrt = "sqrt"
+    static let powern = "powern"
+    static let powertwo = "powertwo"
+    static let lognm = "lognm"
+
     static let sin = "sin"
+    static let cos = "cos"
+    static let tan = "tan"
+    static let left_bracket = "left_bracket"
+    static let right_bracket = "right_bracket"
+    static let one_bracket = "one_bracket"
+
     static let X = "X"
+    static let format = "format"
 }

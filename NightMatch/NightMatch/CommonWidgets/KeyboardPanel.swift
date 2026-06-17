@@ -171,32 +171,67 @@ struct KeyboardPanel: View {
                 //row 4
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextImage(text: "𝑿", image:Image("custom_button_degree"), action:{
-                        //
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.CONST_E)
+                        } else {
+                            mathListener?.addSingularText(.VAR_X)
+                        }
                     }, accessibilityIdentifier: KeyboardButtonIdentifiers.X)
                     KeyboardButtonImageImage(imageBottom:Image("custom_button_fraction"),imageUp:Image("custom_button_mixedfraction"),action:{
-                        mathListener?.addFraction()
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addMixedFraction()
+                        } else {
+                            mathListener?.addFraction()
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.fraction)
                     KeyboardButtonImageImage(imageBottom:Image("custom_button_sqrt"),imageUp:Image("custom_button_mixedsqrt"),action:{
-                        print("a")
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addMixedSquareRoot()
+                        } else {
+                            mathListener?.addSquareRoot()
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.sqrt)
                     KeyboardButtonImageImage(imageBottom:Image("custom_button_xn"),imageUp:Image("custom_button_x1"),action:{
-                        print("a")
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSquare(1)
+                        } else {
+                            mathListener?.addSquare(0)
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.powern)
                     KeyboardButtonImageImage(imageBottom:Image("custom_button_x2"),imageUp:Image("custom_button_log"),action:{
-                        print("a")
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addLogSimple("log")
+                        } else {
+                            mathListener?.addSquare(2)
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.powertwo)
                     KeyboardButtonImageImage(imageBottom:Image("custom_button_lognm"),imageUp:Image("custom_button_ln"),action:{
-                        print("a")
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addLogSimple("ln")
+                        } else {
+                            mathListener?.addLogFull()
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.lognm)
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 //row 5
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextImage(text: "(一)", image:Image("custom_button_e"), action:{
-                        //
-                    })
-                    
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.CONST_E)
+                        } else {
+                            mathListener?.addSingularText(.NEGATIVE)
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.one_bracket)
+
                     KeyboardButtonTextImage(text: "sin", image:Image("custom_button_sin1"), action:{
                         if shiftListener != nil && shiftListener!.isShiftPressed() {
                             shiftListener?.resetShift()
@@ -205,32 +240,62 @@ struct KeyboardPanel: View {
                             mathListener?.addMethodWithOneArgument("sin")
                         }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.sin)
-                    
+
                     KeyboardButtonTextImage(text: "cos", image:Image("custom_button_cos1"), action:{
-                        //
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addMethodWithOneArgument("arccos")
+                        } else {
+                            mathListener?.addMethodWithOneArgument("cos")
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.cos)
                     KeyboardButtonTextImage(text: "tan", image:Image("custom_button_tan1"), action:{
-                        //
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addMethodWithOneArgument("arctan")
+                        } else {
+                            mathListener?.addMethodWithOneArgument("tan")
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.tan)
                     KeyboardButtonTextImage(text: "(", image:Image("custom_button_equal"), action:{
-                        //
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            // equal sign — not yet in SingularTextEnum, no-op for now
+                        } else {
+                            mathListener?.addSingularText(.LEFT_PARENTHESIS)
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.left_bracket)
                     KeyboardButtonTextImage(text: ")", image:Image("custom_button_comma"), action:{
-                        //
-                    })
+                        mathListener?.addSingularText(.RIGHT_PARENTHESIS)
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.right_bracket)
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 //row 6
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "7", secondText: "π", action:{
-                        mathListener?.addSingularText(.SEVEN)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.PI)
+                        } else {
+                            mathListener?.addSingularText(.SEVEN)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_7)
                     KeyboardButtonTextText(text: "8", secondText: "∠", action:{
-                        mathListener?.addSingularText(.EIGHT)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.ANGLE)
+                        } else {
+                            mathListener?.addSingularText(.EIGHT)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_8)
                     KeyboardButtonTextText(text: "9", secondText: "i", action:{
-                        mathListener?.addSingularText(.NINE)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.COMPLEX_I)
+                        } else {
+                            mathListener?.addSingularText(.NINE)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_9)
                     KeyboardButtonImageText(image: Image("custom_button_delete"), secondText: " ", action:{
                         deleteListener?.onDelete()
@@ -244,39 +309,89 @@ struct KeyboardPanel: View {
                 //row 7
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "4", secondText: "A", action:{
-                        mathListener?.addSingularText(.FOUR)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_A)
+                        } else {
+                            mathListener?.addSingularText(.FOUR)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_4)
                     KeyboardButtonTextText(text: "5", secondText: "B", action:{
-                        mathListener?.addSingularText(.FIVE)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_B)
+                        } else {
+                            mathListener?.addSingularText(.FIVE)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_5)
                     KeyboardButtonTextText(text: "6", secondText: "C", action:{
-                        mathListener?.addSingularText(.SIX)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_C)
+                        } else {
+                            mathListener?.addSingularText(.SIX)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_6)
                     KeyboardButtonTextImage(text: "×", image:Image("custom_button_int"), action:{
-                        //
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addIntegral()
+                        } else {
+                            mathListener?.addSingularText(.MULTIPLY)
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.multiply)
                     KeyboardButtonTextImage(text: "÷", image:Image("custom_button_dx"), action:{
-                        //
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addDDX()
+                        } else {
+                            mathListener?.addSingularText(.DIVIDE)
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.divide)
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
                 
                 //row 8
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextText(text: "1", secondText: "D", action:{
-                        mathListener?.addSingularText(.ONE)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_D)
+                        } else {
+                            mathListener?.addSingularText(.ONE)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_1)
                     KeyboardButtonTextText(text: "2", secondText: "E", action:{
-                        mathListener?.addSingularText(.TWO)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_E)
+                        } else {
+                            mathListener?.addSingularText(.TWO)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_2)
                     KeyboardButtonTextText(text: "3", secondText: "F", action:{
-                        mathListener?.addSingularText(.THREE)
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_F)
+                        } else {
+                            mathListener?.addSingularText(.THREE)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_3)
                     KeyboardButtonTextText(text: "+", secondText: "nPr", action:{
-                        //
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addMethodWithTwoArguments("nPr")
+                        } else {
+                            mathListener?.addSingularText(.ADD)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.add)
                     KeyboardButtonTextText(text: "-", secondText: "nCr", action:{
-                        //
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addMethodWithTwoArguments("nCr")
+                        } else {
+                            mathListener?.addSingularText(.SUBTRACT)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.subtract)
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)
@@ -292,30 +407,45 @@ struct KeyboardPanel: View {
                         }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_0)
                     KeyboardButtonTextText(text: ".", secondText: "y", action:{
-                        //
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_Y)
+                        } else {
+                            mathListener?.addSingularText(.DOT)
+                        }
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.num_dot)
                     KeyboardButtonImageText(image: Image("custom_button_x10n"), secondText: "z", action:{
-                        //
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addSingularText(.VAR_Z)
+                        } else {
+                            mathListener?.addMultiplySquare()
+                        }
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.num_power10)
                     KeyboardButtonImageText(image: Image("custom_button_fmt"), secondText: "Ans", action:{
-                        if(formatListener == nil){
-                            return
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            // Ans — not yet in SingularTextEnum, no-op for now
+                        } else {
+                            if(formatListener == nil){
+                                return
+                            }
+                            let formatData = formatListener!.getFormat()
+                              if(formatData == nil){
+                                return
+                            }
+                            if(formatData!.formatList.isEmpty) {
+                                return
+                            }
+                            self.showingFormat = true
+                            self.formatData.formatList = formatData!.formatList
                         }
-                        let formatData = formatListener!.getFormat()
-                          if(formatData == nil){
-                            return
-                        }
-                        if(formatData!.formatList.isEmpty) {
-                            return
-                        }
-                        self.showingFormat = true
-                        self.formatData.formatList = formatData!.formatList
-                    })
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.format)
                     .sheet(isPresented: $showingFormat) {
                         FormatList(formatList:self.formatData.formatList)
                     }
                     KeyboardButtonTextText(text: "EXE", secondText: " ", action:{
-                        //
+                        okExeListener?.onOK()
                     },accessibilityIdentifier: KeyboardButtonIdentifiers.exe)
                 }
                 .frame(width:geometry.size.width*rowWidthPct, height:geometry.size.height * 1/9)

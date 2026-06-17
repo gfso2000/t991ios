@@ -81,13 +81,61 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
     func addFraction() {
         expressionContext!.getActiveExpressionModel().addFraction()
     }
-    
+
+    func addMixedFraction() {
+        expressionContext!.getActiveExpressionModel().addMixedFraction()
+    }
+
+    func addSquareRoot() {
+        expressionContext!.getActiveExpressionModel().addSquareRoot()
+    }
+
+    func addMixedSquareRoot() {
+        expressionContext!.getActiveExpressionModel().addMixedSquareRoot()
+    }
+
+    func addSquare(_ type: Int) {
+        expressionContext!.getActiveExpressionModel().addSquare(type)
+    }
+
+    func addMultiplySquare() {
+        expressionContext!.getActiveExpressionModel().addMultiplySquare()
+    }
+
+    func addLogFull() {
+        expressionContext!.getActiveExpressionModel().addLogFull()
+    }
+
+    func addLogSimple(_ type: String) {
+        expressionContext!.getActiveExpressionModel().addLogSimple(type)
+    }
+
     func addSingularText(_ text:SingularTextEnum) {
         expressionContext!.getActiveExpressionModel().addSingularText(text)
     }
-    
+
     func addMethodWithOneArgument(_ type:String) {
         expressionContext!.getActiveExpressionModel().addMethodWithOneArgument(type)
+    }
+
+    func addMethodWithTwoArguments(_ type: String) {
+        expressionContext!.getActiveExpressionModel().addMethodWithTwoArguments(type)
+    }
+
+    func addDDX() {
+        expressionContext!.getActiveExpressionModel().addDDX()
+    }
+
+    func addIntegral() {
+        expressionContext!.getActiveExpressionModel().addIntegral()
+    }
+
+    func addSum() {
+        expressionContext!.getActiveExpressionModel().addSum()
+    }
+
+    func addAbs() {
+        expressionContext!.getActiveExpressionModel().addAbs()
     }
     
     func onOK() {

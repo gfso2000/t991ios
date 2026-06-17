@@ -7,8 +7,20 @@
 
 import Foundation
 
-protocol MathListener{
-    func addFraction()->Void
-    func addSingularText(_ text:SingularTextEnum)->Void
-    func addMethodWithOneArgument(_ type:String)->Void
+protocol MathListener {
+    func addSingularText(_ text: SingularTextEnum) -> Void
+    func addFraction() -> Void
+    func addMixedFraction() -> Void
+    func addSquareRoot() -> Void
+    func addMixedSquareRoot() -> Void
+    func addSquare(_ type: Int) -> Void
+    func addMultiplySquare() -> Void
+    func addLogFull() -> Void
+    func addLogSimple(_ type: String) -> Void
+    func addMethodWithOneArgument(_ type: String) -> Void
+    func addMethodWithTwoArguments(_ type: String) -> Void
+    func addDDX() -> Void
+    func addIntegral() -> Void
+    func addSum() -> Void
+    func addAbs() -> Void
 }

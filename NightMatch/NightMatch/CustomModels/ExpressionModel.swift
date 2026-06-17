@@ -110,6 +110,242 @@ class ExpressionModel:ObservableObject,ArrowListener{
         return fractionModel;
     }
     
+    func addMixedFraction() {
+        if (!canAddFraction()) {
+            return
+        }
+        savePreviousState()
+        let mixedFractionModel = doAddMixedFraction()
+        loseFocus()
+        self.lastFocusedChildrenId = mixedFractionModel.id
+        let merged = initializeMergedExpression(mixedFractionModel)
+        if (merged) {
+            mixedFractionModel.setFocus(FocusDirectionEnum.ORIGINAL)
+        } else {
+            mixedFractionModel.setFocus(FocusDirectionEnum.LEFT)
+        }
+    }
+
+    func doAddMixedFraction() -> MixedFractionModel {
+        let mixedFractionModel = MixedFractionModel(expressionContext: self.expressionContext,
+                                                    id: CustomIdGenerator.generateId(),
+                                                    showCaret: false, parentModel: self)
+        insertChild(mixedFractionModel)
+        return mixedFractionModel
+    }
+
+    func addMixedSquareRoot() {
+        savePreviousState()
+        let mixedSquareRootModel = doAddMixedSquareRoot()
+        loseFocus()
+        self.lastFocusedChildrenId = mixedSquareRootModel.id
+        let merged = initializeMergedExpression(mixedSquareRootModel)
+        if (merged) {
+            mixedSquareRootModel.setFocus(FocusDirectionEnum.RIGHT)
+        } else {
+            mixedSquareRootModel.setFocus(FocusDirectionEnum.LEFT)
+        }
+    }
+
+    func doAddMixedSquareRoot() -> MixedSquareRootModel {
+        let mixedSquareRootModel = MixedSquareRootModel(expressionContext: self.expressionContext,
+                                                        id: CustomIdGenerator.generateId(),
+                                                        showCaret: false, parentModel: self)
+        insertChild(mixedSquareRootModel)
+        return mixedSquareRootModel
+    }
+
+    func addSquareRoot() {
+        savePreviousState()
+        let squareRootModel = doAddSquareRoot()
+        let merged = initializeMergedExpression(squareRootModel)
+        if (!merged) {
+            loseFocus()
+            self.lastFocusedChildrenId = squareRootModel.id
+            squareRootModel.setFocus(FocusDirectionEnum.LEFT)
+        }
+    }
+
+    func doAddSquareRoot() -> SquareRootModel {
+        let squareRootModel = SquareRootModel(expressionContext: self.expressionContext,
+                                              id: CustomIdGenerator.generateId(),
+                                              showCaret: false, parentModel: self)
+        insertChild(squareRootModel)
+        return squareRootModel
+    }
+
+    func addMultiplySquare() {
+        savePreviousState()
+        _ = doAddSingularText(.MULTIPLY)
+        let squareModel = doAddSquare()
+        loseFocus()
+        self.lastFocusedChildrenId = squareModel.id
+        var childrenData: [ExpressionItemData] = []
+        childrenData.append(SingularTextData(id: CustomIdGenerator.generateId(), text: .ONE))
+        childrenData.append(SingularTextData(id: CustomIdGenerator.generateId(), text: .ZERO))
+        let expressionData = ExpressionData(lastFocusedChildrenId: -1, children: childrenData, id: CustomIdGenerator.generateId())
+        squareModel.initializeBottomPartExpression(expressionData)
+        squareModel.setFocus(FocusDirectionEnum.RIGHT)
+    }
+
+    func addSquare(_ type: Int) {
+        savePreviousState()
+        let squareModel = doAddSquare()
+        let merged = initializeMergedExpression(squareModel)
+        if type == 1 {
+            var childrenData: [ExpressionItemData] = []
+            childrenData.append(SingularTextData(id: CustomIdGenerator.generateId(), text: .NEGATIVE))
+            childrenData.append(SingularTextData(id: CustomIdGenerator.generateId(), text: .ONE))
+            let expressionData = ExpressionData(lastFocusedChildrenId: -1, children: childrenData, id: CustomIdGenerator.generateId())
+            squareModel.initializeTopPartExpression(expressionData)
+            if (!merged) {
+                loseFocus()
+                self.lastFocusedChildrenId = squareModel.id
+                squareModel.setFocus(FocusDirectionEnum.LEFT)
+            }
+            return
+        } else if type == 2 {
+            var childrenData: [ExpressionItemData] = []
+            childrenData.append(SingularTextData(id: CustomIdGenerator.generateId(), text: .TWO))
+            let expressionData = ExpressionData(lastFocusedChildrenId: -1, children: childrenData, id: CustomIdGenerator.generateId())
+            squareModel.initializeTopPartExpression(expressionData)
+            if (!merged) {
+                loseFocus()
+                self.lastFocusedChildrenId = squareModel.id
+                squareModel.setFocus(FocusDirectionEnum.LEFT)
+            }
+            return
+        }
+        loseFocus()
+        self.lastFocusedChildrenId = squareModel.id
+        if (merged) {
+            squareModel.setFocus(FocusDirectionEnum.RIGHT)
+        } else {
+            squareModel.setFocus(FocusDirectionEnum.LEFT)
+        }
+    }
+
+    func doAddSquare() -> SquareModel {
+        let squareModel = SquareModel(expressionContext: self.expressionContext,
+                                     id: CustomIdGenerator.generateId(),
+                                     showCaret: false, parentModel: self)
+        insertChild(squareModel)
+        return squareModel
+    }
+
+    func addLogFull() {
+        savePreviousState()
+        let logFullModel = doAddLogFull()
+        loseFocus()
+        self.lastFocusedChildrenId = logFullModel.id
+        logFullModel.setFocus(FocusDirectionEnum.LEFT)
+    }
+
+    func doAddLogFull() -> LogFullModel {
+        let logFullModel = LogFullModel(expressionContext: self.expressionContext,
+                                       id: CustomIdGenerator.generateId(),
+                                       showCaret: false, parentModel: self)
+        insertChild(logFullModel)
+        return logFullModel
+    }
+
+    func addLogSimple(_ type: String) {
+        savePreviousState()
+        let logSimpleModel = doAddLogSimple(type)
+        loseFocus()
+        self.lastFocusedChildrenId = logSimpleModel.id
+        logSimpleModel.setFocus(FocusDirectionEnum.LEFT)
+    }
+
+    func doAddLogSimple(_ type: String) -> LogSimpleModel {
+        let logSimpleModel = LogSimpleModel(expressionContext: self.expressionContext,
+                                            id: CustomIdGenerator.generateId(),
+                                            showCaret: false, parentModel: self, type: type)
+        insertChild(logSimpleModel)
+        return logSimpleModel
+    }
+
+    func addMethodWithTwoArguments(_ type: String) {
+        savePreviousState()
+        let methodTwoModel = doAddMethodWithTwoArguments(type)
+        loseFocus()
+        self.lastFocusedChildrenId = methodTwoModel.id
+        methodTwoModel.setFocus(FocusDirectionEnum.LEFT)
+    }
+
+    func doAddMethodWithTwoArguments(_ type: String) -> MethodTwoModel {
+        let methodTwoModel = MethodTwoModel(expressionContext: self.expressionContext,
+                                            id: CustomIdGenerator.generateId(),
+                                            showCaret: false, parentModel: self, type: type)
+        insertChild(methodTwoModel)
+        return methodTwoModel
+    }
+
+    func addDDX() {
+        savePreviousState()
+        let ddxModel = doAddDDX()
+        loseFocus()
+        self.lastFocusedChildrenId = ddxModel.id
+        ddxModel.setFocus(FocusDirectionEnum.LEFT)
+    }
+
+    func doAddDDX() -> DDXModel {
+        let ddxModel = DDXModel(expressionContext: self.expressionContext,
+                                id: CustomIdGenerator.generateId(),
+                                showCaret: false, parentModel: self)
+        insertChild(ddxModel)
+        return ddxModel
+    }
+
+    func addIntegral() {
+        savePreviousState()
+        let integralModel = doAddIntegral()
+        loseFocus()
+        self.lastFocusedChildrenId = integralModel.id
+        integralModel.setFocus(FocusDirectionEnum.LEFT)
+    }
+
+    func doAddIntegral() -> IntegralModel {
+        let integralModel = IntegralModel(expressionContext: self.expressionContext,
+                                          id: CustomIdGenerator.generateId(),
+                                          showCaret: false, parentModel: self)
+        insertChild(integralModel)
+        return integralModel
+    }
+
+    func addSum() {
+        savePreviousState()
+        let sumModel = doAddSum()
+        loseFocus()
+        self.lastFocusedChildrenId = sumModel.id
+        sumModel.setFocus(FocusDirectionEnum.LEFT)
+    }
+
+    func doAddSum() -> SumModel {
+        let sumModel = SumModel(expressionContext: self.expressionContext,
+                                id: CustomIdGenerator.generateId(),
+                                showCaret: false, parentModel: self)
+        insertChild(sumModel)
+        return sumModel
+    }
+
+    func addAbs() {
+        savePreviousState()
+        let absModel = doAddAbs()
+        loseFocus()
+        self.lastFocusedChildrenId = absModel.id
+        _ = initializeMergedExpression(absModel)
+        absModel.setFocus(FocusDirectionEnum.LEFT)
+    }
+
+    func doAddAbs() -> AbsModel {
+        let absModel = AbsModel(expressionContext: self.expressionContext,
+                                id: CustomIdGenerator.generateId(),
+                                showCaret: false, parentModel: self)
+        insertChild(absModel)
+        return absModel
+    }
+
     func addMethodWithOneArgument(_ type:String) {
         savePreviousState()
         let methodOneModel = doAddMethodWithOneArgument(type)
@@ -138,8 +374,12 @@ class ExpressionModel:ObservableObject,ArrowListener{
             return false
         }
 
+        if index == 0 {
+            return false
+        }
+
         index -= 1
-        var endPos = index
+        let endPos = index
         var startPos = index
 
         if isRightParenthesis(endPos) {
@@ -173,7 +413,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
 
     func canBeMerged(_ index:Int) -> Bool {
         //xx.xxxPI
-        var child = children[index]
+        let child = children[index]
         if !(child is SingularTextModel) {
             return false
         }
@@ -182,7 +422,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
 
     func isE(_ index:Int) -> Bool {
-        var child = children[index]
+        let child = children[index]
         if !(child is SingularTextModel) {
             return false
         }
@@ -191,7 +431,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
 
     func isPI(_ index:Int) -> Bool {
-        var child = children[index]
+        let child = children[index]
         if !(child is SingularTextModel) {
             return false
         }
@@ -200,7 +440,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
 
     func isX(_ index:Int) -> Bool {
-        var child = children[index]
+        let child = children[index]
         if !(child is SingularTextModel) {
             return false
         }
@@ -209,7 +449,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
 
     func isMat(_ index:Int) -> Bool {
-        var child = children[index]
+        let child = children[index]
         if !(child is SingularTextModel) {
             return false
         }
@@ -218,7 +458,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
 
     func isVariableABCEDEFxyz(_ index:Int) -> Bool {
-        var child = children[index]
+        let child = children[index]
         if !(child is SingularTextModel) {
             return false
         }
@@ -228,7 +468,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
 
     func isCompositeModel(_ index:Int) -> Bool {
-        var child = children[index]
+        let child = children[index]
         if (child is SingularTextModel) {
             return false
         }
@@ -236,7 +476,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
 
     func isRightParenthesis(_ index:Int) -> Bool {
-        var child = children[index]
+        let child = children[index]
         if !(child is SingularTextModel) {
             return false
         }
@@ -246,7 +486,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
     }
 
     func isLeftParenthesis(_ index:Int) -> Bool {
-        var child = children[index]
+        let child = children[index]
         if !(child is SingularTextModel) {
             return false
         }
@@ -567,9 +807,42 @@ class ExpressionModel:ObservableObject,ArrowListener{
             } else if let fractionData = child as? FractionData {
                 let newFractionModel = doAddFraction()
                 newFractionModel.replicate(fractionData)
+            } else if let mixedFractionData = child as? MixedFractionData {
+                let newMixedFractionModel = doAddMixedFraction()
+                newMixedFractionModel.replicate(mixedFractionData)
+            } else if let mixedSquareRootData = child as? MixedSquareRootData {
+                let newMixedSquareRootModel = doAddMixedSquareRoot()
+                newMixedSquareRootModel.replicate(mixedSquareRootData)
+            } else if let squareRootData = child as? SquareRootData {
+                let newSquareRootModel = doAddSquareRoot()
+                newSquareRootModel.replicate(squareRootData)
+            } else if let squareData = child as? SquareData {
+                let newSquareModel = doAddSquare()
+                newSquareModel.replicate(squareData)
+            } else if let logFullData = child as? LogFullData {
+                let newLogFullModel = doAddLogFull()
+                newLogFullModel.replicate(logFullData)
+            } else if let logSimpleData = child as? LogSimpleData {
+                let newLogSimpleModel = doAddLogSimple("logln")
+                newLogSimpleModel.replicate(logSimpleData)
             } else if let methodOneData = child as? MethodOneData {
-                let newMethodOneModel = doAddMethodWithOneArgument("methodOne")
+                let newMethodOneModel = doAddMethodWithOneArgument("sincos")
                 newMethodOneModel.replicate(methodOneData)
+            } else if let methodTwoData = child as? MethodTwoData {
+                let newMethodTwoModel = doAddMethodWithTwoArguments("nPrnCr")
+                newMethodTwoModel.replicate(methodTwoData)
+            } else if let ddxData = child as? DDXData {
+                let newDDXModel = doAddDDX()
+                newDDXModel.replicate(ddxData)
+            } else if let integralData = child as? IntegralData {
+                let newIntegralModel = doAddIntegral()
+                newIntegralModel.replicate(integralData)
+            } else if let sumData = child as? SumData {
+                let newSumModel = doAddSum()
+                newSumModel.replicate(sumData)
+            } else if let absData = child as? AbsData {
+                let newAbsModel = doAddAbs()
+                newAbsModel.replicate(absData)
             }
         }
     }

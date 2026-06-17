@@ -101,4 +101,12 @@ class SquareModel: Caretable, ObservableObject, ArrowListener {
     func initializeNumberExpression(_ expressionData: ExpressionData) {
         bottomPartModel.replicate(expressionData)
     }
+
+    func initializeTopPartExpression(_ expressionData: ExpressionData) {
+        topPartModel.replicate(expressionData)
+    }
+
+    func initializeBottomPartExpression(_ expressionData: ExpressionData) {
+        bottomPartModel.replicate(expressionData)
+    }
 }

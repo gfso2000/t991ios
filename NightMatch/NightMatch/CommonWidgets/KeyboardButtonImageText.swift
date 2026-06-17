@@ -19,8 +19,9 @@ struct KeyboardButtonImageText: View {
     var bgColor : Color
     var textColor: Color
     var buttonStyle : GrowingButtonStyle
-    
-    init(image:Image, secondText:String, fontSize:Int=18, imageScale:Double = 0.6, bgColor: Color = Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255), textColor: Color = Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), action:@escaping () -> Void){
+    var accessibilityIdentifier: String
+
+    init(image:Image, secondText:String, fontSize:Int=18, imageScale:Double = 0.6, bgColor: Color = Color(red: 54 / 255, green: 54 / 255, blue: 54 / 255), textColor: Color = Color(red: 102 / 255, green: 204 / 255, blue: 255 / 255), action:@escaping () -> Void, accessibilityIdentifier: String = "Z"){
         self.image = image;
         self.secondText = secondText
         self.fontSize = fontSize
@@ -29,6 +30,7 @@ struct KeyboardButtonImageText: View {
         self.textColor = textColor
         self.buttonStyle = GrowingButtonStyle(bgColor: self.bgColor)
         self.action = action
+        self.accessibilityIdentifier = accessibilityIdentifier
     }
     
     var body: some View {
@@ -46,6 +48,7 @@ struct KeyboardButtonImageText: View {
                         .scaleEffect(CGSize(width: imageScale, height: imageScale))
                 }
                 .buttonStyle(buttonStyle)
+                .accessibilityIdentifier(accessibilityIdentifier)
             }
         }
     }

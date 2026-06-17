@@ -11,13 +11,14 @@ struct KeyboardButtonImageImage: View {
     var imageBottom: Image
     var imageUp: Image
     var action:() -> Void
+    var accessibilityIdentifier: String = "Z"
     let topHeightPct = 0.35
     let bottomHeightPct = 0.55
     let widthPct = 0.8
     let fontSize = 24
     let imageScale = 0.6
     let imageUpScale = 0.8
-    
+
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing:0){
@@ -32,6 +33,7 @@ struct KeyboardButtonImageImage: View {
                         .scaleEffect(CGSize(width: imageScale, height: imageScale))
                 }
                 .buttonStyle(GrowingButtonStyle())
+                .accessibilityIdentifier(accessibilityIdentifier)
             }
         }
     }

@@ -20,9 +20,12 @@ struct CustomMethodTwoView: View {
                     Rectangle().frame(width: 1).foregroundColor(.clear)
                 }
                 HStack(spacing: 0) {
-                    CustomExpressionView(accessibilityIdentifier: "NA", expressionModel: model.nPartModel)
                     Text(model.type)
+                    Text("(")
+                    CustomExpressionView(accessibilityIdentifier: "NA", expressionModel: model.nPartModel)
+                    Text(",")
                     CustomExpressionView(accessibilityIdentifier: "NA", expressionModel: model.rPartModel)
+                    Text(")")
                 }
             }
             .fixedSize(horizontal: false, vertical: true)

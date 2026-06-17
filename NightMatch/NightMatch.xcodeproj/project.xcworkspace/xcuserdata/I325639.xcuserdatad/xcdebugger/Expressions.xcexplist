@@ -17,6 +17,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ExpressionModel.doReplicate(_:):ExpressionModel.swift">
+      </ContextState>
+      <ContextState
          contextName = "ExpressionModel.replicate(_:):ExpressionModel.swift">
       </ContextState>
       <ContextState
@@ -50,9 +53,6 @@
          contextName = "SingularTextModel.replicate(_:):SingularTextModel.swift">
       </ContextState>
       <ContextState
-         contextName = "ExpressionModel.doReplicate(_:):ExpressionModel.swift">
-      </ContextState>
-      <ContextState
          contextName = "ExpressionData.init(_:):ExpressionData.swift">
          <PersistentStrings>
             <PersistentString
@@ -67,10 +67,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #2 in closure #7 in closure #1 in closure #1 in KeyboardPanel.body.getter:KeyboardPanel.swift">
+      </ContextState>
+      <ContextState
          contextName = "FragmentCalulateController.pressShift():FragmentCalulateController.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.activeFragment.shiftPressed">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FragmentCalulateController.addSingularText(_:):FragmentCalulateController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "expressionContext!.getActiveExpressionModel()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

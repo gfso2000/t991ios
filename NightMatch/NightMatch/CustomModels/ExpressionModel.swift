@@ -110,7 +110,7 @@ class ExpressionModel:ObservableObject,ArrowListener{
         return fractionModel;
     }
     
-    func addMethodWithOneArgument(type:String) {
+    func addMethodWithOneArgument(_ type:String) {
         savePreviousState()
         let methodOneModel = doAddMethodWithOneArgument(type)
         loseFocus()

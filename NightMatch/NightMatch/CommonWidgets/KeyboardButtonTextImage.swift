@@ -16,6 +16,7 @@ struct KeyboardButtonTextImage: View {
     let widthPct = 0.8
     let fontSize = 24
     let imageScale = 0.8
+    var accessibilityIdentifier:String = "Z"
     
     var body: some View {
         GeometryReader { geometry in
@@ -31,6 +32,7 @@ struct KeyboardButtonTextImage: View {
                         .font(.system(size: CGFloat(fontSize)))
                 }
                 .buttonStyle(GrowingButtonStyle())
+                .accessibilityIdentifier(accessibilityIdentifier)
             }
         }
     }
@@ -39,5 +41,5 @@ struct KeyboardButtonTextImage: View {
 #Preview {
     KeyboardButtonTextImage(text:"Del",image:Image("custom_button_x10n"),action:{
         print("a")
-    })
+    },accessibilityIdentifier: KeyboardButtonIdentifiers.sin)
 }

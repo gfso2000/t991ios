@@ -20,6 +20,28 @@ struct CustomExpressionView: View {
                     CustomFractionView(model:fractionModel)
                 }else if let methodOneModel = expressionModel.children[index] as? MethodOneModel {
                     CustomMethodOneView(model:methodOneModel)
+                }else if let absModel = expressionModel.children[index] as? AbsModel {
+                    CustomAbsView(model:absModel)
+                }else if let ddxModel = expressionModel.children[index] as? DDXModel {
+                    CustomDDXView(model:ddxModel)
+                }else if let integralModel = expressionModel.children[index] as? IntegralModel {
+                    CustomIntegralView(model:integralModel)
+                }else if let logFullModel = expressionModel.children[index] as? LogFullModel {
+                    CustomLogFullView(model:logFullModel)
+                }else if let logSimpleModel = expressionModel.children[index] as? LogSimpleModel {
+                    CustomLogSimpleView(model:logSimpleModel)
+                }else if let methodTwoModel = expressionModel.children[index] as? MethodTwoModel {
+                    CustomMethodTwoView(model:methodTwoModel)
+                }else if let mixedFractionModel = expressionModel.children[index] as? MixedFractionModel {
+                    CustomMixedFractionView(model:mixedFractionModel)
+                }else if let mixedSquareRootModel = expressionModel.children[index] as? MixedSquareRootModel {
+                    CustomMixedSquareRootView(model:mixedSquareRootModel)
+                }else if let squareModel = expressionModel.children[index] as? SquareModel {
+                    CustomSquareView(model:squareModel)
+                }else if let squareRootModel = expressionModel.children[index] as? SquareRootModel {
+                    CustomSquareRootView(model:squareRootModel)
+                }else if let sumModel = expressionModel.children[index] as? SumModel {
+                    CustomSumView(model:sumModel)
                 }
             }
             Text(expressionModel.getData().getDataAsQalculate())

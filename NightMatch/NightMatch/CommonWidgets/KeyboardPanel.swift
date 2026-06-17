@@ -172,7 +172,7 @@ struct KeyboardPanel: View {
                 HStack(spacing:btnSpacing){
                     KeyboardButtonTextImage(text: "𝑿", image:Image("custom_button_degree"), action:{
                         //
-                    })
+                    }, accessibilityIdentifier: KeyboardButtonIdentifiers.X)
                     KeyboardButtonImageImage(imageBottom:Image("custom_button_fraction"),imageUp:Image("custom_button_mixedfraction"),action:{
                         mathListener?.addFraction()
                     })
@@ -196,9 +196,16 @@ struct KeyboardPanel: View {
                     KeyboardButtonTextImage(text: "(一)", image:Image("custom_button_e"), action:{
                         //
                     })
+                    
                     KeyboardButtonTextImage(text: "sin", image:Image("custom_button_sin1"), action:{
-                        //
-                    })
+                        if shiftListener != nil && shiftListener!.isShiftPressed() {
+                            shiftListener?.resetShift()
+                            mathListener?.addMethodWithOneArgument("arcsin")
+                        }else{
+                            mathListener?.addMethodWithOneArgument("sin")
+                        }
+                    },accessibilityIdentifier: KeyboardButtonIdentifiers.sin)
+                    
                     KeyboardButtonTextImage(text: "cos", image:Image("custom_button_cos1"), action:{
                         //
                     })

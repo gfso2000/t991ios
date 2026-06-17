@@ -10,4 +10,5 @@ import Foundation
 protocol MathListener{
     func addFraction()->Void
     func addSingularText(_ text:SingularTextEnum)->Void
+    func addMethodWithOneArgument(_ type:String)->Void
 }

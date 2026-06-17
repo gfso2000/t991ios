@@ -81,6 +81,39 @@
 		DAEEB3982C8AD4B500246752 /* CalculateHistoryBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3972C8AD4B400246752 /* CalculateHistoryBean.swift */; };
 		DAEEB39A2C8AD63D00246752 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB3992C8AD63D00246752 /* HistoryItem.swift */; };
 		DAEEB39C2C8ADD0800246752 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEEB39B2C8ADD0800246752 /* HistoryList.swift */; };
+		BBAA00012CF0000000000001 /* AbsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00012CF0000000000001 /* AbsData.swift */; };
+		BBAA00022CF0000000000001 /* DDXData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00022CF0000000000001 /* DDXData.swift */; };
+		BBAA00032CF0000000000001 /* IntegralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00032CF0000000000001 /* IntegralData.swift */; };
+		BBAA00042CF0000000000001 /* LogFullData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00042CF0000000000001 /* LogFullData.swift */; };
+		BBAA00052CF0000000000001 /* LogSimpleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00052CF0000000000001 /* LogSimpleData.swift */; };
+		BBAA00062CF0000000000001 /* MethodTwoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00062CF0000000000001 /* MethodTwoData.swift */; };
+		BBAA00072CF0000000000001 /* MixedFractionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00072CF0000000000001 /* MixedFractionData.swift */; };
+		BBAA00082CF0000000000001 /* MixedSquareRootData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00082CF0000000000001 /* MixedSquareRootData.swift */; };
+		BBAA00092CF0000000000001 /* SquareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00092CF0000000000001 /* SquareData.swift */; };
+		BBAA000A2CF0000000000001 /* SquareRootData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB000A2CF0000000000001 /* SquareRootData.swift */; };
+		BBAA000B2CF0000000000001 /* SumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB000B2CF0000000000001 /* SumData.swift */; };
+		BBAA000C2CF0000000000001 /* AbsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB000C2CF0000000000001 /* AbsModel.swift */; };
+		BBAA000D2CF0000000000001 /* DDXModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB000D2CF0000000000001 /* DDXModel.swift */; };
+		BBAA000E2CF0000000000001 /* IntegralModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB000E2CF0000000000001 /* IntegralModel.swift */; };
+		BBAA000F2CF0000000000001 /* LogFullModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB000F2CF0000000000001 /* LogFullModel.swift */; };
+		BBAA00102CF0000000000001 /* LogSimpleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00102CF0000000000001 /* LogSimpleModel.swift */; };
+		BBAA00112CF0000000000001 /* MethodTwoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00112CF0000000000001 /* MethodTwoModel.swift */; };
+		BBAA00122CF0000000000001 /* MixedFractionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00122CF0000000000001 /* MixedFractionModel.swift */; };
+		BBAA00132CF0000000000001 /* MixedSquareRootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00132CF0000000000001 /* MixedSquareRootModel.swift */; };
+		BBAA00142CF0000000000001 /* SquareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00142CF0000000000001 /* SquareModel.swift */; };
+		BBAA00152CF0000000000001 /* SquareRootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00152CF0000000000001 /* SquareRootModel.swift */; };
+		BBAA00162CF0000000000001 /* SumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00162CF0000000000001 /* SumModel.swift */; };
+		BBAA00172CF0000000000001 /* CustomAbsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00172CF0000000000001 /* CustomAbsView.swift */; };
+		BBAA00182CF0000000000001 /* CustomDDXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00182CF0000000000001 /* CustomDDXView.swift */; };
+		BBAA00192CF0000000000001 /* CustomIntegralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00192CF0000000000001 /* CustomIntegralView.swift */; };
+		BBAA001A2CF0000000000001 /* CustomLogFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB001A2CF0000000000001 /* CustomLogFullView.swift */; };
+		BBAA001B2CF0000000000001 /* CustomLogSimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB001B2CF0000000000001 /* CustomLogSimpleView.swift */; };
+		BBAA001C2CF0000000000001 /* CustomMethodTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB001C2CF0000000000001 /* CustomMethodTwoView.swift */; };
+		BBAA001D2CF0000000000001 /* CustomMixedFractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB001D2CF0000000000001 /* CustomMixedFractionView.swift */; };
+		BBAA001E2CF0000000000001 /* CustomMixedSquareRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB001E2CF0000000000001 /* CustomMixedSquareRootView.swift */; };
+		BBAA001F2CF0000000000001 /* CustomSquareRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB001F2CF0000000000001 /* CustomSquareRootView.swift */; };
+		BBAA00202CF0000000000001 /* CustomSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00202CF0000000000001 /* CustomSquareView.swift */; };
+		BBAA00212CF0000000000001 /* CustomSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00212CF0000000000001 /* CustomSumView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +210,39 @@
 		DAEEB3972C8AD4B400246752 /* CalculateHistoryBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateHistoryBean.swift; sourceTree = "<group>"; };
 		DAEEB3992C8AD63D00246752 /* HistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
 		DAEEB39B2C8ADD0800246752 /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
+		AABB00012CF0000000000001 /* AbsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsData.swift; sourceTree = "<group>"; };
+		AABB00022CF0000000000001 /* DDXData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDXData.swift; sourceTree = "<group>"; };
+		AABB00032CF0000000000001 /* IntegralData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegralData.swift; sourceTree = "<group>"; };
+		AABB00042CF0000000000001 /* LogFullData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFullData.swift; sourceTree = "<group>"; };
+		AABB00052CF0000000000001 /* LogSimpleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSimpleData.swift; sourceTree = "<group>"; };
+		AABB00062CF0000000000001 /* MethodTwoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodTwoData.swift; sourceTree = "<group>"; };
+		AABB00072CF0000000000001 /* MixedFractionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedFractionData.swift; sourceTree = "<group>"; };
+		AABB00082CF0000000000001 /* MixedSquareRootData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedSquareRootData.swift; sourceTree = "<group>"; };
+		AABB00092CF0000000000001 /* SquareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareData.swift; sourceTree = "<group>"; };
+		AABB000A2CF0000000000001 /* SquareRootData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareRootData.swift; sourceTree = "<group>"; };
+		AABB000B2CF0000000000001 /* SumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumData.swift; sourceTree = "<group>"; };
+		AABB000C2CF0000000000001 /* AbsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsModel.swift; sourceTree = "<group>"; };
+		AABB000D2CF0000000000001 /* DDXModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDXModel.swift; sourceTree = "<group>"; };
+		AABB000E2CF0000000000001 /* IntegralModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegralModel.swift; sourceTree = "<group>"; };
+		AABB000F2CF0000000000001 /* LogFullModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFullModel.swift; sourceTree = "<group>"; };
+		AABB00102CF0000000000001 /* LogSimpleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSimpleModel.swift; sourceTree = "<group>"; };
+		AABB00112CF0000000000001 /* MethodTwoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodTwoModel.swift; sourceTree = "<group>"; };
+		AABB00122CF0000000000001 /* MixedFractionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedFractionModel.swift; sourceTree = "<group>"; };
+		AABB00132CF0000000000001 /* MixedSquareRootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedSquareRootModel.swift; sourceTree = "<group>"; };
+		AABB00142CF0000000000001 /* SquareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareModel.swift; sourceTree = "<group>"; };
+		AABB00152CF0000000000001 /* SquareRootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareRootModel.swift; sourceTree = "<group>"; };
+		AABB00162CF0000000000001 /* SumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumModel.swift; sourceTree = "<group>"; };
+		AABB00172CF0000000000001 /* CustomAbsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAbsView.swift; sourceTree = "<group>"; };
+		AABB00182CF0000000000001 /* CustomDDXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDDXView.swift; sourceTree = "<group>"; };
+		AABB00192CF0000000000001 /* CustomIntegralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntegralView.swift; sourceTree = "<group>"; };
+		AABB001A2CF0000000000001 /* CustomLogFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogFullView.swift; sourceTree = "<group>"; };
+		AABB001B2CF0000000000001 /* CustomLogSimpleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogSimpleView.swift; sourceTree = "<group>"; };
+		AABB001C2CF0000000000001 /* CustomMethodTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMethodTwoView.swift; sourceTree = "<group>"; };
+		AABB001D2CF0000000000001 /* CustomMixedFractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMixedFractionView.swift; sourceTree = "<group>"; };
+		AABB001E2CF0000000000001 /* CustomMixedSquareRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMixedSquareRootView.swift; sourceTree = "<group>"; };
+		AABB001F2CF0000000000001 /* CustomSquareRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSquareRootView.swift; sourceTree = "<group>"; };
+		AABB00202CF0000000000001 /* CustomSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSquareView.swift; sourceTree = "<group>"; };
+		AABB00212CF0000000000001 /* CustomSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSumView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +278,17 @@
 				DAC9910F2C69CFF400744B5D /* CustomFractionView.swift */,
 				DA8CF6A32CEF0565000472E4 /* CustomMethodOneView.swift */,
 				DA03B85A2C65A9B5003626B8 /* CustomExpressionView.swift */,
+				AABB00172CF0000000000001 /* CustomAbsView.swift */,
+				AABB00182CF0000000000001 /* CustomDDXView.swift */,
+				AABB00192CF0000000000001 /* CustomIntegralView.swift */,
+				AABB001A2CF0000000000001 /* CustomLogFullView.swift */,
+				AABB001B2CF0000000000001 /* CustomLogSimpleView.swift */,
+				AABB001C2CF0000000000001 /* CustomMethodTwoView.swift */,
+				AABB001D2CF0000000000001 /* CustomMixedFractionView.swift */,
+				AABB001E2CF0000000000001 /* CustomMixedSquareRootView.swift */,
+				AABB001F2CF0000000000001 /* CustomSquareRootView.swift */,
+				AABB00202CF0000000000001 /* CustomSquareView.swift */,
+				AABB00212CF0000000000001 /* CustomSumView.swift */,
 			);
 			path = CustomWidgets;
 			sourceTree = "<group>";
@@ -374,6 +451,17 @@
 				DABFAF5C2C65E23F008E8048 /* SingularTextModel.swift */,
 				DABFAF5E2C65E420008E8048 /* FractionModel.swift */,
 				DA8CF6992CEEE1C2000472E4 /* MethodOneModel.swift */,
+				AABB000C2CF0000000000001 /* AbsModel.swift */,
+				AABB000D2CF0000000000001 /* DDXModel.swift */,
+				AABB000E2CF0000000000001 /* IntegralModel.swift */,
+				AABB000F2CF0000000000001 /* LogFullModel.swift */,
+				AABB00102CF0000000000001 /* LogSimpleModel.swift */,
+				AABB00112CF0000000000001 /* MethodTwoModel.swift */,
+				AABB00122CF0000000000001 /* MixedFractionModel.swift */,
+				AABB00132CF0000000000001 /* MixedSquareRootModel.swift */,
+				AABB00142CF0000000000001 /* SquareModel.swift */,
+				AABB00152CF0000000000001 /* SquareRootModel.swift */,
+				AABB00162CF0000000000001 /* SumModel.swift */,
 			);
 			path = CustomModels;
 			sourceTree = "<group>";
@@ -424,6 +512,17 @@
 				DAEEB3922C899C1F00246752 /* FractionData.swift */,
 				DA8CF69B2CEEE2AE000472E4 /* MethodOneData.swift */,
 				DA6061722CB762AC0091779E /* FormatData.swift */,
+				AABB00012CF0000000000001 /* AbsData.swift */,
+				AABB00022CF0000000000001 /* DDXData.swift */,
+				AABB00032CF0000000000001 /* IntegralData.swift */,
+				AABB00042CF0000000000001 /* LogFullData.swift */,
+				AABB00052CF0000000000001 /* LogSimpleData.swift */,
+				AABB00062CF0000000000001 /* MethodTwoData.swift */,
+				AABB00072CF0000000000001 /* MixedFractionData.swift */,
+				AABB00082CF0000000000001 /* MixedSquareRootData.swift */,
+				AABB00092CF0000000000001 /* SquareData.swift */,
+				AABB000A2CF0000000000001 /* SquareRootData.swift */,
+				AABB000B2CF0000000000001 /* SumData.swift */,
 			);
 			path = CustomData;
 			sourceTree = "<group>";
@@ -641,6 +740,39 @@
 				DA9C3F5A2CCB8BC100170FF7 /* TopViewIdentifiers.swift in Sources */,
 				DA8CF69E2CEEE430000472E4 /* FxGxUtil.swift in Sources */,
 				DABFAF5F2C65E420008E8048 /* FractionModel.swift in Sources */,
+				BBAA00012CF0000000000001 /* AbsData.swift in Sources */,
+				BBAA00022CF0000000000001 /* DDXData.swift in Sources */,
+				BBAA00032CF0000000000001 /* IntegralData.swift in Sources */,
+				BBAA00042CF0000000000001 /* LogFullData.swift in Sources */,
+				BBAA00052CF0000000000001 /* LogSimpleData.swift in Sources */,
+				BBAA00062CF0000000000001 /* MethodTwoData.swift in Sources */,
+				BBAA00072CF0000000000001 /* MixedFractionData.swift in Sources */,
+				BBAA00082CF0000000000001 /* MixedSquareRootData.swift in Sources */,
+				BBAA00092CF0000000000001 /* SquareData.swift in Sources */,
+				BBAA000A2CF0000000000001 /* SquareRootData.swift in Sources */,
+				BBAA000B2CF0000000000001 /* SumData.swift in Sources */,
+				BBAA000C2CF0000000000001 /* AbsModel.swift in Sources */,
+				BBAA000D2CF0000000000001 /* DDXModel.swift in Sources */,
+				BBAA000E2CF0000000000001 /* IntegralModel.swift in Sources */,
+				BBAA000F2CF0000000000001 /* LogFullModel.swift in Sources */,
+				BBAA00102CF0000000000001 /* LogSimpleModel.swift in Sources */,
+				BBAA00112CF0000000000001 /* MethodTwoModel.swift in Sources */,
+				BBAA00122CF0000000000001 /* MixedFractionModel.swift in Sources */,
+				BBAA00132CF0000000000001 /* MixedSquareRootModel.swift in Sources */,
+				BBAA00142CF0000000000001 /* SquareModel.swift in Sources */,
+				BBAA00152CF0000000000001 /* SquareRootModel.swift in Sources */,
+				BBAA00162CF0000000000001 /* SumModel.swift in Sources */,
+				BBAA00172CF0000000000001 /* CustomAbsView.swift in Sources */,
+				BBAA00182CF0000000000001 /* CustomDDXView.swift in Sources */,
+				BBAA00192CF0000000000001 /* CustomIntegralView.swift in Sources */,
+				BBAA001A2CF0000000000001 /* CustomLogFullView.swift in Sources */,
+				BBAA001B2CF0000000000001 /* CustomLogSimpleView.swift in Sources */,
+				BBAA001C2CF0000000000001 /* CustomMethodTwoView.swift in Sources */,
+				BBAA001D2CF0000000000001 /* CustomMixedFractionView.swift in Sources */,
+				BBAA001E2CF0000000000001 /* CustomMixedSquareRootView.swift in Sources */,
+				BBAA001F2CF0000000000001 /* CustomSquareRootView.swift in Sources */,
+				BBAA00202CF0000000000001 /* CustomSquareView.swift in Sources */,
+				BBAA00212CF0000000000001 /* CustomSumView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,7 +37,7 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
     }
     
     func addFun(_ funName: String) {
-        expressionContext!.getActiveExpressionModel().addMethodWithOneArgument(type: funName)
+        expressionContext!.getActiveExpressionModel().addMethodWithOneArgument(funName)
     }
 
     func showHistory()->Bool {
@@ -84,6 +84,10 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
     
     func addSingularText(_ text:SingularTextEnum) {
         expressionContext!.getActiveExpressionModel().addSingularText(text)
+    }
+    
+    func addMethodWithOneArgument(_ type:String) {
+        expressionContext!.getActiveExpressionModel().addMethodWithOneArgument(type)
     }
     
     func onOK() {

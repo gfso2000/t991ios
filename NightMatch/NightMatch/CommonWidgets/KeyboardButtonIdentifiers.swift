@@ -26,4 +26,7 @@ struct KeyboardButtonIdentifiers {
     
     static let add = "add"
     static let subtract = "subtract"
+    
+    static let sin = "sin"
+    static let X = "X"
 }

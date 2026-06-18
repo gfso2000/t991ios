@@ -138,37 +138,66 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
         expressionContext!.getActiveExpressionModel().addAbs()
     }
     
+    static let precision = 10
+
     func onOK() {
         let expressionData = expressionContext!.getMathExpression()
-        //save to history
         expressionContext!.addToHistory(expressionData)
 
-        //evaluate in expression context, and save result
-        let resultExpressionData = expressionData
-        //record default format
+        let qalculateExpression = expressionData.getDataAsQalculate()
+
+        // Evaluate with libqalculate across all mode combinations,
+        // mirroring the Java MathInputControl approach.
+        //
+        // approximation indices (QalculateWrapper.h):
+        //   0=EXACT  1=TRY_EXACT  2=APPROXIMATE  3=EXACT_VARIABLES
+        // fraction format indices:
+        //   0=DECIMAL  1=DECIMAL_EXACT  2=FRACTIONAL  3=COMBINED
+        let approxModes:  [(Int, String)] = [
+            (0, "APPROXIMATION_EXACT"),
+            (1, "APPROXIMATION_TRY_EXACT"),
+            (2, "APPROXIMATION_APPROXIMATE"),
+            (3, "APPROXIMATION_EXACT_VARIABLES")
+        ]
+        let fractionFmts: [(Int, String)] = [
+            (3, "FRACTION_COMBINED"),
+            (2, "FRACTION_FRACTIONAL"),
+            (0, "FRACTION_DECIMAL"),
+            (1, "FRACTION_DECIMAL_EXACT")
+        ]
+
+        QalculateBridge.initialize_qalc()
+        QalculateBridge.setPrecision(Int32(FragmentCalulateController.precision))
+
         formatData = FormatData()
-        formatData!.defaultExpressionData = resultExpressionData
-        //record other formats
-        let decimalFormatBean = FormatBean(id: 1, name: "Decimal", expressionData: resultExpressionData)
-        formatData?.formatList.append(decimalFormatBean)
-        let fractionFormatBean = FormatBean(id: 2, name: "Fraction", expressionData: resultExpressionData)
-        formatData?.formatList.append(fractionFormatBean)
-        let fractionFormatBean2 = FormatBean(id: 3, name: "Fraction", expressionData: resultExpressionData)
-        formatData?.formatList.append(fractionFormatBean2)
-        let fractionFormatBean3 = FormatBean(id: 4, name: "Fraction", expressionData: resultExpressionData)
-        formatData?.formatList.append(fractionFormatBean3)
-        let fractionFormatBean4 = FormatBean(id: 5, name: "Fraction", expressionData: resultExpressionData)
-        formatData?.formatList.append(fractionFormatBean4)
-        let fractionFormatBean5 = FormatBean(id: 6, name: "Fraction", expressionData: resultExpressionData)
-        formatData?.formatList.append(fractionFormatBean5)
-        let fractionFormatBean6 = FormatBean(id: 7, name: "Fraction", expressionData: resultExpressionData)
-        formatData?.formatList.append(fractionFormatBean6)
-        let fractionFormatBean7 = FormatBean(id: 8, name: "Fraction", expressionData: resultExpressionData)
-        formatData?.formatList.append(fractionFormatBean7)
+        formatData!.defaultExpressionData = expressionData
+
+        var beanId = 1
+        var debugLog = ""
+        for (approxIdx, approxName) in approxModes {
+            for (fmtIdx, fmtName) in fractionFmts {
+                let result = QalculateBridge.evaluate(
+                    qalculateExpression,
+                    approximation: Int32(approxIdx),
+                    fractionFormat: Int32(fmtIdx),
+                    timeoutMs: 60000
+                )
+                let label = "\(approxName):\(fmtName)"
+                debugLog += "\(label):\(result)\n"
+                formatData!.formatList.append(
+                    FormatBean(id: beanId, name: label,
+                               expressionData: expressionData,
+                               resultString: result)
+                )
+                beanId += 1
+            }
+            debugLog += "\n"
+        }
+        print(debugLog)
 
         resultModel!.onAC()
-        if(formatData?.defaultExpressionData != nil){
-            resultModel!.replicate(formatData!.defaultExpressionData!)
+        if let defaultData = formatData?.defaultExpressionData {
+            resultModel!.replicate(defaultData)
         }
     }
     

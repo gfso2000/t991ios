@@ -114,7 +114,14 @@
 		BBAA001F2CF0000000000001 /* CustomSquareRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB001F2CF0000000000001 /* CustomSquareRootView.swift */; };
 		BBAA00202CF0000000000001 /* CustomSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00202CF0000000000001 /* CustomSquareView.swift */; };
 		BBAA00212CF0000000000001 /* CustomSumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00212CF0000000000001 /* CustomSumView.swift */; };
-/* End PBXBuildFile section */
+
+		CC000008CF000000000000A1 /* QalculateWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC000001CF000000000000A1 /* QalculateWrapper.cpp */; };
+		CC000009CF000000000000A1 /* QalculateBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = CC000002CF000000000000A1 /* QalculateBridge.mm */; };
+		CC00000ACF000000000000A1 /* libqalculate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC000004CF000000000000A1 /* libqalculate.xcframework */; };
+		CC00000BCF000000000000A1 /* libgmp.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC000005CF000000000000A1 /* libgmp.xcframework */; };
+		CC00000CCF000000000000A1 /* libmpfr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC000006CF000000000000A1 /* libmpfr.xcframework */; };
+		CC00000DCF000000000000A1 /* libxml2custom.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC000007CF000000000000A1 /* libxml2custom.xcframework */; };
+		/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DA076E2D2C22B0E500F7A2C1 /* PBXContainerItemProxy */ = {
@@ -243,7 +250,15 @@
 		AABB001F2CF0000000000001 /* CustomSquareRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSquareRootView.swift; sourceTree = "<group>"; };
 		AABB00202CF0000000000001 /* CustomSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSquareView.swift; sourceTree = "<group>"; };
 		AABB00212CF0000000000001 /* CustomSumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSumView.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
+
+		CC000001CF000000000000A1 /* QalculateWrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QalculateWrapper.cpp; sourceTree = "<group>"; };
+		CC000002CF000000000000A1 /* QalculateBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = QalculateBridge.mm; sourceTree = "<group>"; };
+		CC000003CF000000000000A1 /* NightMatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NightMatch-Bridging-Header.h"; sourceTree = "<group>"; };
+		CC000004CF000000000000A1 /* libqalculate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libqalculate.xcframework; path = "/Users/I325639/a_libqalculate/out/xcframeworks/libqalculate.xcframework"; sourceTree = "<absolute>"; };
+		CC000005CF000000000000A1 /* libgmp.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libgmp.xcframework; path = "/Users/I325639/a_libqalculate/out/xcframeworks/libgmp.xcframework"; sourceTree = "<absolute>"; };
+		CC000006CF000000000000A1 /* libmpfr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libmpfr.xcframework; path = "/Users/I325639/a_libqalculate/out/xcframeworks/libmpfr.xcframework"; sourceTree = "<absolute>"; };
+		CC000007CF000000000000A1 /* libxml2custom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libxml2custom.xcframework; path = "/Users/I325639/a_libqalculate/out/xcframeworks/libxml2custom.xcframework"; sourceTree = "<absolute>"; };
+		/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DA076E192C22B0DF00F7A2C1 /* Frameworks */ = {
@@ -251,6 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2072242CCF829000E02D44 /* LaTeXSwiftUI in Frameworks */,
+				CC00000ACF000000000000A1 /* libqalculate.xcframework in Frameworks */,
+				CC00000BCF000000000000A1 /* libgmp.xcframework in Frameworks */,
+				CC00000CCF000000000000A1 /* libmpfr.xcframework in Frameworks */,
+				CC00000DCF000000000000A1 /* libxml2custom.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +347,7 @@
 				DAC991182C6C75A900744B5D /* CommonWidgets */,
 				DA03B8572C65A418003626B8 /* CustomWidgets */,
 				DAC991212C6DD9B300744B5D /* Utils */,
+				CC00000ECF000000000000A1 /* cpp */,
 				DA076E1F2C22B0DF00F7A2C1 /* NightMatchApp.swift */,
 				DA5918702CB8EC3F00A98368 /* TestView.swift */,
 				DA076E232C22B0E400F7A2C1 /* Assets.xcassets */,
@@ -538,7 +558,18 @@
 			path = CalculateHistory;
 			sourceTree = "<group>";
 		};
-/* End PBXGroup section */
+
+		CC00000ECF000000000000A1 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				CC000001CF000000000000A1 /* QalculateWrapper.cpp */,
+				CC000002CF000000000000A1 /* QalculateBridge.mm */,
+				CC000003CF000000000000A1 /* NightMatch-Bridging-Header.h */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
+		/* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		DA076E1B2C22B0DF00F7A2C1 /* NightMatch */ = {
@@ -773,6 +804,8 @@
 				BBAA001F2CF0000000000001 /* CustomSquareRootView.swift in Sources */,
 				BBAA00202CF0000000000001 /* CustomSquareView.swift in Sources */,
 				BBAA00212CF0000000000001 /* CustomSumView.swift in Sources */,
+				CC000008CF000000000000A1 /* QalculateWrapper.cpp in Sources */,
+				CC000009CF000000000000A1 /* QalculateBridge.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,6 +993,20 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "NightMatch/NightMatch-Bridging-Header.h";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/NightMatch/cpp",
+					"/Users/I325639/a_libqalculate/out/xcframeworks/libqalculate.xcframework/ios-arm64/Headers",
+					"/Users/I325639/a_libqalculate/out/xcframeworks/libgmp.xcframework/ios-arm64/Headers",
+					"/Users/I325639/a_libqalculate/out/xcframeworks/libmpfr.xcframework/ios-arm64/Headers",
+					"/Users/I325639/a_libqalculate/out/xcframeworks/libxml2custom.xcframework/ios-arm64/Headers",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lstdc++",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -994,6 +1041,20 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "NightMatch/NightMatch-Bridging-Header.h";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/NightMatch/cpp",
+					"/Users/I325639/a_libqalculate/out/xcframeworks/libqalculate.xcframework/ios-arm64/Headers",
+					"/Users/I325639/a_libqalculate/out/xcframeworks/libgmp.xcframework/ios-arm64/Headers",
+					"/Users/I325639/a_libqalculate/out/xcframeworks/libmpfr.xcframework/ios-arm64/Headers",
+					"/Users/I325639/a_libqalculate/out/xcframeworks/libxml2custom.xcframework/ios-arm64/Headers",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lstdc++",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

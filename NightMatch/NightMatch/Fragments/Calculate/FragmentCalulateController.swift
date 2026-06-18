@@ -143,57 +143,29 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
     func onOK() {
         let expressionData = expressionContext!.getMathExpression()
         let qalculateExpression = expressionData.getDataAsQalculate()
-        if(qalculateExpression == ""){
-            return
-        }
+        if qalculateExpression == "" { return }
         expressionContext!.addToHistory(expressionData)
 
+        let result = LibQalculateUtil.callQalculate(
+            qalculateExpression,
+            precision: FragmentCalulateController.precision
+        )
 
-        // Evaluate with libqalculate across all mode combinations,
-        // mirroring the Java MathInputControl approach.
-        //
-        // approximation indices (QalculateWrapper.h):
-        //   0=EXACT  1=TRY_EXACT  2=APPROXIMATE  3=EXACT_VARIABLES
-        // fraction format indices:
-        //   0=DECIMAL  1=DECIMAL_EXACT  2=FRACTIONAL  3=COMBINED
-        let approxModes:  [(Int, String)] = [
-            (0, "APPROXIMATION_EXACT"),
-            (1, "APPROXIMATION_TRY_EXACT"),
-            (2, "APPROXIMATION_APPROXIMATE"),
-            (3, "APPROXIMATION_EXACT_VARIABLES")
-        ]
-        let fractionFmts: [(Int, String)] = [
-            (3, "FRACTION_COMBINED"),
-            (2, "FRACTION_FRACTIONAL"),
-            (0, "FRACTION_DECIMAL"),
-            (1, "FRACTION_DECIMAL_EXACT")
-        ]
-
-        QalculateBridge.initialize_qalc()
-        QalculateBridge.setPrecision(Int32(FragmentCalulateController.precision))
+        let decimalExpressionData     = MathResultToExpression.convertToExpressionData(result.decimalResult)
+        let fractionExpressionData    = MathResultToExpression.convertToExpressionData(result.fractionResult)
+        let combinedExpressionData    = MathResultToExpression.convertToExpressionData(result.combinedFractionResult)
 
         formatData = FormatData()
-
-        var beanId = 1
-        for (approxIdx, approxName) in approxModes {
-            for (fmtIdx, fmtName) in fractionFmts {
-                let result = QalculateBridge.evaluate(
-                    qalculateExpression,
-                    approximation: Int32(approxIdx),
-                    fractionFormat: Int32(fmtIdx),
-                    timeoutMs: 60000
-                )
-                let label = "\(approxName):\(fmtName)"
-                
-                formatData!.formatList.append(
-                    FormatBean(id: beanId, name: label,
-                               expressionData: MathResultToExpression.convertToExpressionData(result),
-                               resultString: result)
-                )
-                formatData!.defaultExpressionData = MathResultToExpression.convertToExpressionData(result)
-                beanId += 1
-            }
-        }
+        formatData!.defaultExpressionData = decimalExpressionData
+        formatData!.formatList.append(FormatBean(id: 1, name: "Decimal",
+                                                 expressionData: decimalExpressionData,
+                                                 resultString: result.decimalResult))
+        formatData!.formatList.append(FormatBean(id: 2, name: "Fraction",
+                                                 expressionData: fractionExpressionData,
+                                                 resultString: result.fractionResult))
+        formatData!.formatList.append(FormatBean(id: 3, name: "Mixed Number",
+                                                 expressionData: combinedExpressionData,
+                                                 resultString: result.combinedFractionResult))
 
         resultModel!.onAC()
         if let defaultData = formatData?.defaultExpressionData {

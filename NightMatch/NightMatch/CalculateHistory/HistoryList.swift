@@ -13,16 +13,21 @@ struct HistoryList: View {
     var rerunItemCallback: (UUID) -> Void
     
     var body: some View {
-        ScrollView {
-            ForEach(historyBeanList) { item in
-                HistoryItem(historyBean: item, deleteItem: deleteItem, rerunItem: rerunItem)
-                    .frame(minHeight: 200)
+        VStack(spacing: 0) {
+            Button(action: { dismiss() }) {
+                Text(LocalizedStringKey("Close"))
             }
-            if(historyBeanList.isEmpty){
-                Text("No History Records")
+            .padding(.vertical, 12)
+            ScrollView {
+                ForEach(historyBeanList) { item in
+                    HistoryItem(historyBean: item, deleteItem: deleteItem, rerunItem: rerunItem)
+                        .frame(minHeight: 200)
+                }
+                if(historyBeanList.isEmpty){
+                    Text("No History Records")
+                }
             }
         }
-        //.frame(height:300)
         .onAppear{
             self.historyBeanList = HistoryUtil.loadHistory()
         }

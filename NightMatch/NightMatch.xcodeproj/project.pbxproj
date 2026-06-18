@@ -122,6 +122,7 @@
 		CC00000CCF000000000000A1 /* libmpfr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC000006CF000000000000A1 /* libmpfr.xcframework */; };
 		CC00000DCF000000000000A1 /* libxml2custom.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC000007CF000000000000A1 /* libxml2custom.xcframework */; };
 				CC000011CF000000000000A1 /* MathResultToExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000010CF000000000000A1 /* MathResultToExpression.swift */; };
+				CC000015CF000000000000A1 /* LibQalculateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000014CF000000000000A1 /* LibQalculateUtil.swift */; };
 		/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +261,7 @@
 		CC000006CF000000000000A1 /* libmpfr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libmpfr.xcframework; path = libqalculate/libmpfr.xcframework; sourceTree = SOURCE_ROOT; };
 		CC000007CF000000000000A1 /* libxml2custom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libxml2custom.xcframework; path = libqalculate/libxml2custom.xcframework; sourceTree = SOURCE_ROOT; };
 				CC000010CF000000000000A1 /* MathResultToExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathResultToExpression.swift; sourceTree = "<group>"; };
+				CC000014CF000000000000A1 /* LibQalculateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibQalculateUtil.swift; sourceTree = "<group>"; };
 		/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +513,7 @@
 			children = (
 				DAC991222C6DD9C200744B5D /* CustomIdGenerator.swift */,
 				CC000010CF000000000000A1 /* MathResultToExpression.swift */,
+				CC000014CF000000000000A1 /* LibQalculateUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				DA5918762CB9139300A98368 /* ActiveFragment.swift in Sources */,
 				DAC991232C6DD9C200744B5D /* CustomIdGenerator.swift in Sources */,
 				CC000011CF000000000000A1 /* MathResultToExpression.swift in Sources */,
+				CC000015CF000000000000A1 /* LibQalculateUtil.swift in Sources */,
 				DAEEB3932C899C1F00246752 /* FractionData.swift in Sources */,
 				DA03B85B2C65A9B5003626B8 /* CustomExpressionView.swift in Sources */,
 				DA5918712CB8EC3F00A98368 /* TestView.swift in Sources */,

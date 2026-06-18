@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct FormatList: View {
+    @Environment(\.dismiss) var dismiss
     let formatList:[FormatBean]
-    
+
     var body: some View {
-        ScrollView {
-            ForEach(formatList) { item in
-                FormatItem(formatBean: item)
+        VStack(spacing: 0) {
+            Button(action: { dismiss() }) {
+                Text(LocalizedStringKey("Close"))
+            }
+            .padding(.vertical, 12)
+            ScrollView {
+                ForEach(formatList) { item in
+                    FormatItem(formatBean: item)
+                }
             }
         }
     }

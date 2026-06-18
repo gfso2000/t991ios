@@ -448,7 +448,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
             endingLineNumber = "188"
-            landmarkName = "onOK()"
+            landmarkName = "onLeftArrow()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -456,7 +456,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E6AEF6AC-9F29-4E28-91D4-8BF8D0E27C19"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NightMatch/Fragments/Calculate/FragmentCalulateController.swift"
@@ -472,7 +472,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6655BA7A-1450-4343-9A82-634687B04E73"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NightMatch/Fragments/Calculate/FragmentCalulateController.swift"

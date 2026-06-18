@@ -20,6 +20,7 @@ enum SingularTextEnum:String,CaseIterable {
     case NEGATIVE = "-", MULTIPLY = "×"
     case ADD = "+", SUBTRACT = "−", DIVIDE = "÷"
     case ANGLE = "∠", COMPLEX_I = "𝑖"
+    case CARET = "^", SCI_E = "SCI_E"
     
     static func getEnumCase(by name: String) -> SingularTextEnum? {
         return SingularTextEnum.allCases.first { "\($0)" == name }

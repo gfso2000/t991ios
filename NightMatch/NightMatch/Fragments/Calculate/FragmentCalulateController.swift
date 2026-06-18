@@ -184,11 +184,13 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
                 )
                 let label = "\(approxName):\(fmtName)"
                 debugLog += "\(label):\(result)\n"
+                
                 formatData!.formatList.append(
                     FormatBean(id: beanId, name: label,
-                               expressionData: expressionData,
+                               expressionData: MathResultToExpression.convertToExpressionData(result),
                                resultString: result)
                 )
+                formatData!.defaultExpressionData = MathResultToExpression.convertToExpressionData(result)
                 beanId += 1
             }
             debugLog += "\n"

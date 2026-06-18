@@ -254,10 +254,10 @@
 		CC000001CF000000000000A1 /* QalculateWrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QalculateWrapper.cpp; sourceTree = "<group>"; };
 		CC000002CF000000000000A1 /* QalculateBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = QalculateBridge.mm; sourceTree = "<group>"; };
 		CC000003CF000000000000A1 /* NightMatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NightMatch-Bridging-Header.h"; sourceTree = "<group>"; };
-		CC000004CF000000000000A1 /* libqalculate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libqalculate.xcframework; path = "/Users/I325639/a_libqalculate/out/xcframeworks/libqalculate.xcframework"; sourceTree = "<absolute>"; };
-		CC000005CF000000000000A1 /* libgmp.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libgmp.xcframework; path = "/Users/I325639/a_libqalculate/out/xcframeworks/libgmp.xcframework"; sourceTree = "<absolute>"; };
-		CC000006CF000000000000A1 /* libmpfr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libmpfr.xcframework; path = "/Users/I325639/a_libqalculate/out/xcframeworks/libmpfr.xcframework"; sourceTree = "<absolute>"; };
-		CC000007CF000000000000A1 /* libxml2custom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libxml2custom.xcframework; path = "/Users/I325639/a_libqalculate/out/xcframeworks/libxml2custom.xcframework"; sourceTree = "<absolute>"; };
+		CC000004CF000000000000A1 /* libqalculate.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libqalculate.xcframework; path = libqalculate/libqalculate.xcframework; sourceTree = SOURCE_ROOT; };
+		CC000005CF000000000000A1 /* libgmp.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libgmp.xcframework; path = libqalculate/libgmp.xcframework; sourceTree = SOURCE_ROOT; };
+		CC000006CF000000000000A1 /* libmpfr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libmpfr.xcframework; path = libqalculate/libmpfr.xcframework; sourceTree = SOURCE_ROOT; };
+		CC000007CF000000000000A1 /* libxml2custom.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libxml2custom.xcframework; path = libqalculate/libxml2custom.xcframework; sourceTree = SOURCE_ROOT; };
 		/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -998,10 +998,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/NightMatch/cpp",
-					"/Users/I325639/a_libqalculate/out/xcframeworks/libqalculate.xcframework/ios-arm64/Headers",
-					"/Users/I325639/a_libqalculate/out/xcframeworks/libgmp.xcframework/ios-arm64/Headers",
-					"/Users/I325639/a_libqalculate/out/xcframeworks/libmpfr.xcframework/ios-arm64/Headers",
-					"/Users/I325639/a_libqalculate/out/xcframeworks/libxml2custom.xcframework/ios-arm64/Headers",
+					"$(SRCROOT)/libqalculate/libqalculate.xcframework/ios-arm64/Headers",
+					"$(SRCROOT)/libqalculate/libgmp.xcframework/ios-arm64/Headers",
+					"$(SRCROOT)/libqalculate/libmpfr.xcframework/ios-arm64/Headers",
+					"$(SRCROOT)/libqalculate/libxml2custom.xcframework/ios-arm64/Headers",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1046,10 +1046,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/NightMatch/cpp",
-					"/Users/I325639/a_libqalculate/out/xcframeworks/libqalculate.xcframework/ios-arm64/Headers",
-					"/Users/I325639/a_libqalculate/out/xcframeworks/libgmp.xcframework/ios-arm64/Headers",
-					"/Users/I325639/a_libqalculate/out/xcframeworks/libmpfr.xcframework/ios-arm64/Headers",
-					"/Users/I325639/a_libqalculate/out/xcframeworks/libxml2custom.xcframework/ios-arm64/Headers",
+					"$(SRCROOT)/libqalculate/libqalculate.xcframework/ios-arm64/Headers",
+					"$(SRCROOT)/libqalculate/libgmp.xcframework/ios-arm64/Headers",
+					"$(SRCROOT)/libqalculate/libmpfr.xcframework/ios-arm64/Headers",
+					"$(SRCROOT)/libqalculate/libxml2custom.xcframework/ios-arm64/Headers",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

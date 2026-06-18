@@ -14,8 +14,11 @@ struct VarItem: View {
     let imageSize:CGFloat = 25
     var selectItem: (SingularTextEnum) -> Void
     var resetItem: (String) -> Void
+    var setItemToLastAns: (String) -> Void
     
-    init(varBean: VarBean, selectItem : @escaping (SingularTextEnum) -> Void, resetItem : @escaping (String) -> Void) {
+    init(varBean: VarBean, selectItem : @escaping (SingularTextEnum) -> Void,
+         resetItem : @escaping (String) -> Void,
+         setItemToLastAns : @escaping (String) -> Void) {
         self.varBean = varBean
         let resultModel: ExpressionModel = ExpressionModel(expressionContext: nil, id:CustomIdGenerator.generateId(), parentModel: nil, fontSize: fontSize)
         resultModel.replicate(varBean.getExpressionData())
@@ -23,6 +26,7 @@ struct VarItem: View {
         self._resultModel = StateObject(wrappedValue: resultModel)
         self.selectItem = selectItem
         self.resetItem = resetItem
+        self.setItemToLastAns = setItemToLastAns
     }
     
     var body: some View {
@@ -48,7 +52,7 @@ struct VarItem: View {
                     .buttonStyle(.bordered)
                     
                     Button {
-                        resetItem(varBean.varName)
+                        setItemToLastAns(varBean.varName)
                     } label: {
                         Image("custom_button_ans")
                             .resizable()
@@ -78,6 +82,8 @@ struct VarItem: View {
     return VarItem(varBean: varBeanA, selectItem: {varName in
         print(varName)
     }, resetItem: {varName in
+        print(varName)
+    }, setItemToLastAns: {varName in
         print(varName)
     })
 }

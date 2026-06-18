@@ -13,10 +13,16 @@ struct VarList: View {
     var selectItemCallback: (SingularTextEnum) -> Void
     
     var body: some View {
-        ScrollView {
-            ForEach(varBeanList) { item in
-                VarItem(varBean: item, selectItem: selectItem, resetItem: resetItemCallback)
-                    .frame(minHeight: 50)
+        VStack(spacing: 0) {
+            Button(action: { dismiss() }) {
+                Text(LocalizedStringKey("Close"))
+            }
+            .padding(.vertical, 12)
+            ScrollView {
+                ForEach(varBeanList) { item in
+                    VarItem(varBean: item, selectItem: selectItem, resetItem: resetItemCallback, setItemToLastAns: setItemToLastAnsCallback)
+                        .frame(minHeight: 50)
+                }
             }
         }
         .onAppear{
@@ -27,6 +33,13 @@ struct VarList: View {
     func resetItemCallback(_ varName:String) -> Void{
         //save to disk
         VarUtil.resetVar(varName)
+        self.varBeanList.removeAll()
+        self.varBeanList = VarUtil.loadVar()
+    }
+    
+    func setItemToLastAnsCallback(_ varName:String) -> Void{
+        //save to disk
+        VarUtil.setVarToLastAns(varName)
         self.varBeanList.removeAll()
         self.varBeanList = VarUtil.loadVar()
     }

@@ -12,7 +12,17 @@ class VarUtil {
         var varBeanList:[VarBean] = VarUtil.loadVar()
         for i in 0..<varBeanList.count {
             if varBeanList[i].varName == varName {
-                varBeanList[i] = VarBean(varName: varName, expressionData: ExpressionData.oneExpressionData())
+                varBeanList[i] = VarBean(varName: varName, expressionData: ExpressionData.zeroExpressionData())
+            }
+        }
+        saveVar(varBeanList)
+    }
+    
+    static func setVarToLastAns(_ varName:String)->Void{
+        var varBeanList:[VarBean] = VarUtil.loadVar()
+        for i in 0..<varBeanList.count {
+            if varBeanList[i].varName == varName {
+                varBeanList[i] = VarBean(varName: varName, expressionData: loadLastAns())
             }
         }
         saveVar(varBeanList)
@@ -65,5 +75,20 @@ class VarUtil {
         } catch {
             print("Error saving var array: \(error.localizedDescription)")
         }
+    }
+
+    static func persistLastAns(_ lastAns: ExpressionData) {
+        let jsonObject = lastAns.getDataAsJson()
+        if let data = try? JSONSerialization.data(withJSONObject: jsonObject) {
+            UserDefaults.standard.set(data, forKey: "lastAns")
+        }
+    }
+
+    static func loadLastAns() -> ExpressionData {
+        guard let data = UserDefaults.standard.data(forKey: "lastAns"),
+              let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+            return ExpressionData.zeroExpressionData()
+        }
+        return ExpressionData(jsonObject)
     }
 }

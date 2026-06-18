@@ -138,13 +138,16 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
         expressionContext!.getActiveExpressionModel().addAbs()
     }
     
-    static let precision = 10
+    static let precision = 13
 
     func onOK() {
         let expressionData = expressionContext!.getMathExpression()
+        let qalculateExpression = expressionData.getDataAsQalculate()
+        if(qalculateExpression == ""){
+            return
+        }
         expressionContext!.addToHistory(expressionData)
 
-        let qalculateExpression = expressionData.getDataAsQalculate()
 
         // Evaluate with libqalculate across all mode combinations,
         // mirroring the Java MathInputControl approach.
@@ -170,10 +173,8 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
         QalculateBridge.setPrecision(Int32(FragmentCalulateController.precision))
 
         formatData = FormatData()
-        formatData!.defaultExpressionData = expressionData
 
         var beanId = 1
-        var debugLog = ""
         for (approxIdx, approxName) in approxModes {
             for (fmtIdx, fmtName) in fractionFmts {
                 let result = QalculateBridge.evaluate(
@@ -183,7 +184,6 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
                     timeoutMs: 60000
                 )
                 let label = "\(approxName):\(fmtName)"
-                debugLog += "\(label):\(result)\n"
                 
                 formatData!.formatList.append(
                     FormatBean(id: beanId, name: label,
@@ -193,13 +193,12 @@ class FragmentCalulateController:ShiftListener, VarListener, FunListener, UndoLi
                 formatData!.defaultExpressionData = MathResultToExpression.convertToExpressionData(result)
                 beanId += 1
             }
-            debugLog += "\n"
         }
-        print(debugLog)
 
         resultModel!.onAC()
         if let defaultData = formatData?.defaultExpressionData {
             resultModel!.replicate(defaultData)
+            VarUtil.persistLastAns(defaultData)
         }
     }
     

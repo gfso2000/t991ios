@@ -34,7 +34,26 @@ class SingularTextData:ExpressionItemData{
     }
     
     override func getDataAsQalculate() -> String {
+        if let varAns = getVariableAnsForQalculate() {
+            return varAns
+        }
         return text.rawValue
+    }
+
+    func getVariableAnsForQalculate() -> String? {
+        switch text {
+            case .VAR_A: return "#varA#"
+            case .VAR_B: return "#varB#"
+            case .VAR_C: return "#varC#"
+            case .VAR_D: return "#varD#"
+            case .VAR_E: return "#varE#"
+            case .VAR_F: return "#varF#"
+            case .VAR_X: return "#varX#"
+            case .VAR_Y: return "#varY#"
+            case .VAR_Z: return "#varZ#"
+            case .ANS: return "#varAns#"
+            default:     return nil
+        }
     }
     
     override func getDataAsLatex() -> String {

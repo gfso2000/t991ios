@@ -14,7 +14,7 @@ enum SingularTextEnum:String,CaseIterable {
          SEVEN = "7", EIGHT = "8" , NINE = "9"
     case VAR_A = "A", VAR_B = "B", VAR_C = "C",
          VAR_D = "D", VAR_E = "E", VAR_F = "F",
-         VAR_X = "𝑿", VAR_Y = "𝒚", VAR_Z = "𝒛"
+         VAR_X = "𝑿", VAR_Y = "𝒚", VAR_Z = "𝒛", ANS = "Ans"
     case LEFT_PARENTHESIS = "(", RIGHT_PARENTHESIS = ")"
     case PI = "π", CONST_E = "e"
     case NEGATIVE = "-", MULTIPLY = "×"
